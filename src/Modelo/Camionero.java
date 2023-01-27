@@ -10,12 +10,12 @@ public class Camionero extends Persona{
     private double salario;
     private String tipolicencia;
     private int aniosexperiencia;
-    private char estado;
+    private String estado;
 
     public Camionero() {
     }
 
-    public Camionero(int codigoCam, double salario, String tipolicencia, int aniosexperiencia, char estado) {
+    public Camionero(int codigoCam, double salario, String tipolicencia, int aniosexperiencia, String estado) {
         this.codigoCam = codigoCam;
         this.salario = salario;
         this.tipolicencia = tipolicencia;
@@ -23,7 +23,7 @@ public class Camionero extends Persona{
         this.estado = estado;
     }
 
-    public Camionero(int codigoCam, double salario, String tipolicencia, int aniosexperiencia, char estado, int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, Date fechanac, int edad, char genero) {
+    public Camionero(int codigoCam, double salario, String tipolicencia, int aniosexperiencia, String estado, int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, Date fechanac, int edad, String genero) {
         super(codigo, dni, prinombre, segnombre, apellidopat, apellidomat, direccion, telefono, email, fechanac, edad, genero);
         this.codigoCam = codigoCam;
         this.salario = salario;
@@ -64,11 +64,11 @@ public class Camionero extends Persona{
         this.aniosexperiencia = aniosexperiencia;
     }
 
-    public char getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(char estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 }
