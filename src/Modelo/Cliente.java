@@ -21,7 +21,7 @@ public class Cliente extends Persona{
         this.estado = estado;
     }
 
-    public Cliente(int codigocli, String ruc, String profesion, String estado, int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, Date fechanac, int edad, char genero) {
+    public Cliente(int codigocli, String ruc, String profesion, String estado, int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, Date fechanac, int edad, String genero) {
         super(codigo, dni, prinombre, segnombre, apellidopat, apellidomat, direccion, telefono, email, fechanac, edad, genero);
         this.codigocli = codigocli;
         this.ruc = ruc;
@@ -59,5 +59,5 @@ public class Cliente extends Persona{
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
+    } 
 }
