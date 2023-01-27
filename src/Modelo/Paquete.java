@@ -1,13 +1,17 @@
 package Modelo;
+import java.time.Instant;
 
 public class Paquete {
 
     private int codigoPaq;
-    private String descripcion;
-    private String destinatario;
-    private String direccionDestinatario;
-    private int codigoCam;
-    private int codigoPro;
+    private int codcliente;
+private int codprovincia;
+private int coddestina;
+private int codcamionero;
+private Time salidaproga;
+paq_llegadaprogra time
+paq_peso double
+paq_fecharegistro date;
 
     public Paquete() {
     }
