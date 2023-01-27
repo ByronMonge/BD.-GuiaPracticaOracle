@@ -1,30 +1,35 @@
 
 package Modelo;
 
+import java.util.Date;
 
-public class Camionero {
+
+public class Camionero extends Persona{
     
     private int codigoCam;
-    private String dni;
-    private String nombre;
-    private String apellido;
-    private String telefono;
-    private String direccion;
-    private String poblacion;
     private double salario;
+    private String tipolicencia;
+    private int aniosexperiencia;
+    private char estado;
 
     public Camionero() {
     }
 
-    public Camionero(int codigoCam, String dni, String nombre, String apellido, String telefono, String direccion, String poblacion, double salario) {
+    public Camionero(int codigoCam, double salario, String tipolicencia, int aniosexperiencia, char estado) {
         this.codigoCam = codigoCam;
-        this.dni = dni;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.direccion = direccion;
-        this.poblacion = poblacion;
         this.salario = salario;
+        this.tipolicencia = tipolicencia;
+        this.aniosexperiencia = aniosexperiencia;
+        this.estado = estado;
+    }
+
+    public Camionero(int codigoCam, double salario, String tipolicencia, int aniosexperiencia, char estado, int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, Date fechanac, int edad, char genero) {
+        super(codigo, dni, prinombre, segnombre, apellidopat, apellidomat, direccion, telefono, email, fechanac, edad, genero);
+        this.codigoCam = codigoCam;
+        this.salario = salario;
+        this.tipolicencia = tipolicencia;
+        this.aniosexperiencia = aniosexperiencia;
+        this.estado = estado;
     }
 
     public int getCodigoCam() {
@@ -35,59 +40,35 @@ public class Camionero {
         this.codigoCam = codigoCam;
     }
 
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getPoblacion() {
-        return poblacion;
-    }
-
-    public void setPoblacion(String poblacion) {
-        this.poblacion = poblacion;
-    }
-
     public double getSalario() {
         return salario;
     }
 
     public void setSalario(double salario) {
         this.salario = salario;
+    }
+
+    public String getTipolicencia() {
+        return tipolicencia;
+    }
+
+    public void setTipolicencia(String tipolicencia) {
+        this.tipolicencia = tipolicencia;
+    }
+
+    public int getAniosexperiencia() {
+        return aniosexperiencia;
+    }
+
+    public void setAniosexperiencia(int aniosexperiencia) {
+        this.aniosexperiencia = aniosexperiencia;
+    }
+
+    public char getEstado() {
+        return estado;
+    }
+
+    public void setEstado(char estado) {
+        this.estado = estado;
     }
 }
