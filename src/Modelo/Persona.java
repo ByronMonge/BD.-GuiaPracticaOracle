@@ -16,12 +16,12 @@ public class Persona {
     private String email;
     private Date fechanac;
     private int edad;
-    private char genero;
+    private String genero;
 
     public Persona() {
     }
 
-    public Persona(int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, Date fechanac, int edad, char genero) {
+    public Persona(int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, Date fechanac, int edad, String genero) {
         this.codigo = codigo;
         this.dni = dni;
         this.prinombre = prinombre;
@@ -124,11 +124,11 @@ public class Persona {
         this.edad = edad;
     }
 
-    public char getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(char genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 }
