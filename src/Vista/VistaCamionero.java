@@ -420,13 +420,13 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
 
         tablacamioneros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código", "DNI", "Nombres", "Apellidos", "Fecha de nacimiento", "Edad", "Genero", "Direccion", "Telefono", "Email", "Salario", "Tipo de licencia", "Años de experiencia"
+                "DNI", "Nombre", "Apellido", "Edad", "Genero", "Telefono", "Salario"
             }
         ));
         jScrollPane1.setViewportView(tablacamioneros);
