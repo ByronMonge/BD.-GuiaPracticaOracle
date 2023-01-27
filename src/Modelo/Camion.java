@@ -8,19 +8,21 @@ public class Camion {
     private String placa;
     private String matricula;
     private String modelo;
-    private String potencia;
     private String tipo;
+    private double potencia;
+    private char estado;
 
     public Camion() {
     }
 
-    public Camion(int codigoCmi, String matricula, String modelo, String potencia, String tipo, String placa) {
+    public Camion(int codigoCmi, String placa, String matricula, String modelo, String tipo, double potencia, char estado) {
         this.codigoCmi = codigoCmi;
-        this.matricula = matricula;
         this.placa = placa;
+        this.matricula = matricula;
         this.modelo = modelo;
-        this.potencia = potencia;
         this.tipo = tipo;
+        this.potencia = potencia;
+        this.estado = estado;
     }
 
     public int getCodigoCmi() {
@@ -29,6 +31,14 @@ public class Camion {
 
     public void setCodigoCmi(int codigoCmi) {
         this.codigoCmi = codigoCmi;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
     public String getMatricula() {
@@ -47,14 +57,6 @@ public class Camion {
         this.modelo = modelo;
     }
 
-    public String getPotencia() {
-        return potencia;
-    }
-
-    public void setPotencia(String potencia) {
-        this.potencia = potencia;
-    }
-
     public String getTipo() {
         return tipo;
     }
@@ -63,11 +65,19 @@ public class Camion {
         this.tipo = tipo;
     }
 
-    public String getPlaca() {
-        return placa;
+    public double getPotencia() {
+        return potencia;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
+    public void setPotencia(double potencia) {
+        this.potencia = potencia;
+    }
+
+    public char getEstado() {
+        return estado;
+    }
+
+    public void setEstado(char estado) {
+        this.estado = estado;
     }
 }
