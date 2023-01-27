@@ -1,28 +1,33 @@
 package Modelo;
-import java.time.Instant;
+
+import java.time.LocalDate;
+import java.util.Date;
 
 public class Paquete {
 
     private int codigoPaq;
     private int codcliente;
-private int codprovincia;
-private int coddestina;
-private int codcamionero;
-private Time salidaproga;
-paq_llegadaprogra time
-paq_peso double
-paq_fecharegistro date;
+    private int codprovincia;
+    private int coddestina;
+    private int codcamionero;
+    private LocalDate salidaproga;
+    private LocalDate llegadaprogra;
+    private double peso;
+    private Date fecharegistro;
 
     public Paquete() {
     }
 
-    public Paquete(int codigoPaq, String descripcion, String destinatario, String direccionDestinatario, int codigoCam, int codigoPro) {
+    public Paquete(int codigoPaq, int codcliente, int codprovincia, int coddestina, int codcamionero, LocalDate salidaproga, LocalDate llegadaprogra, double peso, Date fecharegistro) {
         this.codigoPaq = codigoPaq;
-        this.descripcion = descripcion;
-        this.destinatario = destinatario;
-        this.direccionDestinatario = direccionDestinatario;
-        this.codigoCam = codigoCam;
-        this.codigoPro = codigoPro;
+        this.codcliente = codcliente;
+        this.codprovincia = codprovincia;
+        this.coddestina = coddestina;
+        this.codcamionero = codcamionero;
+        this.salidaproga = salidaproga;
+        this.llegadaprogra = llegadaprogra;
+        this.peso = peso;
+        this.fecharegistro = fecharegistro;
     }
 
     public int getCodigoPaq() {
@@ -33,43 +38,67 @@ paq_fecharegistro date;
         this.codigoPaq = codigoPaq;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public int getCodcliente() {
+        return codcliente;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setCodcliente(int codcliente) {
+        this.codcliente = codcliente;
     }
 
-    public String getDestinatario() {
-        return destinatario;
+    public int getCodprovincia() {
+        return codprovincia;
     }
 
-    public void setDestinatario(String destinatario) {
-        this.destinatario = destinatario;
+    public void setCodprovincia(int codprovincia) {
+        this.codprovincia = codprovincia;
     }
 
-    public String getDireccionDestinatario() {
-        return direccionDestinatario;
+    public int getCoddestina() {
+        return coddestina;
     }
 
-    public void setDireccionDestinatario(String direccionDestinatario) {
-        this.direccionDestinatario = direccionDestinatario;
+    public void setCoddestina(int coddestina) {
+        this.coddestina = coddestina;
     }
 
-    public int getCodigoCam() {
-        return codigoCam;
+    public int getCodcamionero() {
+        return codcamionero;
     }
 
-    public void setCodigoCam(int codigoCam) {
-        this.codigoCam = codigoCam;
+    public void setCodcamionero(int codcamionero) {
+        this.codcamionero = codcamionero;
     }
 
-    public int getCodigoPro() {
-        return codigoPro;
+    public LocalDate getSalidaproga() {
+        return salidaproga;
     }
 
-    public void setCodigoPro(int codigoPro) {
-        this.codigoPro = codigoPro;
+    public void setSalidaproga(LocalDate salidaproga) {
+        this.salidaproga = salidaproga;
+    }
+
+    public LocalDate getLlegadaprogra() {
+        return llegadaprogra;
+    }
+
+    public void setLlegadaprogra(LocalDate llegadaprogra) {
+        this.llegadaprogra = llegadaprogra;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public Date getFecharegistro() {
+        return fecharegistro;
+    }
+
+    public void setFecharegistro(Date fecharegistro) {
+        this.fecharegistro = fecharegistro;
     }
 }
