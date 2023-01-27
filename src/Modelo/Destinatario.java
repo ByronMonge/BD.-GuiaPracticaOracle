@@ -21,7 +21,7 @@ public class Destinatario extends Persona{
         this.callesecun = callesecun;
     }
 
-    public Destinatario(int codigodes, String codpostal, String infocomplement, String calleprinc, String callesecun, int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, Date fechanac, int edad, char genero) {
+    public Destinatario(int codigodes, String codpostal, String infocomplement, String calleprinc, String callesecun, int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, Date fechanac, int edad, String genero) {
         super(codigo, dni, prinombre, segnombre, apellidopat, apellidomat, direccion, telefono, email, fechanac, edad, genero);
         this.codigodes = codigodes;
         this.codpostal = codpostal;
