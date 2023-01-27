@@ -14,7 +14,7 @@ public class Modelo_Camionero extends Camionero {
     public Modelo_Camionero() {
     }
 
-    public List<Camionero> listaPersonasTabla() {
+    public List<Camionero> listaCamioneros() {
         try {
             List<Camionero> listacam = new ArrayList<>();
 
