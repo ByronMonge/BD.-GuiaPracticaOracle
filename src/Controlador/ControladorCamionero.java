@@ -35,7 +35,7 @@ public class ControladorCamionero {
         tabla.setNumRows(0);
 
         //System.out.println("llena datos");
-        List<Camionero> cams = modelo.listaPersonasTabla();
+        List<Camionero> cams = modelo.listaCamioneros();
         cams.stream().forEach(p -> {
             String[] datos = {p.getDni(),p.getPrinombre(), p.getApellidopat(), String.valueOf(p.getEdad()), p.getGenero(), p.getTelefono(), String.valueOf(p.getSalario())};
             tabla.addRow(datos);
