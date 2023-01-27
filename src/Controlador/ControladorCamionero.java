@@ -35,9 +35,9 @@ public class ControladorCamionero {
         tabla.setNumRows(0);
 
         //System.out.println("llena datos");
-        List<Camionero> chefs = modelo.listaPersonasTabla();
-        chefs.stream().forEach(p -> {
-            String[] datos = {p.getNombre()};
+        List<Camionero> cams = modelo.listaPersonasTabla();
+        cams.stream().forEach(p -> {
+            String[] datos = {p.getDni(),p.getPrinombre(), p.getApellidopat(), String.valueOf(p.getEdad()), p.getGenero(), p.getTelefono(), String.valueOf(p.getSalario())};
             tabla.addRow(datos);
         });
     }
