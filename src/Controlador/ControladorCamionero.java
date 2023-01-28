@@ -37,7 +37,7 @@ public class ControladorCamionero {
         DefaultTableModel estructuraTabla = (DefaultTableModel) vista.getTablacamioneros().getModel();
         estructuraTabla.setRowCount(0);
 
-        List<Camionero> listap = modelo.listaPersonasTabla2();
+        List<Camionero> listap = modelo.listaPersonasTabla();
 
         Holder<Integer> i = new Holder<>(0);
 
@@ -46,7 +46,7 @@ public class ControladorCamionero {
                     estructuraTabla.addRow(new Object[8]);
 
                     vista.getTablacamioneros().setValueAt(persona.getCodigo(), i.value, 0);
-                    vista.getTablacamioneros().setValueAt(persona.getPrinombre(), i.value, 1);
+                    //vista.getTablacamioneros().setValueAt(persona.getPrinombre(), i.value, 0);
 
                     i.value++;
                 });
