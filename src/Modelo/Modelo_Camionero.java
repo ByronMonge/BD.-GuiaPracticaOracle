@@ -41,53 +41,15 @@ public class Modelo_Camionero extends Camionero {
             return false;
         }
     }
-    
+
     public boolean modificarPersonaYCamionero() { //modificar la instancia en la BD
 
-        String sqlP = "UPDATE persona SET per_prinombre='" + getPrinombre() + "', per_segnombre='" + getSegnombre() + "', per_apellidopat='" + getApellidopat() + "', per_apellidomat='" + getApellidomat() + "', per_direccion='" + getDireccion() + "', per_telefono=" + getTelefono() + ", per_email=" + getEmail() + ",per_fechanac='" + getFechanac() + ",per_edad='" + getEdad() + ",per_genero='" + getGenero() +"' WHERE per_dni = '" + getDni() + "'";
+        String sqlP = "UPDATE persona SET per_prinombre='" + getPrinombre() + "', per_segnombre='" + getSegnombre() + "', per_apellidopat='" + getApellidopat() + "', per_apellidomat='" + getApellidomat() + "', per_direccion='" + getDireccion() + "', per_telefono=" + getTelefono() + ", per_email=" + getEmail() + ",per_fechanac='" + getFechanac() + ",per_edad='" + getEdad() + ",per_genero='" + getGenero() + "' WHERE per_dni = '" + getDni() + "'";
 
         //String sqlC = "UPDATE camionero SET cam_salario=" + getSalario() +",cam_tipolicencia='" + getTipolicencia() + "', cam_aniosexperi=" + getAniosexperiencia() + " WHERE per_dni = '" + getDni() + "'";
-        
         return conoc.accion(sqlP); // && conoc.accion(sqlC)
     }
 
-    /*public List<Camionero> listaPersonasTabla() {
-        try {
-            //Me retorna un "List" de "persona"
-            List<Camionero> lista = new ArrayList<>();
-
-            String sql = "select per_dni,per_prinombre,per_apellidopat,per_edad,per_genero,per_telefono, cam_salario from persona p, camionero c where p.per_codigo = c.cam_percodigo";
-
-            ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
-
-            //Pasar de "ResultSet" a "List"
-            while (rs.next()) {
-                //Crear las instancias de las personas
-                Camionero cam = new Camionero();
-
-                //Todo lo que haga en la sentencia define como voy a extraer los datos
-                cam.setDni(rs.getString("per_dni"));
-                cam.setPrinombre(rs.getString("per_prinombre"));
-                cam.setApellidopat(rs.getString("per_apellidopat"));
-                cam.setEdad(rs.getInt("per_edad"));
-                cam.setGenero(rs.getString("per_genero"));
-                cam.setTelefono(rs.getString("per_telefono"));
-                cam.setSalario(rs.getDouble("cam_salario"));
-
-                lista.add(cam); //Agrego los datos a la lista
-            }
-
-            //Cierro la conexion a la BD
-            rs.close();
-            //Retorno la lista
-            return lista;
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Modelo_Camionero.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
-    }*/
-    
     public List<Camionero> listaPersonasTabla() {
         try {
             //Me retorna un "List" de "persona"
