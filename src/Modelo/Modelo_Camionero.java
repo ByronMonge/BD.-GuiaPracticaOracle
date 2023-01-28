@@ -12,8 +12,6 @@ public class Modelo_Camionero extends Camionero {
 
     ConectOC conoc = new ConectOC();
 
-    Modelo_Persona mipersona = new Modelo_Persona(); //Creo un objeto de modelo_persona para usar sus metodos
-
     public Modelo_Camionero() {
     }
 
@@ -25,18 +23,23 @@ public class Modelo_Camionero extends Camionero {
         super(codigoCam, salario, tipolicencia, aniosexperiencia, estado, codigo, dni, prinombre, segnombre, apellidopat, apellidomat, direccion, telefono, email, fechanac, edad, genero);
     }
 
-    public boolean crearCamionero() {
+    public boolean crearPersona() {
 
-        if (mipersona.crearPersona()) {
-            //String sql = "insert into camionero (cam_percodigo, cam_salario, cam_tipolicencia, cam_aniosexperi, cam_estado) values (" + mipersona.traerCodigoDePersona() + "," + getSalario() + ",'" + getTipolicencia() + "'," + getAniosexperiencia() + ",'A')";
-
-            String sql = "insert into camionero (cam_percodigo, cam_salario, cam_tipolicencia, cam_aniosexperi, cam_estado) values (4,400,'C',1,'A')";
-            return conoc.accion(sql);
-        } else {
-            return false;
-        }
+        String sql = "insert into persona (per_dni, per_prinombre, per_segnombre, per_apellidopat, per_apellidomat, per_direccion, per_telefono, per_email, per_fechanac, per_edad, per_genero) values ('" + getDni() + "','" + getPrinombre() + "','" + getSegnombre() + "','" + getApellidopat() + "','" + getApellidomat() + "','" + getDireccion() + "','" + getTelefono() + "','" + getEmail() + "','" + getFechanac() + "'," + getEdad() + ",'" + getGenero() + "')";
+        return conoc.accion(sql);
     }
 
+//    public boolean crearCamionero() {
+//
+//        if (mipersona.crearPersona()) {
+//            //String sql = "insert into camionero (cam_percodigo, cam_salario, cam_tipolicencia, cam_aniosexperi, cam_estado) values (" + mipersona.traerCodigoDePersona() + "," + getSalario() + ",'" + getTipolicencia() + "'," + getAniosexperiencia() + ",'A')";
+//
+//            String sql = "insert into camionero (cam_percodigo, cam_salario, cam_tipolicencia, cam_aniosexperi, cam_estado) values (4,400,'C',1,'A')";
+//            return conoc.accion(sql);
+//        } else {
+//            return false;
+//        }
+//    }
     public List<Camionero> listaPersonasTabla() {
         try {
             //Me retorna un "List" de "persona"
