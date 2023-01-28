@@ -29,12 +29,13 @@ public class ControladorCamionero {
         vista.getBtncrear().addActionListener(l -> abrirDialogCrear());
         vista.getBtnactualizar().addActionListener(l -> cargarTabla());
         vista.getBtnguardar().addActionListener(l -> crearPersonaContr());
+        vista.getBtnmodificar().addActionListener(l -> abrirYCargarDatosEnElDialog());
     }
 
     public void abrirDialogCrear() {
         vista.getjDlgCamionero().setName("Crear nueva persona");
         vista.getjDlgCamionero().setLocationRelativeTo(vista);
-        vista.getjDlgCamionero().setSize(1100, 500);
+        vista.getjDlgCamionero().setSize(876, 733);
         vista.getjDlgCamionero().setTitle("Crear nueva persona");
         vista.getjDlgCamionero().setVisible(true);
     }
@@ -62,6 +63,61 @@ public class ControladorCamionero {
 
             i.value++;
         });
+    }
+
+    public void abrirYCargarDatosEnElDialog() {
+
+        int seleccion = vista.getTablacamioneros().getSelectedRow();
+
+        if (seleccion == -1) {
+            JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
+        } else {
+
+            String cedula = vista.getTablacamioneros().getValueAt(seleccion, 0).toString();
+            modelo.listaPersonasTabla().forEach((pe) -> {
+                if (pe.getDni().equals(cedula)) {
+
+                    //Abre el jDialog y carga los datos en el jDialog
+                    vista.getjDlgCamionero().setName("Editar");
+                    vista.getjDlgCamionero().setLocationRelativeTo(vista);
+                    vista.getjDlgCamionero().setSize(876, 733);
+                    vista.getjDlgCamionero().setTitle("Editar");
+                    vista.getjDlgCamionero().setVisible(true);
+
+                    //Seteo los datos en los campos de texto
+                    vista.getTxtdni().setText(pe.getDni());
+                    vista.getTxtprinombre().setText(pe.getPrinombre());
+                    vista.getTxtsegnombre().setText(pe.getSegnombre());
+                    vista.getTxtpriapellido().setText(pe.getApellidopat());
+                    vista.getTxtsegapellido().setText(pe.getApellidomat());
+                    vista.getTxtdireccion().setText(pe.getDireccion());
+                    vista.getTxttelefono().setText(pe.getTelefono());
+                    vista.getTxtemail().setText(pe.getEmail());
+                    vista.getTxttipodelicencia().setText(pe.getTipolicencia());
+
+                    if (pe.getGenero().equalsIgnoreCase("M")) {
+                        vista.getMasculino().setSelected(true);
+                    } else {
+                        if (pe.getGenero().equalsIgnoreCase("F")) {
+                            vista.getFemenino().setSelected(true);
+                        }
+                    }
+
+                    vista.getSpinneredad().setValue(pe.getEdad());
+                    vista.getSpinneraniosexperiencia().setValue(pe.getAniosexperiencia());
+                    vista.getSpinnerSalario().setValue(pe.getSalario());
+
+                    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); //Doy formato a la fecha
+                    try {
+                        Date fecha = formato.parse(pe.getFechanac()); //La fecha la paso de String a Date
+                        
+                        vista.getJfechanacimiento().setDate(fecha);
+                    } catch (ParseException ex) {
+                        Logger.getLogger(ControladorCamionero.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            });
+        }
     }
 
     public void crearPersonaContr() {
@@ -108,9 +164,10 @@ public class ControladorCamionero {
 
         camionero.setGenero(genero);
 
-        if (camionero.crearPersona()) {
+        if (camionero.crearCamionero()) {
             vista.getjDlgCamionero().setVisible(false);
             JOptionPane.showMessageDialog(vista, "Persona Creada Satisfactoriamente");
+            cargarTabla();
         } else {
             JOptionPane.showMessageDialog(vista, "No se pudo crear la persona");
         }
