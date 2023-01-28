@@ -16,7 +16,7 @@ public class Modelo_Persona extends Persona {
         super(codigo, dni, prinombre, segnombre, apellidopat, apellidomat, direccion, telefono, email, fechanac, edad, genero);
     }
 
-    public int traerCodigoDePersona() {
+    public int traerCodigoDePersonaCrear() { //Retorna el codigo maximo. Este codigo sirve para crear una persona en la BD
         int codigo = 0;
         try {
 
@@ -27,6 +27,31 @@ public class Modelo_Persona extends Persona {
             //Pasar de "ResultSet" a "List"
             while (rs.next()) {
                 codigo = rs.getInt("max(per_codigo)"); //Trae el codigo de la persona recien creada
+
+            }
+
+            //Cierro la conexion a la BD
+            rs.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Modelo_Camionero.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
+        return codigo;
+    }
+    
+    public int traerCodigoDePersonaModificar(String cedula) { //Trae el codigo de la persona dependiendo el numero de cedula pasado como parametro
+        int codigo = 0;
+        try {
+
+            String sql = "select per_codigo from persona where per_dni = '"+cedula+"'";
+
+            ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
+
+            //Pasar de "ResultSet" a "List"
+            while (rs.next()) {
+                codigo = rs.getInt("per_codigo"); //Trae el codigo de la persona recien creada
 
             }
 
