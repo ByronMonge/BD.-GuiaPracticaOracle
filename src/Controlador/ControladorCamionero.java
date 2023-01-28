@@ -3,13 +3,19 @@ package Controlador;
 import Modelo.Camionero;
 import Modelo.Modelo_Camionero;
 import Vista.VistaCamionero;
+import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
 
@@ -28,8 +34,10 @@ public class ControladorCamionero {
     public void iniciarControl() {
         vista.getBtncrear().addActionListener(l -> abrirDialogCrear());
         vista.getBtnactualizar().addActionListener(l -> cargarTabla());
-        vista.getBtnguardar().addActionListener(l -> crearYModificarPersonaYCamionero());
+        vista.getBtnguardar().addActionListener(l -> crearOModificarPersonaYCamionero());
         vista.getBtnmodificar().addActionListener(l -> abrirYCargarDatosEnElDialog());
+        vista.getBtneliminar().addActionListener(l -> eliminarPersonaYCamionero());
+        buscarPersona(); //Metodo para buscar personas
     }
 
     public void abrirDialogCrear() {
@@ -38,6 +46,7 @@ public class ControladorCamionero {
         vista.getjDlgCamionero().setSize(876, 733);
         vista.getjDlgCamionero().setTitle("Crear nueva persona");
         vista.getjDlgCamionero().setVisible(true);
+        limpiarDatos(); //Limpia la informacion de los campos
     }
 
     public void cargarTabla() {
@@ -120,7 +129,7 @@ public class ControladorCamionero {
         }
     }
 
-    public void crearYModificarPersonaYCamionero() {
+    public void crearOModificarPersonaYCamionero() {
 
         if (vista.getjDlgCamionero().getName().equals("Crear nueva persona")) { //CREAR
             String dni = vista.getTxtdni().getText();
@@ -226,5 +235,91 @@ public class ControladorCamionero {
                 JOptionPane.showMessageDialog(vista, "No se pudo modificar la persona");
             }
         }
+    }
+
+    public void eliminarPersonaYCamionero() {
+
+        int fila = vista.getTablacamioneros().getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
+        } else {
+
+            int response = JOptionPane.showConfirmDialog(vista, "¿Seguro que desea eliminar esta información?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+
+                String cedula;
+                cedula = vista.getTablacamioneros().getValueAt(fila, 0).toString();
+
+                if (modelo.eliminarCamionero(cedula)) {
+                    JOptionPane.showMessageDialog(null, "La persona fue eliminada exitosamente");
+                    cargarTabla();//Actualizo la tabla con los datos
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error: La persona no se pudo eliminar");
+                }
+            }
+        }
+    }
+
+    public void buscarPersona() {
+
+        KeyListener eventoTeclado = new KeyListener() {//Crear un objeto de tipo keyListener(Es una interface) por lo tanto se debe implementar sus metodos abstractos
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+                vista.getTablacamioneros().setRowHeight(25);
+                DefaultTableModel estructuraTabla = (DefaultTableModel) vista.getTablacamioneros().getModel();
+                estructuraTabla.setRowCount(0);
+
+                List<Camionero> listap = modelo.listabuscarPersonasYCamioneros(vista.getTxtbuscar().getText());
+
+                Holder<Integer> i = new Holder<>(0);
+
+                listap.stream().forEach(persona -> {
+
+                    estructuraTabla.addRow(new Object[8]);
+
+                    vista.getTablacamioneros().setValueAt(persona.getDni(), i.value, 0);
+                    vista.getTablacamioneros().setValueAt(persona.getPrinombre(), i.value, 1);
+                    vista.getTablacamioneros().setValueAt(persona.getApellidopat(), i.value, 2);
+                    vista.getTablacamioneros().setValueAt(persona.getEdad(), i.value, 3);
+                    vista.getTablacamioneros().setValueAt(persona.getGenero(), i.value, 4);
+                    vista.getTablacamioneros().setValueAt(persona.getTelefono(), i.value, 5);
+                    vista.getTablacamioneros().setValueAt(persona.getSalario(), i.value, 6);
+
+                    i.value++;
+                });
+            }
+        };
+
+        vista.getTxtbuscar().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
+    }
+
+    public void limpiarDatos() {
+        vista.getTxtdni().setText("");
+        vista.getTxtprinombre().setText("");
+        vista.getTxtsegnombre().setText("");
+        vista.getTxtpriapellido().setText("");
+        vista.getTxtsegapellido().setText("");
+        vista.getTxtdireccion().setText("");
+        vista.getTxttelefono().setText("");
+        vista.getTxtemail().setText("");
+        vista.getTxttipodelicencia().setText("");
+        vista.getSpinneredad().setValue(0);
+        vista.getSpinnerSalario().setValue(0);
+        vista.getSpinneraniosexperiencia().setValue(0);
+        vista.getJfechanacimiento().setDate(null);
+        vista.getGenero().clearSelection();
     }
 }
