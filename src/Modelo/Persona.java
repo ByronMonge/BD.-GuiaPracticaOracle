@@ -14,14 +14,14 @@ public class Persona {
     private String direccion;
     private String telefono;
     private String email;
-    private Date fechanac;
+    private String fechanac; //Si seteo la fecha de tipo Date no funciona
     private int edad;
     private String genero;
 
     public Persona() {
     }
 
-    public Persona(int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, Date fechanac, int edad, String genero) {
+    public Persona(int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, String fechanac, int edad, String genero) {
         this.codigo = codigo;
         this.dni = dni;
         this.prinombre = prinombre;
@@ -108,11 +108,11 @@ public class Persona {
         this.email = email;
     }
 
-    public Date getFechanac() {
+    public String getFechanac() {
         return fechanac;
     }
 
-    public void setFechanac(Date fechanac) {
+    public void setFechanac(String fechanac) {
         this.fechanac = fechanac;
     }
 
