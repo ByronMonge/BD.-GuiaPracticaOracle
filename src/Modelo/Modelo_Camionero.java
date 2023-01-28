@@ -67,7 +67,8 @@ public class Modelo_Camionero extends Camionero {
             //Me retorna un "List" de "persona"
             List<Camionero> lista = new ArrayList<>();
 
-            String sql = "select per_codigo from persona";
+            //String sql = "select per_codigo,per_prinombre,per_apellidopat,per_edad,per_genero,per_telefono from persona";SENTENCIA QUE SIRVE
+            String sql = "select per_codigo,per_prinombre,per_apellidopat,per_edad,per_genero,per_telefono, cam_salario from persona p, camionero c where p.per_codigo = c.cam_percodigo";
 
             ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
@@ -78,6 +79,12 @@ public class Modelo_Camionero extends Camionero {
 
                 //Todo lo que haga en la sentencia define como voy a extraer los datos
                 cam.setCodigo(rs.getInt("per_codigo"));
+                cam.setPrinombre(rs.getString("per_prinombre"));
+                cam.setApellidopat(rs.getString("per_apellidopat"));
+                cam.setEdad(rs.getInt("per_edad"));
+                cam.setGenero(rs.getString("per_genero"));
+                cam.setTelefono(rs.getString("per_telefono"));
+                cam.setSalario(rs.getDouble("cam_salario"));
 
                 lista.add(cam); //Agrego los datos a la lista
             }
