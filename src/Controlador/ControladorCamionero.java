@@ -28,7 +28,7 @@ public class ControladorCamionero {
     public void iniciarControl() {
         vista.getBtncrear().addActionListener(l -> abrirDialogCrear());
         vista.getBtnactualizar().addActionListener(l -> cargarTabla());
-        vista.getBtnguardar().addActionListener(l -> crearPersonaYCamionero());
+        vista.getBtnguardar().addActionListener(l -> crearYModificarPersonaYCamionero());
         vista.getBtnmodificar().addActionListener(l -> abrirYCargarDatosEnElDialog());
     }
 
@@ -120,7 +120,7 @@ public class ControladorCamionero {
         }
     }
 
-    public void crearPersonaYCamionero() {
+    public void crearYModificarPersonaYCamionero() {
 
         if (vista.getjDlgCamionero().getName().equals("Crear nueva persona")) { //CREAR
             String dni = vista.getTxtdni().getText();
@@ -219,8 +219,6 @@ public class ControladorCamionero {
             camionero.setGenero(genero);
 
             if (camionero.modificarPersonaYCamionero()) {
-
-                System.out.println("Dato devuelto: " + camionero.modificarPersonaYCamionero());
                 vista.getjDlgCamionero().setVisible(false);
                 JOptionPane.showMessageDialog(vista, "Persona Modificada Satisfactoriamente");
                 cargarTabla();
