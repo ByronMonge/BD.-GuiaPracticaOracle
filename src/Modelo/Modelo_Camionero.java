@@ -35,7 +35,7 @@ public class Modelo_Camionero extends Camionero {
 
         if (crearPersona()) { //Si la persona ya existe entonces puedo crear un camionero
 
-            String sql = "insert into camionero (cam_percodigo, cam_salario, cam_tipolicencia, cam_aniosexperi, cam_estado) values (" + mipersona.traerCodigoDePersona() + "," + getSalario() + ",'" + getTipolicencia() + "'," + getAniosexperiencia() + ",'A')";
+            String sql = "insert into camionero (cam_percodigo, cam_salario, cam_tipolicencia, cam_aniosexperi, cam_estado) values (" + mipersona.traerCodigoDePersonaCrear()+ "," + getSalario() + ",'" + getTipolicencia() + "'," + getAniosexperiencia() + ",'A')";
             return conoc.accion(sql);
         } else {
             return false;
@@ -43,11 +43,12 @@ public class Modelo_Camionero extends Camionero {
     }
 
     public boolean modificarPersonaYCamionero() { //modificar la instancia en la BD
+        Modelo_Persona mipersona = new Modelo_Persona(); //Creo un objeto de la clase Modelo_Persona 
+        
+        String sqlP = "UPDATE persona set per_prinombre = '"+getPrinombre()+"',per_segnombre = '"+getSegnombre()+"', per_apellidopat = '"+getApellidopat()+"', per_apellidomat = '"+getApellidomat()+"', per_direccion = '"+getDireccion()+"', per_telefono = '"+getTelefono()+"', per_email = '"+getEmail()+"', per_fechanac = '"+getFechanac()+"', per_edad = "+getEdad()+", per_genero = '"+getGenero()+"' where per_dni = '"+getDni()+"'"; //Modifica los datos en la tabla persona
 
-        String sqlP = "UPDATE persona SET per_prinombre='" + getPrinombre() + "', per_segnombre='" + getSegnombre() + "', per_apellidopat='" + getApellidopat() + "', per_apellidomat='" + getApellidomat() + "', per_direccion='" + getDireccion() + "', per_telefono=" + getTelefono() + ", per_email=" + getEmail() + ",per_fechanac='" + getFechanac() + ",per_edad='" + getEdad() + ",per_genero='" + getGenero() + "' WHERE per_dni = '" + getDni() + "'";
-
-        //String sqlC = "UPDATE camionero SET cam_salario=" + getSalario() +",cam_tipolicencia='" + getTipolicencia() + "', cam_aniosexperi=" + getAniosexperiencia() + " WHERE per_dni = '" + getDni() + "'";
-        return conoc.accion(sqlP); // && conoc.accion(sqlC)
+        String sqlC = "UPDATE camionero SET cam_salario = " + getSalario() +",cam_tipolicencia = '" + getTipolicencia() + "', cam_aniosexperi = " + getAniosexperiencia() + " WHERE cam_percodigo = '" + mipersona.traerCodigoDePersonaModificar(getDni()) + "'"; //Modifica los datos de la tabla camionero
+        return conoc.accion(sqlP) && conoc.accion(sqlC);
     }
 
     public List<Camionero> listaPersonasTabla() {
