@@ -46,7 +46,12 @@ public class ControladorCamionero {
                     estructuraTabla.addRow(new Object[8]);
 
                     vista.getTablacamioneros().setValueAt(persona.getCodigo(), i.value, 0);
-                    //vista.getTablacamioneros().setValueAt(persona.getPrinombre(), i.value, 0);
+                    vista.getTablacamioneros().setValueAt(persona.getPrinombre(), i.value, 1);
+                    vista.getTablacamioneros().setValueAt(persona.getApellidopat(), i.value, 2);
+                    vista.getTablacamioneros().setValueAt(persona.getEdad(), i.value, 3);
+                    vista.getTablacamioneros().setValueAt(persona.getGenero(), i.value, 4);
+                    vista.getTablacamioneros().setValueAt(persona.getTelefono(), i.value, 5);
+                    vista.getTablacamioneros().setValueAt(persona.getSalario(), i.value, 6);
 
                     i.value++;
                 });
