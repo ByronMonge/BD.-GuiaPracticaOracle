@@ -3,8 +3,12 @@ package Controlador;
 import Modelo.Camionero;
 import Modelo.Modelo_Camionero;
 import Vista.VistaCamionero;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
@@ -73,7 +77,7 @@ public class ControladorCamionero {
         int edad = Integer.parseInt(vista.getSpinneredad().getValue().toString());
         double salario = Double.parseDouble(vista.getSpinnerSalario().getValue().toString());
         int aniosexperiencia = Integer.parseInt(vista.getSpinneraniosexperiencia().getValue().toString());
-        Date fecha = vista.getJfechanacimiento().getDate();
+        Date fecha = vista.getJfechanacimiento().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
 
         Modelo_Camionero camionero = new Modelo_Camionero();
         camionero.setDni(dni);
@@ -88,7 +92,10 @@ public class ControladorCamionero {
         camionero.setEdad(edad);
         camionero.setSalario(salario);
         camionero.setAniosexperiencia(aniosexperiencia);
-        camionero.setFechanac(fecha);
+
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Doy formato a la fecha
+        String fechaTexto = formato.format(fecha); //La fecha tiene el formato indicado y es de tipo String
+        camionero.setFechanac(fechaTexto);
 
         String genero = "";
         if (vista.getMasculino().isSelected()) {
@@ -101,7 +108,7 @@ public class ControladorCamionero {
 
         camionero.setGenero(genero);
 
-        if (modelo.crearCamionero()) {
+        if (camionero.crearPersona()) {
             vista.getjDlgCamionero().setVisible(false);
             JOptionPane.showMessageDialog(vista, "Persona Creada Satisfactoriamente");
         } else {
