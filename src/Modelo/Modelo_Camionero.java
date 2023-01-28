@@ -46,9 +46,9 @@ public class Modelo_Camionero extends Camionero {
 
         String sqlP = "UPDATE persona SET per_prinombre='" + getPrinombre() + "', per_segnombre='" + getSegnombre() + "', per_apellidopat='" + getApellidopat() + "', per_apellidomat='" + getApellidomat() + "', per_direccion='" + getDireccion() + "', per_telefono=" + getTelefono() + ", per_email=" + getEmail() + ",per_fechanac='" + getFechanac() + ",per_edad='" + getEdad() + ",per_genero='" + getGenero() +"' WHERE per_dni = '" + getDni() + "'";
 
-        String sqlC = "UPDATE camionero SET cam_salario=" + getSalario() +",cam_tipolicencia='" + getTipolicencia() + "', cam_aniosexperi=" + getAniosexperiencia() + " WHERE per_dni = '" + getDni() + "'";
+        //String sqlC = "UPDATE camionero SET cam_salario=" + getSalario() +",cam_tipolicencia='" + getTipolicencia() + "', cam_aniosexperi=" + getAniosexperiencia() + " WHERE per_dni = '" + getDni() + "'";
         
-        return conoc.accion(sqlP) && conoc.accion(sqlC);
+        return conoc.accion(sqlP); // && conoc.accion(sqlC)
     }
 
     /*public List<Camionero> listaPersonasTabla() {
