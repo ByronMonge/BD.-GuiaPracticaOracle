@@ -28,7 +28,7 @@ public class ControladorCamionero {
     public void iniciarControl() {
         vista.getBtncrear().addActionListener(l -> abrirDialogCrear());
         vista.getBtnactualizar().addActionListener(l -> cargarTabla());
-        vista.getBtnguardar().addActionListener(l -> crearPersonaContr());
+        vista.getBtnguardar().addActionListener(l -> crearPersonaYCamionero());
         vista.getBtnmodificar().addActionListener(l -> abrirYCargarDatosEnElDialog());
     }
 
@@ -110,7 +110,7 @@ public class ControladorCamionero {
                     SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); //Doy formato a la fecha
                     try {
                         Date fecha = formato.parse(pe.getFechanac()); //La fecha la paso de String a Date
-                        
+
                         vista.getJfechanacimiento().setDate(fecha);
                     } catch (ParseException ex) {
                         Logger.getLogger(ControladorCamionero.class.getName()).log(Level.SEVERE, null, ex);
@@ -120,56 +120,113 @@ public class ControladorCamionero {
         }
     }
 
-    public void crearPersonaContr() {
-        String dni = vista.getTxtdni().getText();
-        String prinombre = vista.getTxtprinombre().getText();
-        String segnombre = vista.getTxtsegnombre().getText();
-        String priapellido = vista.getTxtpriapellido().getText();
-        String segapellido = vista.getTxtsegapellido().getText();
-        String direccion = vista.getTxtdireccion().getText();
-        String telefono = vista.getTxttelefono().getText();
-        String email = vista.getTxtemail().getText();
-        String tipodelicencia = vista.getTxttipodelicencia().getText();
-        int edad = Integer.parseInt(vista.getSpinneredad().getValue().toString());
-        double salario = Double.parseDouble(vista.getSpinnerSalario().getValue().toString());
-        int aniosexperiencia = Integer.parseInt(vista.getSpinneraniosexperiencia().getValue().toString());
-        Date fecha = vista.getJfechanacimiento().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
+    public void crearPersonaYCamionero() {
 
-        Modelo_Camionero camionero = new Modelo_Camionero();
-        camionero.setDni(dni);
-        camionero.setPrinombre(prinombre);
-        camionero.setSegnombre(segnombre);
-        camionero.setApellidopat(priapellido);
-        camionero.setApellidomat(segapellido);
-        camionero.setDireccion(direccion);
-        camionero.setTelefono(telefono);
-        camionero.setEmail(email);
-        camionero.setTipolicencia(tipodelicencia);
-        camionero.setEdad(edad);
-        camionero.setSalario(salario);
-        camionero.setAniosexperiencia(aniosexperiencia);
+        if (vista.getjDlgCamionero().getName().equals("Crear nueva persona")) { //CREAR
+            String dni = vista.getTxtdni().getText();
+            String prinombre = vista.getTxtprinombre().getText();
+            String segnombre = vista.getTxtsegnombre().getText();
+            String priapellido = vista.getTxtpriapellido().getText();
+            String segapellido = vista.getTxtsegapellido().getText();
+            String direccion = vista.getTxtdireccion().getText();
+            String telefono = vista.getTxttelefono().getText();
+            String email = vista.getTxtemail().getText();
+            String tipodelicencia = vista.getTxttipodelicencia().getText();
+            int edad = Integer.parseInt(vista.getSpinneredad().getValue().toString());
+            double salario = Double.parseDouble(vista.getSpinnerSalario().getValue().toString());
+            int aniosexperiencia = Integer.parseInt(vista.getSpinneraniosexperiencia().getValue().toString());
+            Date fecha = vista.getJfechanacimiento().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
 
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Doy formato a la fecha
-        String fechaTexto = formato.format(fecha); //La fecha tiene el formato indicado y es de tipo String
-        camionero.setFechanac(fechaTexto);
+            Modelo_Camionero camionero = new Modelo_Camionero();
+            camionero.setDni(dni);
+            camionero.setPrinombre(prinombre);
+            camionero.setSegnombre(segnombre);
+            camionero.setApellidopat(priapellido);
+            camionero.setApellidomat(segapellido);
+            camionero.setDireccion(direccion);
+            camionero.setTelefono(telefono);
+            camionero.setEmail(email);
+            camionero.setTipolicencia(tipodelicencia);
+            camionero.setEdad(edad);
+            camionero.setSalario(salario);
+            camionero.setAniosexperiencia(aniosexperiencia);
 
-        String genero = "";
-        if (vista.getMasculino().isSelected()) {
-            genero = "M";
-        } else {
-            if (vista.getFemenino().isSelected()) {
-                genero = "F";
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Doy formato a la fecha
+            String fechaTexto = formato.format(fecha); //La fecha tiene el formato indicado y es de tipo String
+            camionero.setFechanac(fechaTexto);
+
+            String genero = "";
+            if (vista.getMasculino().isSelected()) {
+                genero = "M";
+            } else {
+                if (vista.getFemenino().isSelected()) {
+                    genero = "F";
+                }
             }
-        }
 
-        camionero.setGenero(genero);
+            camionero.setGenero(genero);
 
-        if (camionero.crearCamionero()) {
-            vista.getjDlgCamionero().setVisible(false);
-            JOptionPane.showMessageDialog(vista, "Persona Creada Satisfactoriamente");
-            cargarTabla();
-        } else {
-            JOptionPane.showMessageDialog(vista, "No se pudo crear la persona");
+            if (camionero.crearCamionero()) {
+                vista.getjDlgCamionero().setVisible(false);
+                JOptionPane.showMessageDialog(vista, "Persona Creada Satisfactoriamente");
+                cargarTabla();
+            } else {
+                JOptionPane.showMessageDialog(vista, "No se pudo crear la persona");
+            }
+
+        } else { //EDITAR 
+            String dni = vista.getTxtdni().getText();
+            String prinombre = vista.getTxtprinombre().getText();
+            String segnombre = vista.getTxtsegnombre().getText();
+            String priapellido = vista.getTxtpriapellido().getText();
+            String segapellido = vista.getTxtsegapellido().getText();
+            String direccion = vista.getTxtdireccion().getText();
+            String telefono = vista.getTxttelefono().getText();
+            String email = vista.getTxtemail().getText();
+            String tipodelicencia = vista.getTxttipodelicencia().getText();
+            int edad = Integer.parseInt(vista.getSpinneredad().getValue().toString());
+            double salario = Double.parseDouble(vista.getSpinnerSalario().getValue().toString());
+            int aniosexperiencia = Integer.parseInt(vista.getSpinneraniosexperiencia().getValue().toString());
+            Date fecha = vista.getJfechanacimiento().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
+
+            Modelo_Camionero camionero = new Modelo_Camionero();
+            camionero.setDni(dni);
+            camionero.setPrinombre(prinombre);
+            camionero.setSegnombre(segnombre);
+            camionero.setApellidopat(priapellido);
+            camionero.setApellidomat(segapellido);
+            camionero.setDireccion(direccion);
+            camionero.setTelefono(telefono);
+            camionero.setEmail(email);
+            camionero.setTipolicencia(tipodelicencia);
+            camionero.setEdad(edad);
+            camionero.setSalario(salario);
+            camionero.setAniosexperiencia(aniosexperiencia);
+
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Doy formato a la fecha
+            String fechaTexto = formato.format(fecha); //La fecha tiene el formato indicado y es de tipo String
+            camionero.setFechanac(fechaTexto);
+
+            String genero = "";
+            if (vista.getMasculino().isSelected()) {
+                genero = "M";
+            } else {
+                if (vista.getFemenino().isSelected()) {
+                    genero = "F";
+                }
+            }
+
+            camionero.setGenero(genero);
+
+            if (camionero.modificarPersonaYCamionero()) {
+
+                System.out.println("Dato devuelto: " + camionero.modificarPersonaYCamionero());
+                vista.getjDlgCamionero().setVisible(false);
+                JOptionPane.showMessageDialog(vista, "Persona Modificada Satisfactoriamente");
+                cargarTabla();
+            } else {
+                JOptionPane.showMessageDialog(vista, "No se pudo modificar la persona");
+            }
         }
     }
 }
