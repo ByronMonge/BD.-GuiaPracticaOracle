@@ -1,9 +1,12 @@
 package Vista;
 
+import com.toedter.calendar.JDateChooser;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
@@ -13,6 +16,14 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
 
     public VistaCamionero() {
         initComponents();
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public void setBtnCancelar(JButton btnCancelar) {
+        this.btnCancelar = btnCancelar;
     }
 
     public JButton getBtnactualizar() {
@@ -39,12 +50,28 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
         this.btneliminar = btneliminar;
     }
 
+    public JButton getBtnguardar() {
+        return btnguardar;
+    }
+
+    public void setBtnguardar(JButton btnguardar) {
+        this.btnguardar = btnguardar;
+    }
+
     public JButton getBtnmodificar() {
         return btnmodificar;
     }
 
     public void setBtnmodificar(JButton btnmodificar) {
         this.btnmodificar = btnmodificar;
+    }
+
+    public ButtonGroup getGenero() {
+        return genero;
+    }
+
+    public void setGenero(ButtonGroup genero) {
+        this.genero = genero;
     }
 
     public JDialog getjDlgCamionero() {
@@ -61,6 +88,62 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
 
     public void setjLabel1(JLabel jLabel1) {
         this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel16() {
+        return jLabel16;
+    }
+
+    public void setjLabel16(JLabel jLabel16) {
+        this.jLabel16 = jLabel16;
     }
 
     public JLabel getjLabel2() {
@@ -135,12 +218,36 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
         this.jPanel1 = jPanel1;
     }
 
+    public JRadioButton getjRadioButton1() {
+        return femenino;
+    }
+
+    public void setjRadioButton1(JRadioButton jRadioButton1) {
+        this.femenino = jRadioButton1;
+    }
+
+    public JRadioButton getjRadioButton2() {
+        return masculino;
+    }
+
+    public void setjRadioButton2(JRadioButton jRadioButton2) {
+        this.masculino = jRadioButton2;
+    }
+
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
 
     public void setjScrollPane1(JScrollPane jScrollPane1) {
         this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JDateChooser getJfechanacimiento() {
+        return jfechanacimiento;
+    }
+
+    public void setJfechanacimiento(JDateChooser jfechanacimiento) {
+        this.jfechanacimiento = jfechanacimiento;
     }
 
     public JSpinner getSpinnerSalario() {
@@ -151,20 +258,28 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
         this.spinnerSalario = spinnerSalario;
     }
 
+    public JSpinner getSpinneraniosexperiencia() {
+        return spinneraniosexperiencia;
+    }
+
+    public void setSpinneraniosexperiencia(JSpinner spinneraniosexperiencia) {
+        this.spinneraniosexperiencia = spinneraniosexperiencia;
+    }
+
+    public JSpinner getSpinneredad() {
+        return spinneredad;
+    }
+
+    public void setSpinneredad(JSpinner spinneredad) {
+        this.spinneredad = spinneredad;
+    }
+
     public JTable getTablacamioneros() {
         return tablacamioneros;
     }
 
     public void setTablacamioneros(JTable tablacamioneros) {
         this.tablacamioneros = tablacamioneros;
-    }
-
-    public JTextField getTxtapellido() {
-        return txtapellido;
-    }
-
-    public void setTxtapellido(JTextField txtapellido) {
-        this.txtapellido = txtapellido;
     }
 
     public JTextField getTxtbuscar() {
@@ -175,14 +290,6 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
         this.txtbuscar = txtbuscar;
     }
 
-    public JTextField getTxtcedula() {
-        return txtcedula;
-    }
-
-    public void setTxtcedula(JTextField txtcedula) {
-        this.txtcedula = txtcedula;
-    }
-
     public JTextField getTxtdireccion() {
         return txtdireccion;
     }
@@ -191,20 +298,52 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
         this.txtdireccion = txtdireccion;
     }
 
-    public JTextField getTxtnombre() {
-        return txtnombre;
+    public JTextField getTxtdni() {
+        return txtdni;
     }
 
-    public void setTxtnombre(JTextField txtnombre) {
-        this.txtnombre = txtnombre;
+    public void setTxtdni(JTextField txtdni) {
+        this.txtdni = txtdni;
     }
 
-    public JTextField getTxtpoblacion() {
-        return txtpoblacion;
+    public JTextField getTxtemail() {
+        return txtemail;
     }
 
-    public void setTxtpoblacion(JTextField txtpoblacion) {
-        this.txtpoblacion = txtpoblacion;
+    public void setTxtemail(JTextField txtemail) {
+        this.txtemail = txtemail;
+    }
+
+    public JTextField getTxtpriapellido() {
+        return txtpriapellido;
+    }
+
+    public void setTxtpriapellido(JTextField txtpriapellido) {
+        this.txtpriapellido = txtpriapellido;
+    }
+
+    public JTextField getTxtprinombre() {
+        return txtprinombre;
+    }
+
+    public void setTxtprinombre(JTextField txtprinombre) {
+        this.txtprinombre = txtprinombre;
+    }
+
+    public JTextField getTxtsegapellido() {
+        return txtsegapellido;
+    }
+
+    public void setTxtsegapellido(JTextField txtsegapellido) {
+        this.txtsegapellido = txtsegapellido;
+    }
+
+    public JTextField getTxtsegnombre() {
+        return txtsegnombre;
+    }
+
+    public void setTxtsegnombre(JTextField txtsegnombre) {
+        this.txtsegnombre = txtsegnombre;
     }
 
     public JTextField getTxttelefono() {
@@ -215,20 +354,28 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
         this.txttelefono = txttelefono;
     }
 
-    public JButton getBtnCancelar() {
-        return btnCancelar;
+    public JTextField getTxttipodelicencia() {
+        return txttipodelicencia;
     }
 
-    public void setBtnCancelar(JButton btnCancelar) {
-        this.btnCancelar = btnCancelar;
+    public void setTxttipodelicencia(JTextField txttipodelicencia) {
+        this.txttipodelicencia = txttipodelicencia;
     }
 
-    public JButton getBtnguardar() {
-        return btnguardar;
+    public JRadioButton getFemenino() {
+        return femenino;
     }
 
-    public void setBtnguardar(JButton btnguardar) {
-        this.btnguardar = btnguardar;
+    public void setFemenino(JRadioButton femenino) {
+        this.femenino = femenino;
+    }
+
+    public JRadioButton getMasculino() {
+        return masculino;
+    }
+
+    public void setMasculino(JRadioButton masculino) {
+        this.masculino = masculino;
     }
 
     @SuppressWarnings("unchecked")
@@ -242,17 +389,33 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtcedula = new javax.swing.JTextField();
-        txtapellido = new javax.swing.JTextField();
-        txtnombre = new javax.swing.JTextField();
-        txtpoblacion = new javax.swing.JTextField();
+        txtdni = new javax.swing.JTextField();
+        txtpriapellido = new javax.swing.JTextField();
+        txtprinombre = new javax.swing.JTextField();
         txttelefono = new javax.swing.JTextField();
         txtdireccion = new javax.swing.JTextField();
         spinnerSalario = new javax.swing.JSpinner();
         btnguardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        txtsegnombre = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        txtsegapellido = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtemail = new javax.swing.JTextField();
+        jfechanacimiento = new com.toedter.calendar.JDateChooser();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        spinneredad = new javax.swing.JSpinner();
+        jLabel14 = new javax.swing.JLabel();
+        femenino = new javax.swing.JRadioButton();
+        masculino = new javax.swing.JRadioButton();
+        jLabel15 = new javax.swing.JLabel();
+        txttipodelicencia = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        spinneraniosexperiencia = new javax.swing.JSpinner();
+        genero = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
@@ -268,69 +431,117 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Cédula:");
 
-        jLabel4.setText("Nombre:");
+        jLabel4.setText("Primer nombre:");
 
-        jLabel5.setText("Apellido:");
+        jLabel5.setText("Primer apellido:");
 
         jLabel6.setText("Telefono:");
 
         jLabel7.setText("Dirección:");
 
-        jLabel8.setText("Población:");
+        jLabel9.setText("Años de experiencia:");
 
-        jLabel9.setText("Salario:");
+        spinnerSalario.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 10000.0d, 1.0d));
 
         btnguardar.setText("Guardar");
 
         btnCancelar.setText("Cancelar");
+
+        jLabel10.setText("Primer nombre:");
+
+        jLabel11.setText("Primer apellido:");
+
+        jLabel8.setText("Edad:");
+
+        jLabel12.setText("Fecha de nacimiento:");
+
+        jLabel13.setText("Email:");
+
+        spinneredad.setModel(new javax.swing.SpinnerNumberModel(18, 18, 65, 1));
+
+        jLabel14.setText("Genero:");
+
+        genero.add(femenino);
+        femenino.setText("F");
+
+        genero.add(masculino);
+        masculino.setText("M");
+
+        jLabel15.setText("Tipo de licencia:");
+
+        jLabel16.setText("Salario:");
+
+        spinneraniosexperiencia.setModel(new javax.swing.SpinnerNumberModel(0, 0, 40, 1));
 
         javax.swing.GroupLayout jDlgCamioneroLayout = new javax.swing.GroupLayout(jDlgCamionero.getContentPane());
         jDlgCamionero.getContentPane().setLayout(jDlgCamioneroLayout);
         jDlgCamioneroLayout.setHorizontalGroup(
             jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDlgCamioneroLayout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDlgCamioneroLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDlgCamioneroLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDlgCamioneroLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDlgCamioneroLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDlgCamioneroLayout.createSequentialGroup()
-                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jDlgCamioneroLayout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDlgCamioneroLayout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(40, 40, 40)))
-                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtpoblacion, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spinnerSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDlgCamioneroLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(41, 41, 41)
-                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(126, Short.MAX_VALUE))
-            .addGroup(jDlgCamioneroLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(btnguardar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCancelar)
                 .addGap(34, 34, 34))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDlgCamioneroLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDlgCamioneroLayout.createSequentialGroup()
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel9))
+                        .addGap(30, 30, 30)
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(spinneraniosexperiencia, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txttipodelicencia, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtsegapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spinnerSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jDlgCamioneroLayout.createSequentialGroup()
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDlgCamioneroLayout.createSequentialGroup()
+                                .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3))
+                                .addGap(59, 59, 59)
+                                .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtdni, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtprinombre, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtsegnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtpriapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)))
+                .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDlgCamioneroLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(123, 123, 123)
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spinneredad, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jDlgCamioneroLayout.createSequentialGroup()
+                                .addComponent(masculino)
+                                .addGap(18, 18, 18)
+                                .addComponent(femenino))))
+                    .addGroup(jDlgCamioneroLayout.createSequentialGroup()
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel6))
+                        .addGap(33, 33, 33)
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jfechanacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(41, Short.MAX_VALUE))
+            .addGroup(jDlgCamioneroLayout.createSequentialGroup()
+                .addGap(365, 365, 365)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDlgCamioneroLayout.setVerticalGroup(
             jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,34 +549,56 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(35, 35, 35)
+                .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jDlgCamioneroLayout.createSequentialGroup()
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtdni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txtprinombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))
+                        .addGap(47, 47, 47)
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel10)
+                                .addComponent(txtsegnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel12))
+                            .addComponent(jfechanacimiento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtpriapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)
+                            .addComponent(spinneredad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addGap(42, 42, 42)
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(txtsegapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14)
+                            .addComponent(femenino)
+                            .addComponent(masculino))
+                        .addGap(44, 44, 44)
+                        .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(86, 86, 86))
+                    .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(spinnerSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel16)))
+                .addGap(50, 50, 50)
                 .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel15)
+                    .addComponent(txttipodelicencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtpoblacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(40, 40, 40)
-                .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
-                    .addComponent(spinnerSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                    .addComponent(spinneraniosexperiencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(jDlgCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnguardar)
                     .addComponent(btnCancelar))
@@ -457,8 +690,17 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnmodificar;
+    private javax.swing.JRadioButton femenino;
+    private javax.swing.ButtonGroup genero;
     private javax.swing.JDialog jDlgCamionero;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -469,14 +711,21 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private com.toedter.calendar.JDateChooser jfechanacimiento;
+    private javax.swing.JRadioButton masculino;
     private javax.swing.JSpinner spinnerSalario;
+    private javax.swing.JSpinner spinneraniosexperiencia;
+    private javax.swing.JSpinner spinneredad;
     private javax.swing.JTable tablacamioneros;
-    private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtbuscar;
-    private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtdireccion;
-    private javax.swing.JTextField txtnombre;
-    private javax.swing.JTextField txtpoblacion;
+    private javax.swing.JTextField txtdni;
+    private javax.swing.JTextField txtemail;
+    private javax.swing.JTextField txtpriapellido;
+    private javax.swing.JTextField txtprinombre;
+    private javax.swing.JTextField txtsegapellido;
+    private javax.swing.JTextField txtsegnombre;
     private javax.swing.JTextField txttelefono;
+    private javax.swing.JTextField txttipodelicencia;
     // End of variables declaration//GEN-END:variables
 }
