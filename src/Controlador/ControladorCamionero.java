@@ -56,7 +56,7 @@ public class ControladorCamionero {
         DefaultTableModel estructuraTabla = (DefaultTableModel) vista.getTablacamioneros().getModel();
         estructuraTabla.setRowCount(0);
 
-        List<Camionero> listap = modelo.listaPersonasTabla();
+        List<Camionero> listap = modelo.listaCamionerosTabla();
 
         Holder<Integer> i = new Holder<>(0);
 
@@ -85,7 +85,7 @@ public class ControladorCamionero {
         } else {
 
             String cedula = vista.getTablacamioneros().getValueAt(seleccion, 0).toString();
-            modelo.listaPersonasTabla().forEach((pe) -> {
+            modelo.listaCamionerosTabla().forEach((pe) -> {
                 if (pe.getDni().equals(cedula)) {
 
                     //Abre el jDialog y carga los datos en el jDialog
