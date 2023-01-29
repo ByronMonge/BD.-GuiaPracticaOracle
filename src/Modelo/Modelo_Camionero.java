@@ -57,7 +57,7 @@ public class Modelo_Camionero extends Camionero {
         return conoc.accion(sqlC);
     }
 
-    public List<Camionero> listaPersonasTabla() {
+    public List<Camionero> listaCamionerosTabla() {
         try {
             //Me retorna un "List" de "persona"
             List<Camionero> lista = new ArrayList<>();
