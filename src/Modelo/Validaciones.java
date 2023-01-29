@@ -154,6 +154,18 @@ public class Validaciones {
         }
         return validar;
     }
+
+    public boolean validarPlaca(String placa) {
+        boolean validar = false;
+        if (placa.matches("[A-Z]{3}[-][0-9]{3,4}")) {
+            validar = true;
+        }
+        return validar;
+    }
     
-    
+//    public boolean validarInformacionConEspacio(String cadena) {
+//        cadena = cadena.trim();
+//        boolean validar = cadena.matches("[A-Za-z0-9\\s]*");
+//        return validar;
+//    }
 }
