@@ -112,7 +112,7 @@ public class Validaciones {
     }
 
     //Validar poblacion
-    public boolean validarNombApeEspacios(String cadena) {
+    public boolean validarTextoConEspacio(String cadena) {
         cadena = cadena.trim();
         boolean validar = cadena.matches("[A-Za-z\\s]*");
         return validar;
