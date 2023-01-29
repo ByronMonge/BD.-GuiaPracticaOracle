@@ -129,13 +129,13 @@ public class VistaProvincia extends javax.swing.JInternalFrame {
 
         tblprovincias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Código", "Nombre"
+                "Nombre", "Región", "Numero de catones"
             }
         ));
         jScrollPane2.setViewportView(tblprovincias);
