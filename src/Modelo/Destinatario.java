@@ -1,7 +1,5 @@
 package Modelo;
 
-import java.util.Date;
-
 public class Destinatario extends Persona{
 
     private int codigodes;
