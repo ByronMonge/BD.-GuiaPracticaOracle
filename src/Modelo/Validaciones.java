@@ -117,14 +117,14 @@ public class Validaciones {
         boolean validar = cadena.matches("[A-Za-z\\s]*");
         return validar;
     }
-    
+
     //Validar direccion
     public boolean validarDireccion(String direccion) {
         direccion = direccion.trim();//trim()
         boolean validar = direccion.matches("([\\w\\s]+\\-*+\\#*+\\.*)*");
         return validar;
     }
-    
+
     //Validar telefono
     public boolean validarTelefono(String telefono) {
         boolean validar = false;
@@ -133,7 +133,7 @@ public class Validaciones {
         }
         return validar;
     }
-    
+
     //Validar correo
     public boolean validarCorreo(String mail) {
         boolean val = false;
@@ -146,4 +146,14 @@ public class Validaciones {
 
         return val;
     }
+
+    public boolean validarTipoDeLicencia(String licencia) {
+        boolean validar = false;
+        if (licencia.matches("[A-F]{1}")) {
+            validar = true;
+        }
+        return validar;
+    }
+    
+    
 }
