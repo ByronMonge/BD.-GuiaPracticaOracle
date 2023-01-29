@@ -46,7 +46,7 @@ public class VistaCamion extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("Camión");
 
-        jLabel3.setText("Codigo:");
+        jLabel3.setText("Placa:");
 
         jLabel4.setText("Matricula:");
 
@@ -59,6 +59,8 @@ public class VistaCamion extends javax.swing.JInternalFrame {
         btncancelar.setText("Cancelar");
 
         btnguardar.setText("Guardar");
+
+        spinnerpotencia.setModel(new javax.swing.SpinnerNumberModel(1.0d, 1.0d, 1000.0d, 1.0d));
 
         javax.swing.GroupLayout jDlgCamionLayout = new javax.swing.GroupLayout(jDlgCamion.getContentPane());
         jDlgCamion.getContentPane().setLayout(jDlgCamionLayout);
@@ -267,14 +269,6 @@ public class VistaCamion extends javax.swing.JInternalFrame {
 
     public void setjLabel2(JLabel jLabel2) {
         this.jLabel2 = jLabel2;
-    }
-
-    public JLabel getjLabel3() {
-        return jLabel3;
-    }
-
-    public void setjLabel3(JLabel jLabel3) {
-        this.jLabel3 = jLabel3;
     }
 
     public JLabel getjLabel4() {
