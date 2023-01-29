@@ -162,10 +162,12 @@ public class Validaciones {
         }
         return validar;
     }
-    
-//    public boolean validarInformacionConEspacio(String cadena) {
-//        cadena = cadena.trim();
-//        boolean validar = cadena.matches("[A-Za-z0-9\\s]*");
-//        return validar;
-//    }
+
+    public boolean validarMatricula(String matricula) {
+        boolean validar = false;
+        if (matricula.matches("[0-9]{7}")) {
+            validar = true;
+        }
+        return validar;
+    }
 }
