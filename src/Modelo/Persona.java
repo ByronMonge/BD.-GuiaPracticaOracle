@@ -1,11 +1,8 @@
-
 package Modelo;
 
-import java.util.Date;
-
 public class Persona {
-    
-    private int codigo;
+
+    private int codigoPer;
     private String dni;
     private String prinombre;
     private String segnombre;
@@ -21,8 +18,8 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(int codigo, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, String fechanac, int edad, String genero) {
-        this.codigo = codigo;
+    public Persona(int codigoPer, String dni, String prinombre, String segnombre, String apellidopat, String apellidomat, String direccion, String telefono, String email, String fechanac, int edad, String genero) {
+        this.codigoPer = codigoPer;
         this.dni = dni;
         this.prinombre = prinombre;
         this.segnombre = segnombre;
@@ -36,12 +33,12 @@ public class Persona {
         this.genero = genero;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getCodigoPer() {
+        return codigoPer;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setCodigoPer(int codigoPer) {
+        this.codigoPer = codigoPer;
     }
 
     public String getDni() {
