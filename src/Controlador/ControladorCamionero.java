@@ -388,7 +388,7 @@ public class ControladorCamionero {
         vista.getTxttelefono().setText("");
         vista.getTxtemail().setText("");
         vista.getTxttipodelicencia().setText("");
-        vista.getSpinneredad().setValue(0);
+        vista.getSpinneredad().setValue(18);
         vista.getSpinnerSalario().setValue(0);
         vista.getSpinneraniosexperiencia().setValue(0);
         vista.getJfechanacimiento().setDate(null);
