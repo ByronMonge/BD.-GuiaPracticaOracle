@@ -2,9 +2,9 @@ package Controlador;
 
 import Modelo.Camionero;
 import Modelo.Modelo_Camionero;
+import Modelo.Modelo_Persona;
 import Modelo.Validaciones;
 import Vista.VistaCamionero;
-import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.ParseException;
@@ -13,12 +13,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
+
+
 
 public class ControladorCamionero {
 
@@ -47,6 +47,8 @@ public class ControladorCamionero {
         vista.getjDlgCamionero().setSize(876, 733);
         vista.getjDlgCamionero().setTitle("Crear nueva persona");
         vista.getjDlgCamionero().setVisible(true);
+        vista.getTxtdni().setEditable(true); //Desbloqueo el campo de la cedula
+        limpiarDatos(); //Limpia la informacion de los campos
     }
 
     public void cargarTabla() {
@@ -92,6 +94,7 @@ public class ControladorCamionero {
                     vista.getjDlgCamionero().setSize(876, 733);
                     vista.getjDlgCamionero().setTitle("Editar");
                     vista.getjDlgCamionero().setVisible(true);
+                    vista.getTxtdni().setEditable(false); //Bloqueo el campo de cedula
 
                     //Seteo los datos en los campos de texto
                     vista.getTxtdni().setText(pe.getDni());
@@ -131,8 +134,71 @@ public class ControladorCamionero {
 
     public void crearOModificarPersonaYCamionero() {
 
+        Modelo_Persona mipersona = new Modelo_Persona();
+
         if (vista.getjDlgCamionero().getName().equals("Crear nueva persona")) { //CREAR
 
+            if (mipersona.validarRepetidos(vista.getTxtdni().getText()) == 0) {
+                if (validacionDeDatos()) {
+                    String dni = vista.getTxtdni().getText();
+                    String prinombre = vista.getTxtprinombre().getText();
+                    String segnombre = vista.getTxtsegnombre().getText();
+                    String priapellido = vista.getTxtpriapellido().getText();
+                    String segapellido = vista.getTxtsegapellido().getText();
+                    String direccion = vista.getTxtdireccion().getText();
+                    String telefono = vista.getTxttelefono().getText();
+                    String email = vista.getTxtemail().getText();
+                    String tipodelicencia = vista.getTxttipodelicencia().getText();
+                    int edad = Integer.parseInt(vista.getSpinneredad().getValue().toString());
+                    double salario = Double.parseDouble(vista.getSpinnerSalario().getValue().toString());
+                    int aniosexperiencia = Integer.parseInt(vista.getSpinneraniosexperiencia().getValue().toString());
+                    Date fecha = vista.getJfechanacimiento().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
+
+                    Modelo_Camionero camionero = new Modelo_Camionero();
+                    camionero.setDni(dni);
+                    camionero.setPrinombre(prinombre);
+                    camionero.setSegnombre(segnombre);
+                    camionero.setApellidopat(priapellido);
+                    camionero.setApellidomat(segapellido);
+                    camionero.setDireccion(direccion);
+                    camionero.setTelefono(telefono);
+                    camionero.setEmail(email);
+                    camionero.setTipolicencia(tipodelicencia);
+                    camionero.setEdad(edad);
+                    camionero.setSalario(salario);
+                    camionero.setAniosexperiencia(aniosexperiencia);
+
+                    SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Doy formato a la fecha
+                    String fechaTexto = formato.format(fecha); //La fecha tiene el formato indicado y es de tipo String
+                    camionero.setFechanac(fechaTexto);
+
+                    String genero = "";
+                    if (vista.getMasculino().isSelected()) {
+                        genero = "M";
+                    } else {
+                        if (vista.getFemenino().isSelected()) {
+                            genero = "F";
+                        }
+                    }
+
+                    camionero.setGenero(genero);
+
+                    if (camionero.crearCamionero()) {
+                        vista.getjDlgCamionero().setVisible(false);
+                        JOptionPane.showMessageDialog(vista, "Persona Creada Satisfactoriamente");
+                        cargarTabla();
+                    } else {
+                        JOptionPane.showMessageDialog(vista, "No se pudo crear la persona");
+                    }
+                } else {
+
+                    JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
+                }
+            } else {
+                JOptionPane.showMessageDialog(vista, "El numero de cedula ya se encuentra registrado");
+            }
+
+        } else {//EDITAR 
             if (validacionDeDatos()) {
                 String dni = vista.getTxtdni().getText();
                 String prinombre = vista.getTxtprinombre().getText();
@@ -177,67 +243,16 @@ public class ControladorCamionero {
 
                 camionero.setGenero(genero);
 
-                if (camionero.crearCamionero()) {
+                if (camionero.modificarPersonaYCamionero()) {
+
                     vista.getjDlgCamionero().setVisible(false);
-                    JOptionPane.showMessageDialog(vista, "Persona Creada Satisfactoriamente");
-                    limpiarDatos(); //Limpia la informacion de los campos
+                    JOptionPane.showMessageDialog(vista, "Persona Modificada Satisfactoriamente");
                     cargarTabla();
                 } else {
-                    JOptionPane.showMessageDialog(vista, "No se pudo crear la persona");
+                    JOptionPane.showMessageDialog(vista, "No se pudo modificar la persona");
                 }
-            }
-
-        } else { //EDITAR 
-            String dni = vista.getTxtdni().getText();
-            String prinombre = vista.getTxtprinombre().getText();
-            String segnombre = vista.getTxtsegnombre().getText();
-            String priapellido = vista.getTxtpriapellido().getText();
-            String segapellido = vista.getTxtsegapellido().getText();
-            String direccion = vista.getTxtdireccion().getText();
-            String telefono = vista.getTxttelefono().getText();
-            String email = vista.getTxtemail().getText();
-            String tipodelicencia = vista.getTxttipodelicencia().getText();
-            int edad = Integer.parseInt(vista.getSpinneredad().getValue().toString());
-            double salario = Double.parseDouble(vista.getSpinnerSalario().getValue().toString());
-            int aniosexperiencia = Integer.parseInt(vista.getSpinneraniosexperiencia().getValue().toString());
-            Date fecha = vista.getJfechanacimiento().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
-
-            Modelo_Camionero camionero = new Modelo_Camionero();
-            camionero.setDni(dni);
-            camionero.setPrinombre(prinombre);
-            camionero.setSegnombre(segnombre);
-            camionero.setApellidopat(priapellido);
-            camionero.setApellidomat(segapellido);
-            camionero.setDireccion(direccion);
-            camionero.setTelefono(telefono);
-            camionero.setEmail(email);
-            camionero.setTipolicencia(tipodelicencia);
-            camionero.setEdad(edad);
-            camionero.setSalario(salario);
-            camionero.setAniosexperiencia(aniosexperiencia);
-
-            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Doy formato a la fecha
-            String fechaTexto = formato.format(fecha); //La fecha tiene el formato indicado y es de tipo String
-            camionero.setFechanac(fechaTexto);
-
-            String genero = "";
-            if (vista.getMasculino().isSelected()) {
-                genero = "M";
             } else {
-                if (vista.getFemenino().isSelected()) {
-                    genero = "F";
-                }
-            }
-
-            camionero.setGenero(genero);
-
-            if (camionero.modificarPersonaYCamionero()) {
-                vista.getjDlgCamionero().setVisible(false);
-                JOptionPane.showMessageDialog(vista, "Persona Modificada Satisfactoriamente");
-                limpiarDatos(); //Limpia la informacion de los campos
-                cargarTabla();
-            } else {
-                JOptionPane.showMessageDialog(vista, "No se pudo modificar la persona");
+                JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
             }
         }
     }
@@ -316,54 +331,48 @@ public class ControladorCamionero {
 
         boolean validar = true;
 
-        if (vista.getTxtdni().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(vista, "Ingrese una cedula");
+        /*if (vista.getTxtdni().getText().isEmpty() || !mivalidacion.validarCedula(vista.getTxtdni().getText())) {
+
             validar = false;
-        } else {
-            if (!mivalidacion.validarCedula(vista.getTxtdni().getText())) {
-                JOptionPane.showMessageDialog(vista, "Cedula incorrecta");
-                validar = false;
-            }
+        }*/
+        if (vista.getTxtprinombre().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtprinombre().getText())) {
+            validar = false;
         }
 
-        if (vista.getTxtprinombre().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(vista, "Ingrese el primer nombre");
+        if (vista.getTxtsegnombre().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtsegnombre().getText())) {
             validar = false;
-        } else {
-            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtprinombre().getText())) {
-                JOptionPane.showMessageDialog(vista, "Primer nombre incorrecto");
-                validar = false;
-            }
         }
-        
-        if (vista.getTxtsegnombre().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(vista, "Ingrese el segundo nombre");
+
+        if (vista.getTxtpriapellido().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtpriapellido().getText())) {
             validar = false;
-        } else {
-            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtsegnombre().getText())) {
-                JOptionPane.showMessageDialog(vista, "Segundo nombre incorrecto");
-                validar = false;
-            }
         }
-        
-        if (vista.getTxtpriapellido().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(vista, "Ingrese el primer apellido");
+
+        if (vista.getTxtsegapellido().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtsegapellido().getText())) {
             validar = false;
-        } else {
-            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtpriapellido().getText())) {
-                JOptionPane.showMessageDialog(vista, "Primer apellido incorrecto");
-                validar = false;
-            }
         }
-        
-        if (vista.getTxtsegapellido().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(vista, "Ingrese el segundo apellido");
+
+        if (vista.getTxtdireccion().getText().isEmpty() || !mivalidacion.validarDireccion(vista.getTxtdireccion().getText())) {
             validar = false;
-        } else {
-            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtsegapellido().getText())) {
-                JOptionPane.showMessageDialog(vista, "Segundo apellido incorrecto");
-                validar = false;
-            }
+        }
+
+        if (vista.getTxttelefono().getText().isEmpty() || !mivalidacion.validarTelefono(vista.getTxttelefono().getText())) {
+            validar = false;
+        }
+
+        if (vista.getTxtemail().getText().isEmpty() || !mivalidacion.validarCorreo(vista.getTxtemail().getText())) {
+            validar = false;
+        }
+
+        if (vista.getTxttipodelicencia().getText().isEmpty() || !mivalidacion.validarTipoDeLicencia(vista.getTxttipodelicencia().getText())) {
+            validar = false;
+        }
+
+        if (vista.getJfechanacimiento().getDate() == null) {
+            validar = false;
+        }
+
+        if (vista.getMasculino() == null && vista.getFemenino() == null) {
+            validar = false;
         }
 
         return validar;
