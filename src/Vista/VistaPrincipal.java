@@ -44,14 +44,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.jMenu1 = jMenu1;
     }
 
-    public JMenu getjMenu2() {
-        return jMenu2;
-    }
-
-    public void setjMenu2(JMenu jMenu2) {
-        this.jMenu2 = jMenu2;
-    }
-
     public JToolBar getjToolBar1() {
         return jToolBar1;
     }
@@ -76,6 +68,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.btnprovincia = btnprovincia;
     }
 
+    public JButton getBtnCliente() {
+        return btnCliente;
+    }
+
+    public void setBtnCliente(JButton btnCliente) {
+        this.btnCliente = btnCliente;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -86,16 +86,18 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btncamion = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
         btnprovincia = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JToolBar.Separator();
+        btnCliente = new javax.swing.JButton();
         escritorio = new javax.swing.JDesktopPane();
         MnuCamioneros = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jToolBar1.setRollover(true);
 
         btnCamionero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/agregar-usuario.png"))); // NOI18N
+        btnCamionero.setToolTipText("Camioneros");
         btnCamionero.setFocusable(false);
         btnCamionero.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCamionero.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -105,6 +107,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jToolBar1.add(jSeparator1);
 
         btncamion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/camion (1).png"))); // NOI18N
+        btncamion.setToolTipText("Camiones");
         btncamion.setFocusable(false);
         btncamion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btncamion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -119,6 +122,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnprovincia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnprovincia);
 
+        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
+        jToolBar1.add(jSeparator3);
+
+        btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/servicio-al-cliente.png"))); // NOI18N
+        btnCliente.setFocusable(false);
+        btnCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnCliente);
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
@@ -130,11 +142,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
             .addGap(0, 391, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Camioneros");
+        jMenu1.setText("Opciones");
         MnuCamioneros.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        MnuCamioneros.add(jMenu2);
 
         setJMenuBar(MnuCamioneros);
 
@@ -160,13 +169,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar MnuCamioneros;
     private javax.swing.JButton btnCamionero;
+    private javax.swing.JButton btnCliente;
     private javax.swing.JButton btncamion;
     private javax.swing.JButton btnprovincia;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
