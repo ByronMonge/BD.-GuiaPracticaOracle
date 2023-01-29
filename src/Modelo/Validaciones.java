@@ -170,4 +170,12 @@ public class Validaciones {
         }
         return validar;
     }
+
+    public boolean validarRuc(String ruc) {
+        boolean validar = false;
+        if (ruc.matches("[0-9]{13}")) {
+            validar = true;
+        }
+        return validar;
+    }
 }
