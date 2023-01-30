@@ -76,6 +76,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.btnCliente = btnCliente;
     }
 
+    public JButton getBtndestinatario() {
+        return btndestinatario;
+    }
+
+    public void setBtndestinatario(JButton btndestinatario) {
+        this.btndestinatario = btndestinatario;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -88,6 +96,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnprovincia = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
         btnCliente = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JToolBar.Separator();
+        btndestinatario = new javax.swing.JButton();
         escritorio = new javax.swing.JDesktopPane();
         MnuCamioneros = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -131,6 +141,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnCliente);
 
+        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
+        jToolBar1.add(jSeparator4);
+
+        btndestinatario.setText("jButton1");
+        btndestinatario.setFocusable(false);
+        btndestinatario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btndestinatario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btndestinatario);
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
@@ -171,12 +190,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnCamionero;
     private javax.swing.JButton btnCliente;
     private javax.swing.JButton btncamion;
+    private javax.swing.JButton btndestinatario;
     private javax.swing.JButton btnprovincia;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
+    private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
