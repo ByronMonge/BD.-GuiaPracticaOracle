@@ -1,4 +1,3 @@
-
 package Vista;
 
 import javax.swing.JButton;
@@ -6,11 +5,11 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
 public class VistaProvincia extends javax.swing.JInternalFrame {
-
 
     public VistaProvincia() {
         initComponents();
@@ -22,10 +21,16 @@ public class VistaProvincia extends javax.swing.JInternalFrame {
 
         jDlgprovincias = new javax.swing.JDialog();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lbcodigo = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
         btncancelar = new javax.swing.JButton();
         btnguardar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtregion = new javax.swing.JTextField();
+        spinnercantones = new javax.swing.JSpinner();
+        jLabel6 = new javax.swing.JLabel();
+        txtcodigo = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
@@ -39,46 +44,82 @@ public class VistaProvincia extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("Provincias");
 
-        jLabel3.setText("Nombre:");
+        lbcodigo.setText("Código:");
 
         btncancelar.setText("Cancelar");
 
         btnguardar.setText("Guardar");
+
+        jLabel4.setText("Región:");
+
+        jLabel5.setText("Número de cantones:");
+
+        spinnercantones.setModel(new javax.swing.SpinnerNumberModel(1, 1, 30, 1));
+
+        jLabel6.setText("Nombre:");
 
         javax.swing.GroupLayout jDlgprovinciasLayout = new javax.swing.GroupLayout(jDlgprovincias.getContentPane());
         jDlgprovincias.getContentPane().setLayout(jDlgprovinciasLayout);
         jDlgprovinciasLayout.setHorizontalGroup(
             jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDlgprovinciasLayout.createSequentialGroup()
-                .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGap(136, 136, 136)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jDlgprovinciasLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDlgprovinciasLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel3)
-                        .addGap(63, 63, 63)
-                        .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jDlgprovinciasLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
                         .addComponent(btnguardar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btncancelar)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                        .addComponent(btncancelar)
+                        .addGap(38, 38, 38))
+                    .addGroup(jDlgprovinciasLayout.createSequentialGroup()
+                        .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbcodigo)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(40, 40, 40)
+                        .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDlgprovinciasLayout.createSequentialGroup()
+                                .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtregion, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(spinnercantones, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(35, Short.MAX_VALUE))
+                            .addGroup(jDlgprovinciasLayout.createSequentialGroup()
+                                .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))))
         );
         jDlgprovinciasLayout.setVerticalGroup(
             jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDlgprovinciasLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(27, 27, 27)
-                .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                .addGap(30, 30, 30)
+                .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbcodigo)
+                    .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDlgprovinciasLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(50, 50, 50)
+                        .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txtregion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(spinnercantones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)
+                        .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnguardar)
+                            .addComponent(btncancelar)))
                     .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(77, 77, 77)
-                .addGroup(jDlgprovinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btncancelar)
-                    .addComponent(btnguardar))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -129,13 +170,13 @@ public class VistaProvincia extends javax.swing.JInternalFrame {
 
         tblprovincias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nombre", "Región", "Numero de catones"
+                "Código", "Nombre", "Región", "Numero de catones"
             }
         ));
         jScrollPane2.setViewportView(tblprovincias);
@@ -231,11 +272,11 @@ public class VistaProvincia extends javax.swing.JInternalFrame {
     }
 
     public JLabel getjLabel3() {
-        return jLabel3;
+        return lbcodigo;
     }
 
     public void setjLabel3(JLabel jLabel3) {
-        this.jLabel3 = jLabel3;
+        this.lbcodigo = jLabel3;
     }
 
     public JPanel getjPanel1() {
@@ -278,6 +319,39 @@ public class VistaProvincia extends javax.swing.JInternalFrame {
         this.txtnombre = txtnombre;
     }
 
+    public JSpinner getSpinnercantones() {
+        return spinnercantones;
+    }
+
+    public void setSpinnercantones(JSpinner spinnercantones) {
+        this.spinnercantones = spinnercantones;
+    }
+
+    public JTextField getTxtcodigo() {
+        return txtcodigo;
+    }
+
+    public void setTxtcodigo(JTextField txtcodigo) {
+        this.txtcodigo = txtcodigo;
+    }
+
+    public JTextField getTxtregion() {
+        return txtregion;
+    }
+
+    public void setTxtregion(JTextField txtregion) {
+        this.txtregion = txtregion;
+    }
+
+    public JLabel getLbcodigo() {
+        return lbcodigo;
+    }
+
+    public void setLbcodigo(JLabel lbcodigo) {
+        this.lbcodigo = lbcodigo;
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnactualizar;
     private javax.swing.JButton btncancelar;
@@ -288,11 +362,17 @@ public class VistaProvincia extends javax.swing.JInternalFrame {
     private javax.swing.JDialog jDlgprovincias;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lbcodigo;
+    private javax.swing.JSpinner spinnercantones;
     private javax.swing.JTable tblprovincias;
     private javax.swing.JTextField txtbuscar;
+    private javax.swing.JTextField txtcodigo;
     private javax.swing.JTextField txtnombre;
+    private javax.swing.JTextField txtregion;
     // End of variables declaration//GEN-END:variables
 }
