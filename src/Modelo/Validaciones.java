@@ -178,4 +178,12 @@ public class Validaciones {
         }
         return validar;
     }
+
+    public boolean validarCodigoPostal(String codigoPostal) {
+        boolean validar = false;
+        if (codigoPostal.matches("[0-9]{6}")) {
+            validar = true;
+        }
+        return validar;
+    }
 }
