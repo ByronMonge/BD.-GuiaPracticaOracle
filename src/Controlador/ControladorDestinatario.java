@@ -103,7 +103,7 @@ public class ControladorDestinatario {
                     vista.getTxttelefono().setText(pe.getTelefono());
                     vista.getTxtemail().setText(pe.getEmail());
                     vista.getTxtcodpostal().setText(pe.getCodpostal());
-                    vista.getTxtinfocomplement().setText(pe.getInfocomplement());
+                    vista.getTxtArea().setText(pe.getInfocomplement());
                     vista.getTxtcalleprinc().setText(pe.getCalleprinc());
                     vista.getTxtcallesecun().setText(pe.getCallesecun());
 
@@ -146,7 +146,7 @@ public class ControladorDestinatario {
                     String telefono = vista.getTxttelefono().getText();
                     String email = vista.getTxtemail().getText();
                     String codpostal = vista.getTxtcodpostal().getText();
-                    String infocomplement = vista.getTxtinfocomplement().getText();                   
+                    String infocomplement = vista.getTxtArea().getText();                   
                     String calleprinc = vista.getTxtcalleprinc().getText();
                     String callesecun = vista.getTxtcallesecun().getText();
                     int edad = Integer.parseInt(vista.getSpinneredad().getValue().toString());
@@ -210,7 +210,7 @@ public class ControladorDestinatario {
                     String telefono = vista.getTxttelefono().getText();
                     String email = vista.getTxtemail().getText();
                     String codpostal = vista.getTxtcodpostal().getText();
-                    String infocomplement = vista.getTxtinfocomplement().getText();                   
+                    String infocomplement = vista.getTxtArea().getText();                   
                     String calleprinc = vista.getTxtcalleprinc().getText();
                     String callesecun = vista.getTxtcallesecun().getText();
                     int edad = Integer.parseInt(vista.getSpinneredad().getValue().toString());
@@ -368,19 +368,19 @@ public class ControladorDestinatario {
             validar = false;
         }
         
-        if (vista.getTxtcodpostal().getText().isEmpty() || !mivalidacion.validarTextoConEspacio(vista.getTxtcodpostal().getText())) {
+        if (vista.getTxtcodpostal().getText().isEmpty() || !mivalidacion.validarCodigoPostal(vista.getTxtcodpostal().getText())) {
             validar = false;
         }
         
-        if (vista.getTxtinfocomplement().getText().isEmpty() || !mivalidacion.validarTextoConEspacio(vista.getTxtinfocomplement().getText())) {
+        if (vista.getTxtArea().getText().isEmpty() || !mivalidacion.validarTextoConEspacio(vista.getTxtArea().getText())) {
             validar = false;
         }
         
-        if (vista.getTxtcalleprinc().getText().isEmpty() || !mivalidacion.validarTextoConEspacio(vista.getTxtcalleprinc().getText())) {
+        if (vista.getTxtcalleprinc().getText().isEmpty() || !mivalidacion.validarDireccion(vista.getTxtcalleprinc().getText())) {
             validar = false;
         }
 
-        if (vista.getTxtcallesecun().getText().isEmpty() || !mivalidacion.validarTextoConEspacio(vista.getTxtcallesecun().getText())) {
+        if (vista.getTxtcallesecun().getText().isEmpty() || !mivalidacion.validarDireccion(vista.getTxtcallesecun().getText())) {
             validar = false;
         }
         if (vista.getJfechanacimiento().getDate() == null) {
@@ -404,7 +404,7 @@ public class ControladorDestinatario {
         vista.getTxttelefono().setText("");
         vista.getTxtemail().setText("");
         vista.getTxtcodpostal().setText("");
-        vista.getTxtinfocomplement().setText("");
+        vista.getTxtArea().setText("");
         vista.getTxtcalleprinc().setText("");
         vista.getTxtcallesecun().setText("");
         vista.getSpinneredad().setValue(18);
