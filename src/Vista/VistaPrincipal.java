@@ -84,6 +84,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.btndestinatario = btndestinatario;
     }
 
+    public JButton getBtnconduce() {
+        return btnconduce;
+    }
+
+    public void setBtnconduce(JButton btnconduce) {
+        this.btnconduce = btnconduce;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -98,6 +106,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnCliente = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
         btndestinatario = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
+        btnconduce = new javax.swing.JButton();
         escritorio = new javax.swing.JDesktopPane();
         MnuCamioneros = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -153,6 +163,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btndestinatario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btndestinatario);
 
+        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
+        jToolBar1.add(jSeparator5);
+
+        btnconduce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/carnet-de-conducir.png"))); // NOI18N
+        btnconduce.setToolTipText("Horarios de conduccion");
+        btnconduce.setFocusable(false);
+        btnconduce.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnconduce.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnconduce);
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
@@ -193,6 +213,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnCamionero;
     private javax.swing.JButton btnCliente;
     private javax.swing.JButton btncamion;
+    private javax.swing.JButton btnconduce;
     private javax.swing.JButton btndestinatario;
     private javax.swing.JButton btnprovincia;
     private javax.swing.JDesktopPane escritorio;
@@ -201,6 +222,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
