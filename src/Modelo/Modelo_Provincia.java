@@ -29,7 +29,7 @@ public class Modelo_Provincia extends Provincia {
         return conoc.accion(sql);
     }
 
-    public boolean eliminarProvincia(String codigo) {
+    public boolean eliminarProvincia(int codigo) {
 
         String sqlC = "UPDATE provincia SET pro_estado = 'I' WHERE pro_codigo = '" + codigo + "'";
         return conoc.accion(sqlC);
@@ -73,7 +73,7 @@ public class Modelo_Provincia extends Provincia {
             //Me retorna un "List" de "persona"
             List<Provincia> lista = new ArrayList<>();
 
-            String sql = "select * from provincia where pro_estado = 'A' and pro_nombre like '" + nombre + "%'";
+            String sql = "select * from provincia where pro_estado = 'A' and Upper(pro_nombre) like '" + nombre.toUpperCase() + "%'";
 
             ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
