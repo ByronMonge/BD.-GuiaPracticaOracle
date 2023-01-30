@@ -41,7 +41,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="139" max="32767" attributes="0"/>
+                          <EmptySpace pref="134" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -188,7 +188,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel17">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Calle principal"/>
+            <Property name="text" type="java.lang.String" value="Calle principal:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="femenino">
@@ -201,7 +201,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel18">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Calle secundaria"/>
+            <Property name="text" type="java.lang.String" value="Calle secundaria:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
@@ -221,7 +221,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Info. complementaria"/>
+            <Property name="text" type="java.lang.String" value="Info. complementaria:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtdni">
@@ -230,7 +230,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel16">
           <Properties>
-            <Property name="text" type="java.lang.String" value="C&#xf3;d Postal"/>
+            <Property name="text" type="java.lang.String" value="C&#xf3;d Postal:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtprinombre">

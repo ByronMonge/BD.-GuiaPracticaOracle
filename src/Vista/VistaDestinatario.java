@@ -433,21 +433,21 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
 
         jLabel14.setText("Género:");
 
-        jLabel17.setText("Calle principal");
+        jLabel17.setText("Calle principal:");
 
         genero.add(femenino);
         femenino.setText("F");
 
-        jLabel18.setText("Calle secundaria");
+        jLabel18.setText("Calle secundaria:");
 
         jLabel7.setText("Dirección:");
 
         genero.add(masculino);
         masculino.setText("M");
 
-        jLabel15.setText("Info. complementaria");
+        jLabel15.setText("Info. complementaria:");
 
-        jLabel16.setText("Cód Postal");
+        jLabel16.setText("Cód Postal:");
 
         btnguardar.setText("Guardar");
 
@@ -513,7 +513,7 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
                                     .addComponent(txtsegapellido, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                                     .addComponent(txtdireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                         .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13)
                             .addComponent(jLabel6)
