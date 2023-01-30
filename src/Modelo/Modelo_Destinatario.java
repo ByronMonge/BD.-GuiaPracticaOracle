@@ -46,7 +46,7 @@ public class Modelo_Destinatario extends Destinatario{
 
         String sqlP = "UPDATE persona set per_prinombre = '" + getPrinombre() + "',per_segnombre = '" + getSegnombre() + "', per_apellidopat = '" + getApellidopat() + "', per_apellidomat = '" + getApellidomat() + "', per_direccion = '" + getDireccion() + "', per_telefono = '" + getTelefono() + "', per_email = '" + getEmail() + "', per_fechanac = '" + getFechanac() + "', per_edad = " + getEdad() + ", per_genero = '" + getGenero() + "' where per_dni = '" + getDni() + "'"; //Modifica los datos en la tabla persona
 
-        String sqlC = "UPDATE destinatario SET des_codpostal = " + getCodpostal() + ",des_infocomplement = '" + getInfocomplement() + "', des_calleprinc = " + getCalleprinc() + "', des_callesecun = " + getCallesecun() +  " WHERE cam_percodigo = '" + mipersona.traerCodigoDePersonaModificar(getDni()) + "'"; //Modifica los datos de la tabla camionero
+        String sqlC = "UPDATE destinatario SET des_codpostal = '" + getCodpostal() + "',des_infocomplement = '" + getInfocomplement() + "', des_calleprinc = '" + getCalleprinc() + "', des_callesecun = '" + getCallesecun() +  "' WHERE des_percodigo = '" + mipersona.traerCodigoDePersonaModificar(getDni()) + "'"; //Modifica los datos de la tabla camionero
         return conoc.accion(sqlP) && conoc.accion(sqlC);
     }
 
@@ -62,9 +62,7 @@ public class Modelo_Destinatario extends Destinatario{
             //Me retorna un "List" de "persona"
             List<Destinatario> lista = new ArrayList<>();
 
-            String sql = "select per_dni,per_prinombre,per_segnombre,per_apellidopat,per_apellidomat,per_direccion,per_telefono,per_email,per_fechanac,per_edad,per_genero,des_codpostal,des_infocomplement,des_calleprin,des_callesecun"
-                    + "from persona p, destinatario d "
-                    + "where p.per_codigo = d.des_percodigo";
+            String sql = "select per_dni,per_prinombre,per_segnombre,per_apellidopat,per_apellidomat,per_direccion,per_telefono,per_email,per_fechanac,per_edad,per_genero,des_codpostal,des_infocomplement,des_calleprinc,des_callesecun from persona p, destinatario d where p.per_codigo = d.des_percodigo";
 
             ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
@@ -109,9 +107,7 @@ public class Modelo_Destinatario extends Destinatario{
             //Me retorna un "List" de "persona"
             List<Destinatario> lista = new ArrayList<>();
 
-            String sql = "select per_dni,per_prinombre,per_segnombre,per_apellidopat,per_apellidomat,per_direccion,per_telefono,per_email,per_fechanac,per_edad,per_genero,des_codpostal,des_infocomplement,des_calleprin,des_callesecu"
-                    + "from persona p, destinatario d"
-                    + "where p.per_codigo =d.des_percodigo and per_dni Like '" + cedula + "%'";
+            String sql = "select per_dni,per_prinombre,per_segnombre,per_apellidopat,per_apellidomat,per_direccion,per_telefono,per_email,per_fechanac,per_edad,per_genero,des_codpostal,des_infocomplement,des_calleprinc,des_callesecun from persona p, destinatario d where p.per_codigo =d.des_percodigo and per_dni Like '" + cedula + "%'";
 
             ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
