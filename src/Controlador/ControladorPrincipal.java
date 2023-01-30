@@ -3,11 +3,13 @@ package Controlador;
 import Modelo.Modelo_Camion;
 import Modelo.Modelo_Camionero;
 import Modelo.Modelo_Cliente;
+import Modelo.Modelo_Conduce;
 import Modelo.Modelo_Destinatario;
 import Modelo.Modelo_Provincia;
 import Vista.VistaCamion;
 import Vista.VistaCamionero;
 import Vista.VistaCliente;
+import Vista.VistaConduce;
 import Vista.VistaDestinatario;
 import Vista.VistaPrincipal;
 import Vista.VistaProvincia;
@@ -28,6 +30,7 @@ public class ControladorPrincipal {
         vistaPrincipal.getBtnprovincia().addActionListener(l -> crudProvincias());
         vistaPrincipal.getBtnCliente().addActionListener(l -> crudClientes());
         vistaPrincipal.getBtndestinatario().addActionListener(l -> crudDestinatarios());
+        vistaPrincipal.getBtnconduce().addActionListener(l-> crudConduce());
     }
 
     private void crudCamioneros() {
@@ -49,6 +52,16 @@ public class ControladorPrincipal {
         vistaPrincipal.getEscritorio().add(vista);
 
         ControladorCamion control = new ControladorCamion(modelo, vista);
+        control.iniciarControl();
+    }
+
+    private void crudConduce() {
+        VistaConduce vista = new VistaConduce();
+        Modelo_Conduce modelo = new Modelo_Conduce();
+
+        vistaPrincipal.getEscritorio().add(vista);
+
+        ControladorConduce control = new ControladorConduce(modelo, vista);
         control.iniciarControl();
     }
 
