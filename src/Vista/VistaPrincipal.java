@@ -127,6 +127,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jToolBar1.add(jSeparator2);
 
         btnprovincia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lugar.png"))); // NOI18N
+        btnprovincia.setToolTipText("Provincias");
         btnprovincia.setFocusable(false);
         btnprovincia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnprovincia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -136,6 +137,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jToolBar1.add(jSeparator3);
 
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/servicio-al-cliente.png"))); // NOI18N
+        btnCliente.setToolTipText("Clientes");
         btnCliente.setFocusable(false);
         btnCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -144,7 +146,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
         jToolBar1.add(jSeparator4);
 
-        btndestinatario.setText("jButton1");
+        btndestinatario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/grupo.png"))); // NOI18N
+        btndestinatario.setToolTipText("Destinatarios");
         btndestinatario.setFocusable(false);
         btndestinatario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btndestinatario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
