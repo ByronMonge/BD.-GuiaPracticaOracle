@@ -105,7 +105,7 @@ public class Modelo_Provincia extends Provincia {
         int cantidad = 0;
         try {
 
-            String sql = "select COUNT(*) from camion where cmi_placa = '" + placa + "'";
+            String sql = "select COUNT(*) from provincia where pro_nombre = '" + nombre + "'";
 
             ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
