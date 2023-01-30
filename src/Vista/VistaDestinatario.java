@@ -1,4 +1,3 @@
-
 package Vista;
 
 import com.toedter.calendar.JDateChooser;
@@ -11,11 +10,10 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-
 public class VistaDestinatario extends javax.swing.JInternalFrame {
-
 
     public VistaDestinatario() {
         initComponents();
@@ -333,14 +331,6 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
         this.txtemail = txtemail;
     }
 
-    public JTextField getTxtinfocomplement() {
-        return txtinfocomplement;
-    }
-
-    public void setTxtinfocomplement(JTextField txtinfocomplement) {
-        this.txtinfocomplement = txtinfocomplement;
-    }
-
     public JTextField getTxtpriapellido() {
         return txtpriapellido;
     }
@@ -381,6 +371,14 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
         this.txttelefono = txttelefono;
     }
 
+    public JTextArea getTxtArea() {
+        return txtArea;
+    }
+
+    public void setTxtArea(JTextArea txtArea) {
+        this.txtArea = txtArea;
+    }
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -398,7 +396,6 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
         masculino = new javax.swing.JRadioButton();
         jLabel15 = new javax.swing.JLabel();
         txtdni = new javax.swing.JTextField();
-        txtinfocomplement = new javax.swing.JTextField();
         txtpriapellido = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         txtprinombre = new javax.swing.JTextField();
@@ -421,6 +418,8 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
         txtemail = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtArea = new javax.swing.JTextArea();
         genero = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -436,12 +435,14 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
 
         jLabel17.setText("Calle principal");
 
+        genero.add(femenino);
         femenino.setText("F");
 
         jLabel18.setText("Calle secundaria");
 
         jLabel7.setText("Dirección:");
 
+        genero.add(masculino);
         masculino.setText("M");
 
         jLabel15.setText("Info. complementaria");
@@ -475,14 +476,22 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Teléfono:");
 
+        txtArea.setColumns(20);
+        txtArea.setRows(5);
+        jScrollPane2.setViewportView(txtArea);
+
         javax.swing.GroupLayout jDlgDestinatariosLayout = new javax.swing.GroupLayout(jDlgDestinatarios.getContentPane());
         jDlgDestinatarios.getContentPane().setLayout(jDlgDestinatariosLayout);
         jDlgDestinatariosLayout.setHorizontalGroup(
             jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDlgDestinatariosLayout.createSequentialGroup()
-                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
+                .addGap(359, 359, 359)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
-                        .addGap(74, 74, 74)
                         .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
@@ -503,54 +512,41 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
                                     .addComponent(txtpriapellido, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                                     .addComponent(txtsegapellido, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                                     .addComponent(txtdireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                                    .addComponent(txtinfocomplement))))
-                        .addGap(78, 78, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                        .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18))
+                        .addGap(25, 25, 25)
                         .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
-                                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel17))
-                                .addGap(23, 23, 23)
-                                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtcalleprinc)
-                                    .addComponent(txtcallesecun))
-                                .addGap(11, 11, 11))
-                            .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel14))
-                                .addGap(25, 25, 25)
-                                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
-                                        .addComponent(masculino)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(femenino))
-                                    .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jfechanacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(spinneredad, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(masculino)
+                                .addGap(18, 18, 18)
+                                .addComponent(femenino))
+                            .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jfechanacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spinneredad, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcalleprinc, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                            .addComponent(txtcallesecun))
+                        .addGap(43, 43, 43))
                     .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
                         .addComponent(btnguardar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnCancelar)
-                        .addGap(11, 11, 11)))
-                .addGap(23, 23, 23))
-            .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
-                .addGap(323, 323, 323)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(72, 72, 72))))
         );
         jDlgDestinatariosLayout.setVerticalGroup(
             jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addGap(15, 15, 15)
                 .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
                         .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -563,8 +559,7 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
                         .addGap(47, 47, 47)
                         .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(txtsegnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
+                            .addComponent(txtsegnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(37, 37, 37)
                         .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtpriapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -572,56 +567,58 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
                         .addGap(43, 43, 43)
                         .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(txtsegapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
+                            .addComponent(txtsegapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
                         .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
-                        .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))
-                        .addGap(47, 47, 47)
-                        .addComponent(jfechanacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(spinneredad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42)
-                        .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(femenino)
-                            .addComponent(masculino))))
-                .addGap(44, 44, 44)
-                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(51, 51, 51)
                         .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(txtcodpostal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
-                        .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtinfocomplement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15)))
+                            .addComponent(txtcodpostal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18)
+                            .addComponent(txtcallesecun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56)
+                        .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(102, Short.MAX_VALUE))
                     .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
+                        .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
+                                .addGap(120, 120, 120)
+                                .addComponent(jLabel12))
+                            .addGroup(jDlgDestinatariosLayout.createSequentialGroup()
+                                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(29, 29, 29)
+                                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel13))
+                                .addGap(47, 47, 47)
+                                .addComponent(jfechanacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
+                                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(spinneredad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(42, 42, 42)
+                                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel14)
+                                    .addComponent(femenino)
+                                    .addComponent(masculino))))
+                        .addGap(44, 44, 44)
                         .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17)
                             .addComponent(txtcalleprinc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtcallesecun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jDlgDestinatariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnguardar)
-                    .addComponent(btnCancelar))
-                .addGap(31, 31, 31))
+                            .addComponent(btnguardar)
+                            .addComponent(btnCancelar))
+                        .addGap(31, 31, 31))))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 153));
 
@@ -728,10 +725,12 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private com.toedter.calendar.JDateChooser jfechanacimiento;
     private javax.swing.JRadioButton masculino;
     private javax.swing.JSpinner spinneredad;
     private javax.swing.JTable tabladestinatarios;
+    private javax.swing.JTextArea txtArea;
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtcalleprinc;
     private javax.swing.JTextField txtcallesecun;
@@ -739,7 +738,6 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtdireccion;
     private javax.swing.JTextField txtdni;
     private javax.swing.JTextField txtemail;
-    private javax.swing.JTextField txtinfocomplement;
     private javax.swing.JTextField txtpriapellido;
     private javax.swing.JTextField txtprinombre;
     private javax.swing.JTextField txtsegapellido;
