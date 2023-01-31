@@ -19,10 +19,6 @@
                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="lblcodigoconduce" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
@@ -30,10 +26,7 @@
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtcodigoconduce" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jFechainicio" pref="137" max="32767" attributes="0"/>
-                                  <Component id="jFechafin" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jFechainicio" min="-2" pref="137" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
@@ -129,12 +122,7 @@
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtnombreyapellido" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jFechafin" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="34" max="32767" attributes="0"/>
                   <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -251,13 +239,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Fecha de inicio:"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Fecha de fin:"/>
-          </Properties>
-        </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jFechafin">
         </Component>
         <Component class="javax.swing.JButton" name="btnguardar">
           <Properties>
@@ -531,8 +512,8 @@
               <Table columnCount="7" rowCount="4">
                 <Column editable="true" title="C&#xf3;digo" type="java.lang.Object"/>
                 <Column editable="true" title="Fecha inicio" type="java.lang.Object"/>
-                <Column editable="true" title="Fecha fin" type="java.lang.Object"/>
                 <Column editable="true" title="C&#xf3;digo del camionero" type="java.lang.Object"/>
+                <Column editable="true" title="C&#xe9;dula" type="java.lang.Object"/>
                 <Column editable="true" title="Nombre y apellido" type="java.lang.Object"/>
                 <Column editable="true" title="C&#xf3;digo del camion" type="java.lang.Object"/>
                 <Column editable="true" title="Placa" type="java.lang.Object"/>

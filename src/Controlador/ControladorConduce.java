@@ -45,43 +45,6 @@ public class ControladorConduce {
         limpiarDatosYDespacerCampos();
     }
 
-    /*public void cargarTablaTurnosDeConduccion() {
-
-        Modelo_Camionero modeloCamionero = new Modelo_Camionero();
-        Modelo_Camion modeloCamion = new Modelo_Camion();
-
-        vista.getTablaconduccion().setRowHeight(25);
-        DefaultTableModel estructuraTabla = (DefaultTableModel) vista.getTblcamionerosDlg().getModel();
-        estructuraTabla.setRowCount(0);
-
-        List<Conduce> listacon = modelo.listaTurnosDeConduccion();
-        List<Camionero> listacam = modeloCamionero.listaCamionerosTabla();
-        List<Camion> listacmi = modeloCamion.listaCamiones();
-
-        Holder<Integer> i = new Holder<>(0);
-
-        listacon.stream().forEach(t -> {
-
-            listacam.stream().forEach(c -> {
-
-                if (t.getCodigoCam() == c.getCodigoCam()) {
-
-                    estructuraTabla.addRow(new Object[8]);
-
-                    vista.getTablaconduccion().setValueAt(t.getCodigoCon(), i.value, 0);
-                    vista.getTablaconduccion().setValueAt(t.getFechaSalida(), i.value, 1);
-                    vista.getTablaconduccion().setValueAt(t.getFechaLlegada(), i.value, 2);
-                    vista.getTablaconduccion().setValueAt(t.getCodigoCam(), i.value, 3);
-                    vista.getTablaconduccion().setValueAt(c.getPrinombre(), i.value, 4);
-                    vista.getTablaconduccion().setValueAt(t.getCodigoCmi(), i.value, 5);
-
-                    i.value++;
-                }
-
-            });
-
-        });
-    }*/
     public void cargarTablaTurnosDeConduccion() {
 
         Modelo_Camionero modeloCamionero = new Modelo_Camionero();
@@ -96,6 +59,8 @@ public class ControladorConduce {
 
         listacon.stream().forEach(c -> {
 
+            String fechaInicio = c.getFechaSalida().substring(0, 10);
+
             listacam.stream().forEach(ca -> {
 
                 if (c.getCodigoCam() == ca.getCodigoCam()) {
@@ -103,14 +68,45 @@ public class ControladorConduce {
                     listacmi.stream().forEach(ci -> {
 
                         if (c.getCodigoCmi() == ci.getCodigoCmi()) {
-                            
-                            String[] datos = {String.valueOf(c.getCodigoCon()), c.getFechaSalida(), c.getFechaLlegada(), String.valueOf(c.getCodigoCam()), ca.getPrinombre() + " " + ca.getApellidopat(), String.valueOf(c.getCodigoCmi()), ci.getPlaca()};
+
+                            String[] datos = {String.valueOf(c.getCodigoCon()), fechaInicio, String.valueOf(c.getCodigoCam()), ca.getDni(), ca.getPrinombre() + " " + ca.getApellidopat(), String.valueOf(c.getCodigoCmi()), ci.getPlaca()};
                             tabla.addRow(datos);
                         }
                     });
                 }
             });
         });
+    }
+
+    public void abrirYCargarDatosEnElDialogConduce() {
+
+        int seleccion = vista.getTablaconduccion().getSelectedRow();
+
+        if (seleccion == -1) {
+            JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
+        } else {
+
+            int codigo = Integer.parseInt(vista.getTablaconduccion().getValueAt(seleccion, 0).toString());
+            modelo.listaTurnosDeConduccion().forEach((c) -> {
+                if (c.getCodigoCon() == codigo) {
+
+                    //Abre el jDialog y carga los datos en el jDialog
+                    vista.getjDlgConduce().setName("Editar");
+                    vista.getjDlgConduce().setLocationRelativeTo(vista);
+                    vista.getjDlgConduce().setSize(876, 733);
+                    vista.getjDlgConduce().setTitle("Editar");
+                    vista.getjDlgConduce().setVisible(true);
+                    vista.getTxtcodigoconduce().setEditable(false); //Bloqueo el campo
+
+                    //Seteo los datos en los campos de texto
+                    vista.getTxtcodigoconduce().setText(String.valueOf(c.getCodigoCon()));
+                    vista.getTxtcodigocamionero().setText(String.valueOf(c.getCodigoCam()));
+                    vista.getTxtmodelo().setText(pe.getModelo());
+                    vista.getTxttipo().setText(pe.getTipo());
+                    vista.getSpinnerpotencia().setValue(pe.getPotencia());
+                }
+            });
+        }
     }
 
     //TODO SOBRE CAMIONERO
@@ -232,11 +228,9 @@ public class ControladorConduce {
                 int codigoCamionero = Integer.parseInt(vista.getTxtcodigocamionero().getText());
                 int codigoCamion = Integer.parseInt(vista.getTxtcodigocamion().getText());
                 Date fechainicio = vista.getjFechainicio().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
-                Date fechafin = vista.getjFechafin().getDate();
 
                 SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Doy formato a la fecha
                 String fechainicioTexto = formato.format(fechainicio); //La fecha tiene el formato indicado y es de tipo String
-                String fechafinTexto = formato.format(fechafin);
 
                 //Seteo los datos
                 Modelo_Conduce conduce = new Modelo_Conduce();
@@ -244,7 +238,6 @@ public class ControladorConduce {
                 conduce.setCodigoCam(codigoCamionero);
                 conduce.setCodigoCmi(codigoCamion);
                 conduce.setFechaSalida(fechainicioTexto);
-                conduce.setFechaLlegada(fechafinTexto);
 
                 if (conduce.crearConduccion()) {
                     vista.getjDlgConduce().setVisible(false);
@@ -304,10 +297,6 @@ public class ControladorConduce {
             validar = false;
         }
 
-        if (vista.getjFechafin().getDate() == null) {
-            validar = false;
-        }
-
         return validar;
     }
 
@@ -316,7 +305,6 @@ public class ControladorConduce {
         vista.getTxtcodigocamionero().setText("");
         vista.getTxtcodigocamion().setText("");
         vista.getjFechainicio().setDate(null);
-        vista.getjFechafin().setDate(null);
 
         vista.getTxtcodigoconduce().setVisible(false);
         vista.getLblcodigoconduce().setVisible(false);

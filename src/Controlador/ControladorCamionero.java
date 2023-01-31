@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-;
+import static javafx.scene.paint.Color.color;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
@@ -38,8 +38,9 @@ public class ControladorCamionero {
         vista.getBtnactualizar().addActionListener(l -> cargarTabla());
         vista.getBtnguardar().addActionListener(l -> crearOModificarPersonaYCamionero());
         vista.getBtnmodificar().addActionListener(l -> abrirYCargarDatosEnElDialog());
-        vista.getBtneliminar().addActionListener(l -> eliminarPersonaYCamionero());
-        buscarPersona(); //Metodo para buscar personas
+        vista.getBtneliminar().addActionListener(l -> eliminarPersonaYCamionero());  
+        cam();
+        buscarPersona(); //Metodo para buscar personas       
     }
 
     public void abrirDialogCrear() {
@@ -50,6 +51,16 @@ public class ControladorCamionero {
         vista.getjDlgCamionero().setVisible(true);
         vista.getTxtdni().setEditable(true); //Desbloqueo el campo de la cedula
         limpiarDatos(); //Limpia la informacion de los campos
+    }
+
+    public void limpiarColorrojo() {
+        
+        vista.getTxtemail().setBackground(Color.WHITE);
+        vista.getTxttelefono().setBackground(Color.WHITE);
+        vista.getTxtdireccion().setBackground(Color.WHITE);
+        vista.getTxtsegapellido().setBackground(Color.WHITE);
+        vista.getTxtpriapellido().setBackground(Color.WHITE);
+        vista.getTxtdni().setBackground(Color.WHITE);
     }
 
     public void cargarTabla() {
@@ -331,42 +342,56 @@ public class ControladorCamionero {
         Validaciones mivalidacion = new Validaciones();
 
         boolean validar = true;
-
-        /*if (vista.getTxtdni().getText().isEmpty() || !mivalidacion.validarCedula(vista.getTxtdni().getText())) {
-
+        Color colorRosa = new Color(255, 98, 98);
+        if (vista.getTxtdni().getText().isEmpty() || !mivalidacion.validarCedula(vista.getTxtdni().getText())) {
             validar = false;
-        }*/
+//            JOptionPane.showMessageDialog(null, "Ingrese una cedula correcta");
+            vista.getTxtdni().setBackground(colorRosa);
+            
+        }
+        
         if (vista.getTxtprinombre().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtprinombre().getText())) {
             validar = false;
-            vista.getTxtprinombre().setBackground(Color.red);
+            vista.getTxtprinombre().setBackground(colorRosa);
+            
         }
 
         if (vista.getTxtsegnombre().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtsegnombre().getText())) {
             validar = false;
+
+            vista.getTxtsegnombre().setBackground(colorRosa);
         }
 
         if (vista.getTxtpriapellido().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtpriapellido().getText())) {
             validar = false;
+            vista.getTxtpriapellido().setBackground(colorRosa);
         }
 
         if (vista.getTxtsegapellido().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtsegapellido().getText())) {
             validar = false;
+            vista.getTxtsegapellido().setBackground(colorRosa);
         }
 
         if (vista.getTxtdireccion().getText().isEmpty() || !mivalidacion.validarDireccion(vista.getTxtdireccion().getText())) {
             validar = false;
+            vista.getTxtdireccion().setBackground(colorRosa);
+
         }
 
         if (vista.getTxttelefono().getText().isEmpty() || !mivalidacion.validarTelefono(vista.getTxttelefono().getText())) {
             validar = false;
+            vista.getTxttelefono().setBackground(colorRosa);
+
         }
 
         if (vista.getTxtemail().getText().isEmpty() || !mivalidacion.validarCorreo(vista.getTxtemail().getText())) {
             validar = false;
+            vista.getTxtemail().setBackground(colorRosa);
         }
 
         if (vista.getTxttipodelicencia().getText().isEmpty() || !mivalidacion.validarTipoDeLicencia(vista.getTxttipodelicencia().getText())) {
             validar = false;
+
         }
 
         if (vista.getJfechanacimiento().getDate() == null) {
@@ -395,5 +420,28 @@ public class ControladorCamionero {
         vista.getSpinneraniosexperiencia().setValue(0);
         vista.getJfechanacimiento().setDate(null);
         vista.getGenero().clearSelection();
+    }
+
+    public void cam() {
+        KeyListener eventoTeclado = new KeyListener() {//Crear un objeto de tipo keyListener(Es una interface) por lo tanto se debe implementar sus metodos abstractos
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+///
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+                vista.getTxtdni().setBackground(Color.WHITE);
+            }
+        };
+
+        vista.getTxtdni().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
     }
 }
