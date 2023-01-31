@@ -62,7 +62,7 @@ public class Modelo_Cliente extends Cliente {
             //Me retorna un "List" de "persona"
             List<Cliente> lista = new ArrayList<>();
 
-            String sql = "select per_dni,per_prinombre,per_segnombre,per_apellidopat,per_apellidomat,per_direccion,per_telefono,per_email,per_fechanac,per_edad,per_genero,cli_ruc,cli_profesion from persona p, cliente c where p.per_codigo = c.cli_percodigo and c.cli_estado = 'A'";
+            String sql = "select cli_codigo, per_dni,per_prinombre,per_segnombre,per_apellidopat,per_apellidomat,per_direccion,per_telefono,per_email,per_fechanac,per_edad,per_genero,cli_ruc,cli_profesion from persona p, cliente c where p.per_codigo = c.cli_percodigo and c.cli_estado = 'A'";
 
             ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
@@ -72,6 +72,7 @@ public class Modelo_Cliente extends Cliente {
                 Cliente cli = new Cliente();
 
                 //Todo lo que haga en la sentencia define como voy a extraer los datos
+                cli.setCodigocli(rs.getInt("cli_codigo"));
                 cli.setDni(rs.getString("per_dni"));
                 cli.setPrinombre(rs.getString("per_prinombre"));
                 cli.setSegnombre(rs.getString("per_segnombre"));
