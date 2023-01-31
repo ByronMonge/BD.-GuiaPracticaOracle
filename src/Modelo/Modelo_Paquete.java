@@ -74,6 +74,6 @@ public class Modelo_Paquete extends Paquete {
             Logger.getLogger(Modelo_Paquete.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
-    }
+    }    
     
 }
