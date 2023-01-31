@@ -62,7 +62,7 @@ public class Modelo_Destinatario extends Destinatario{
             //Me retorna un "List" de "persona"
             List<Destinatario> lista = new ArrayList<>();
 
-            String sql = "select per_dni,per_prinombre,per_segnombre,per_apellidopat,per_apellidomat,per_direccion,per_telefono,per_email,per_fechanac,per_edad,per_genero,des_codpostal,des_infocomplement,des_calleprinc,des_callesecun from persona p, destinatario d where p.per_codigo = d.des_percodigo";
+            String sql = "select des_codigo, per_dni,per_prinombre,per_segnombre,per_apellidopat,per_apellidomat,per_direccion,per_telefono,per_email,per_fechanac,per_edad,per_genero,des_codpostal,des_infocomplement,des_calleprinc,des_callesecun from persona p, destinatario d where p.per_codigo = d.des_percodigo";
 
             ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
@@ -72,6 +72,7 @@ public class Modelo_Destinatario extends Destinatario{
                 Destinatario des = new Destinatario();
 
                 //Todo lo que haga en la sentencia define como voy a extraer los datos
+                des.setCodigodes(rs.getInt("des_codigo"));
                 des.setDni(rs.getString("per_dni"));
                 des.setPrinombre(rs.getString("per_prinombre"));
                 des.setSegnombre(rs.getString("per_segnombre"));

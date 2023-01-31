@@ -104,14 +104,6 @@ public class VistaConduce extends javax.swing.JInternalFrame {
         this.jDlgConduceCamionero = jDlgConduceCamionero;
     }
 
-    public JDateChooser getjFechafin() {
-        return jFechafin;
-    }
-
-    public void setjFechafin(JDateChooser jFechafin) {
-        this.jFechafin = jFechafin;
-    }
-
     public JDateChooser getjFechainicio() {
         return jFechainicio;
     }
@@ -142,14 +134,6 @@ public class VistaConduce extends javax.swing.JInternalFrame {
 
     public void setjLabel11(JLabel jLabel11) {
         this.jLabel11 = jLabel11;
-    }
-
-    public JLabel getjLabel12() {
-        return jLabel12;
-    }
-
-    public void setjLabel12(JLabel jLabel12) {
-        this.jLabel12 = jLabel12;
     }
 
     public JLabel getjLabel2() {
@@ -352,6 +336,14 @@ public class VistaConduce extends javax.swing.JInternalFrame {
         this.lblcodigoconduce = lblcodigoconduce;
     }
 
+    public JButton getBtnactualizar() {
+        return btnactualizar;
+    }
+
+    public void setBtnactualizar(JButton btnactualizar) {
+        this.btnactualizar = btnactualizar;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -377,8 +369,6 @@ public class VistaConduce extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jFechafin = new com.toedter.calendar.JDateChooser();
         btnguardar = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
         jDlgConduceCamionero = new javax.swing.JDialog();
@@ -397,6 +387,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
         btncrear = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
+        btnactualizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaconduccion = new javax.swing.JTable();
 
@@ -430,8 +421,6 @@ public class VistaConduce extends javax.swing.JInternalFrame {
 
         jLabel11.setText("Fecha de inicio:");
 
-        jLabel12.setText("Fecha de fin:");
-
         btnguardar.setText("Guardar");
 
         btncancelar.setText("Cancelar");
@@ -451,17 +440,12 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDlgConduceLayout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDlgConduceLayout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addGap(27, 27, 27))
                             .addGroup(jDlgConduceLayout.createSequentialGroup()
                                 .addComponent(lblcodigoconduce)
                                 .addGap(58, 58, 58)))
                         .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtcodigoconduce, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jFechainicio, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                                .addComponent(jFechafin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jFechainicio, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(52, 52, 52))
                     .addGroup(jDlgConduceLayout.createSequentialGroup()
                         .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -534,11 +518,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                     .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(txtnombreyapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
-                .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jFechafin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
                 .addComponent(jLabel9)
@@ -659,6 +639,8 @@ public class VistaConduce extends javax.swing.JInternalFrame {
 
         btneliminar.setText("Eliminar");
 
+        btnactualizar.setText("Actualizar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -667,9 +649,11 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addComponent(btnactualizar)
+                .addGap(36, 36, 36)
                 .addComponent(btncrear, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(30, 30, 30)
                 .addComponent(btnmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
                 .addComponent(btneliminar)
@@ -684,7 +668,8 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                     .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btncrear)
                     .addComponent(btnmodificar)
-                    .addComponent(btneliminar))
+                    .addComponent(btneliminar)
+                    .addComponent(btnactualizar))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -696,7 +681,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código", "Fecha inicio", "Fecha fin", "Código del camionero", "Nombre y apellido", "Código del camion", "Placa"
+                "Código", "Fecha inicio", "Código del camionero", "Cédula", "Nombre y apellido", "Código del camion", "Placa"
             }
         ));
         jScrollPane1.setViewportView(tablaconduccion);
@@ -721,6 +706,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnactualizar;
     private javax.swing.JButton btnbuscarcamion;
     private javax.swing.JButton btnbuscarcamionero;
     private javax.swing.JButton btncancelar;
@@ -733,12 +719,10 @@ public class VistaConduce extends javax.swing.JInternalFrame {
     private javax.swing.JDialog jDlgConduce;
     private javax.swing.JDialog jDlgConduceCamion;
     private javax.swing.JDialog jDlgConduceCamionero;
-    private com.toedter.calendar.JDateChooser jFechafin;
     private com.toedter.calendar.JDateChooser jFechainicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
