@@ -73,11 +73,11 @@ public class VistaConduce extends javax.swing.JInternalFrame {
     }
 
     public JButton getjButton1() {
-        return jButton1;
+        return btnbuscarcamion;
     }
 
     public void setjButton1(JButton jButton1) {
-        this.jButton1 = jButton1;
+        this.btnbuscarcamion = jButton1;
     }
 
     public JDialog getjDlgConduce() {
@@ -336,6 +336,14 @@ public class VistaConduce extends javax.swing.JInternalFrame {
         this.tblcamionesDlg = tblcamionesDlg;
     }
 
+    public JButton getBtnbuscarcamion() {
+        return btnbuscarcamion;
+    }
+
+    public void setBtnbuscarcamion(JButton btnbuscarcamion) {
+        this.btnbuscarcamion = btnbuscarcamion;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -355,7 +363,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
         btnbuscarcamionero = new javax.swing.JButton();
         txtcodigocamionero = new javax.swing.JTextField();
         txtplaca = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnbuscarcamion = new javax.swing.JButton();
         jFechainicio = new com.toedter.calendar.JDateChooser();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
@@ -366,10 +374,10 @@ public class VistaConduce extends javax.swing.JInternalFrame {
         btnguardar = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
         jDlgConduceCamionero = new javax.swing.JDialog();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tblcamionerosDlg = new javax.swing.JTable();
         btncargarCamionero = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblcamionerosDlg = new javax.swing.JTable();
         jDlgConduceCamion = new javax.swing.JDialog();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -401,7 +409,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
 
         btnbuscarcamionero.setText("Buscar");
 
-        jButton1.setText("Buscar");
+        btnbuscarcamion.setText("Buscar");
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -455,7 +463,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(txtcodigocamion, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1)))
+                                .addComponent(btnbuscarcamion)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jDlgConduceLayout.createSequentialGroup()
                 .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -532,7 +540,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                 .addGap(33, 33, 33)
                 .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtcodigocamion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
+                    .addComponent(btnbuscarcamion)
                     .addComponent(jLabel8)
                     .addComponent(txtplaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
@@ -542,6 +550,11 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                     .addComponent(btncancelar))
                 .addGap(22, 22, 22))
         );
+
+        btncargarCamionero.setText("Cargar");
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel14.setText("Registro de camioneros");
 
         tblcamionerosDlg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -556,36 +569,32 @@ public class VistaConduce extends javax.swing.JInternalFrame {
         ));
         jScrollPane2.setViewportView(tblcamionerosDlg);
 
-        btncargarCamionero.setText("Cargar");
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel14.setText("Registro de camioneros");
-
         javax.swing.GroupLayout jDlgConduceCamioneroLayout = new javax.swing.GroupLayout(jDlgConduceCamionero.getContentPane());
         jDlgConduceCamionero.getContentPane().setLayout(jDlgConduceCamioneroLayout);
         jDlgConduceCamioneroLayout.setHorizontalGroup(
             jDlgConduceCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDlgConduceCamioneroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(btncargarCamionero)
-                .addContainerGap())
-            .addGroup(jDlgConduceCamioneroLayout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jDlgConduceCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDlgConduceCamioneroLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btncargarCamionero))
+                    .addGroup(jDlgConduceCamioneroLayout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDlgConduceCamioneroLayout.setVerticalGroup(
             jDlgConduceCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDlgConduceCamioneroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jDlgConduceCamioneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btncargarCamionero)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27))
         );
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -707,6 +716,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnbuscarcamion;
     private javax.swing.JButton btnbuscarcamionero;
     private javax.swing.JButton btncancelar;
     private javax.swing.JButton btncargarCamion;
@@ -715,7 +725,6 @@ public class VistaConduce extends javax.swing.JInternalFrame {
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnmodificar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JDialog jDlgConduce;
     private javax.swing.JDialog jDlgConduceCamion;
     private javax.swing.JDialog jDlgConduceCamionero;
