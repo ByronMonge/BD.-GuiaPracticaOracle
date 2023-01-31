@@ -24,38 +24,29 @@ public class Modelo_Conduce extends Conduce {
         return conoc.accion(sql);
     }
 
-    /*public List<Conduce> listaTurnosDeConduccion() {
+    public List<Conduce> listaTurnosDeConduccion() {
         try {
             //Me retorna un "List" de "persona"
             List<Conduce> lista = new ArrayList<>();
 
-            String sql = "select cam_codigo, per_dni,per_prinombre,per_segnombre,per_apellidopat,per_apellidomat,per_direccion,per_telefono,per_email,per_fechanac,per_edad,per_genero,cam_salario,cam_tipolicencia,cam_aniosexperi from persona p, camionero c where p.per_codigo = c.cam_percodigo and c.cam_estado = 'A'";
+            String sql = "select * from conduce";
 
             ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
             //Pasar de "ResultSet" a "List"
             while (rs.next()) {
                 //Crear las instancias de las personas
-                Camionero cam = new Camionero();
+                Conduce con = new Conduce();
 
                 //Todo lo que haga en la sentencia define como voy a extraer los datos
-                cam.setCodigoCam(rs.getInt("cam_codigo"));
-                cam.setDni(rs.getString("per_dni"));
-                cam.setPrinombre(rs.getString("per_prinombre"));
-                cam.setSegnombre(rs.getString("per_segnombre"));
-                cam.setApellidopat(rs.getString("per_apellidopat"));
-                cam.setApellidomat(rs.getString("per_apellidomat"));
-                cam.setDireccion(rs.getString("per_direccion"));
-                cam.setTelefono(rs.getString("per_telefono"));
-                cam.setEmail(rs.getString("per_email"));
-                cam.setFechanac(rs.getString("per_fechanac"));
-                cam.setEdad(rs.getInt("per_edad"));
-                cam.setGenero(rs.getString("per_genero"));
-                cam.setSalario(rs.getDouble("cam_salario"));
-                cam.setTipolicencia(rs.getString("cam_tipolicencia"));
-                cam.setAniosexperiencia(rs.getInt("cam_aniosexperi"));
+                con.setCodigoCon(rs.getInt("con_codigo"));
+                con.setCodigoCam(rs.getInt("con_codcamionero"));
+                con.setCodigoCmi(rs.getInt("con_codcamion"));
+                con.setFechaSalida(rs.getString("con_fechaini"));
+                con.setFechaLlegada(rs.getString("con_fechafin"));
 
-                lista.add(cam); //Agrego los datos a la lista
+
+                lista.add(con); //Agrego los datos a la lista
             }
 
             //Cierro la conexion a la BD
@@ -67,5 +58,5 @@ public class Modelo_Conduce extends Conduce {
             Logger.getLogger(Modelo_Camionero.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
-    }*/
+    }
 }
