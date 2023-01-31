@@ -1,4 +1,3 @@
-
 package Vista;
 
 import com.toedter.calendar.JDateChooser;
@@ -10,12 +9,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-
 public class VistaPaquete extends javax.swing.JInternalFrame {
-
 
     public VistaPaquete() {
         initComponents();
@@ -173,14 +171,6 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         this.jLabel3 = jLabel3;
     }
 
-    public JLabel getjLabel8() {
-        return jLabel8;
-    }
-
-    public void setjLabel8(JLabel jLabel8) {
-        this.jLabel8 = jLabel8;
-    }
-
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
@@ -251,54 +241,6 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
 
     public void setLbcedcamionero(JLabel lbcedcamionero) {
         this.lbcedcamionero = lbcedcamionero;
-    }
-
-    public JLabel getLblbuscamionero() {
-        return lblbuscamionero;
-    }
-
-    public void setLblbuscamionero(JLabel lblbuscamionero) {
-        this.lblbuscamionero = lblbuscamionero;
-    }
-
-    public JLabel getLblbuscarcliente() {
-        return lblbuscarcliente;
-    }
-
-    public void setLblbuscarcliente(JLabel lblbuscarcliente) {
-        this.lblbuscarcliente = lblbuscarcliente;
-    }
-
-    public JLabel getLblbuscardestinatario() {
-        return lblbuscardestinatario;
-    }
-
-    public void setLblbuscardestinatario(JLabel lblbuscardestinatario) {
-        this.lblbuscardestinatario = lblbuscardestinatario;
-    }
-
-    public JLabel getLblcargarcamionero() {
-        return lblcargarcamionero;
-    }
-
-    public void setLblcargarcamionero(JLabel lblcargarcamionero) {
-        this.lblcargarcamionero = lblcargarcamionero;
-    }
-
-    public JLabel getLblcargarcliente() {
-        return lblcargarcliente;
-    }
-
-    public void setLblcargarcliente(JLabel lblcargarcliente) {
-        this.lblcargarcliente = lblcargarcliente;
-    }
-
-    public JLabel getLblcargardestinatario() {
-        return lblcargardestinatario;
-    }
-
-    public void setLblcargardestinatario(JLabel lblcargardestinatario) {
-        this.lblcargardestinatario = lblcargardestinatario;
     }
 
     public JLabel getLblcedcliente() {
@@ -565,15 +507,93 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         this.txtnomdestinatario = txtnomdestinatario;
     }
 
-    public JTextField getTxtpeso() {
-        return txtpeso;
+    public JButton getBtnbuscarcamionero() {
+        return btnbuscarcamionero;
     }
 
-    public void setTxtpeso(JTextField txtpeso) {
-        this.txtpeso = txtpeso;
+    public void setBtnbuscarcamionero(JButton btnbuscarcamionero) {
+        this.btnbuscarcamionero = btnbuscarcamionero;
     }
-    
-    
+
+    public JButton getBtnbuscarcliente() {
+        return btnbuscarcliente;
+    }
+
+    public void setBtnbuscarcliente(JButton btnbuscarcliente) {
+        this.btnbuscarcliente = btnbuscarcliente;
+    }
+
+    public JButton getBtnbuscardestinatario() {
+        return btnbuscardestinatario;
+    }
+
+    public void setBtnbuscardestinatario(JButton btnbuscardestinatario) {
+        this.btnbuscardestinatario = btnbuscardestinatario;
+    }
+
+    public JTextField getTxtCodigoProvincia() {
+        return txtCodigoProvincia;
+    }
+
+    public void setTxtCodigoProvincia(JTextField txtCodigoProvincia) {
+        this.txtCodigoProvincia = txtCodigoProvincia;
+    }
+
+    public JTextField getTxtcodigoCliente() {
+        return txtcodigoCliente;
+    }
+
+    public void setTxtcodigoCliente(JTextField txtcodigoCliente) {
+        this.txtcodigoCliente = txtcodigoCliente;
+    }
+
+    public JTextField getTxtcodigoDestinatario() {
+        return txtcodigoDestinatario;
+    }
+
+    public void setTxtcodigoDestinatario(JTextField txtcodigoDestinatario) {
+        this.txtcodigoDestinatario = txtcodigoDestinatario;
+    }
+
+    public JButton getBtncargarCamionero() {
+        return btncargarCamionero;
+    }
+
+    public void setBtncargarCamionero(JButton btncargarCamionero) {
+        this.btncargarCamionero = btncargarCamionero;
+    }
+
+    public JButton getBtncargarCliente() {
+        return btncargarCliente;
+    }
+
+    public void setBtncargarCliente(JButton btncargarCliente) {
+        this.btncargarCliente = btncargarCliente;
+    }
+
+    public JButton getBtncargarDestinatario() {
+        return btncargarDestinatario;
+    }
+
+    public void setBtncargarDestinatario(JButton btncargarDestinatario) {
+        this.btncargarDestinatario = btncargarDestinatario;
+    }
+
+    public JTextField getTxtcodigoCamionero() {
+        return txtcodigoCamionero;
+    }
+
+    public void setTxtcodigoCamionero(JTextField txtcodigoCamionero) {
+        this.txtcodigoCamionero = txtcodigoCamionero;
+    }
+
+    public JSpinner getSpinnerPeso() {
+        return spinnerPeso;
+    }
+
+    public void setSpinnerPeso(JSpinner spinnerPeso) {
+        this.spinnerPeso = spinnerPeso;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -590,9 +610,6 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         btnguardar = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
-        lblbuscarcliente = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        lblbuscardestinatario = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         lblcodprovincia = new javax.swing.JLabel();
         lblprovincia = new javax.swing.JLabel();
@@ -600,7 +617,6 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         jLabel15 = new javax.swing.JLabel();
         cbxprovincia = new javax.swing.JComboBox<>();
         lblpeso = new javax.swing.JLabel();
-        txtpeso = new javax.swing.JTextField();
         lblsalidapro = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jclsalidapro = new com.toedter.calendar.JDateChooser();
@@ -620,25 +636,32 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         txtcedcamionero = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         lblnomcamionero = new javax.swing.JLabel();
-        lblbuscamionero = new javax.swing.JLabel();
+        btnbuscarcliente = new javax.swing.JButton();
+        btnbuscardestinatario = new javax.swing.JButton();
+        btnbuscarcamionero = new javax.swing.JButton();
+        txtCodigoProvincia = new javax.swing.JTextField();
+        txtcodigoCliente = new javax.swing.JTextField();
+        txtcodigoDestinatario = new javax.swing.JTextField();
+        txtcodigoCamionero = new javax.swing.JTextField();
+        spinnerPeso = new javax.swing.JSpinner();
         jDlgClientes = new javax.swing.JDialog();
         pnlprincipalcli = new javax.swing.JPanel();
         lbltitulo = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblclientes = new javax.swing.JTable();
-        lblcargarcliente = new javax.swing.JLabel();
+        btncargarCliente = new javax.swing.JButton();
         jDlgDestinatario = new javax.swing.JDialog();
         pblprincipaldes = new javax.swing.JPanel();
         lbltitulo1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbldestinatarios = new javax.swing.JTable();
-        lblcargardestinatario = new javax.swing.JLabel();
+        btncargarDestinatario = new javax.swing.JButton();
         jDlgCamionero = new javax.swing.JDialog();
         pnlprincipalcam = new javax.swing.JPanel();
         lbltitulo2 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblcamioneros = new javax.swing.JTable();
-        lblcargarcamionero = new javax.swing.JLabel();
+        btncargarCamionero = new javax.swing.JButton();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         pnlprincipalframe = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -672,24 +695,6 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
 
         btncancelar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         btncancelar.setText("Cancelar");
-
-        lblbuscarcliente.setBackground(new java.awt.Color(255, 255, 255));
-        lblbuscarcliente.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        lblbuscarcliente.setForeground(new java.awt.Color(255, 255, 255));
-        lblbuscarcliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa.png"))); // NOI18N
-        lblbuscarcliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblbuscarcliente.setOpaque(true);
-
-        jLabel8.setFont(new java.awt.Font("Roboto Black", 1, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel8.setText("####");
-
-        lblbuscardestinatario.setBackground(new java.awt.Color(255, 255, 255));
-        lblbuscardestinatario.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        lblbuscardestinatario.setForeground(new java.awt.Color(255, 255, 255));
-        lblbuscardestinatario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa.png"))); // NOI18N
-        lblbuscardestinatario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblbuscardestinatario.setOpaque(true);
 
         jLabel13.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel13.setText("Información del destino");
@@ -748,12 +753,13 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         lblnomcamionero.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         lblnomcamionero.setText("Nombre y Apellido:");
 
-        lblbuscamionero.setBackground(new java.awt.Color(255, 255, 255));
-        lblbuscamionero.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        lblbuscamionero.setForeground(new java.awt.Color(255, 255, 255));
-        lblbuscamionero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa.png"))); // NOI18N
-        lblbuscamionero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblbuscamionero.setOpaque(true);
+        btnbuscarcliente.setText("buscar");
+
+        btnbuscardestinatario.setText("buscar");
+
+        btnbuscarcamionero.setText("buscar");
+
+        spinnerPeso.setModel(new javax.swing.SpinnerNumberModel(1.0d, 1.0d, 1000.0d, 1.0d));
 
         javax.swing.GroupLayout pnlprincipalLayout = new javax.swing.GroupLayout(pnlprincipal);
         pnlprincipal.setLayout(pnlprincipalLayout);
@@ -762,200 +768,209 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
             .addGroup(pnlprincipalLayout.createSequentialGroup()
                 .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlprincipalLayout.createSequentialGroup()
-                        .addGap(376, 376, 376)
-                        .addComponent(jLabel2)
-                        .addGap(274, 274, 274)
-                        .addComponent(jLabel8))
-                    .addGroup(pnlprincipalLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(jLabel3)
-                                .addGap(10, 10, 10)
-                                .addComponent(lblbuscarcliente))
+                                .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(lblcliente)
+                                        .addGap(5, 5, 5)
+                                        .addComponent(txtnomcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabel21)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnbuscardestinatario))
+                                    .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                        .addComponent(lbldestinatario)
+                                        .addGap(7, 7, 7)
+                                        .addComponent(txtnomdestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel13)
+                                    .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                        .addGap(54, 54, 54)
+                                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                                .addComponent(lblcodcliente)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtcodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                                .addComponent(lblcedcliente)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(txtcedcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblprovincia)
+                                            .addComponent(lblcodprovincia))
+                                        .addGap(36, 36, 36)
+                                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(cbxprovincia, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtCodigoProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lblceddestinatario)
+                                            .addComponent(lblcoddestinatario))
+                                        .addGap(47, 47, 47)
+                                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                                .addGap(22, 22, 22)
+                                                .addComponent(txtceddestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txtcodigoDestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(45, 45, 45)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                                .addGap(2, 2, 2)
+                                                .addComponent(jLabel15))
+                                            .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addComponent(jLabel27)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(btnbuscarcamionero))
+                                            .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                                .addComponent(lblnomcamionero)
+                                                .addGap(7, 7, 7)
+                                                .addComponent(txtnomcamionero, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lbcedcamionero)
+                                            .addComponent(lblcodcamionero))
+                                        .addGap(71, 71, 71)
+                                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtcedcamionero, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtcodigoCamionero, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                                .addComponent(lblpeso)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(spinnerPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel18))
+                                            .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                                .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(lblllegadapro)
+                                                    .addComponent(lblsalidapro))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jclsalidapro, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jclllegadapro, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                             .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addComponent(lblcodcliente))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(lblcedcliente)
-                                .addGap(14, 14, 14)
-                                .addComponent(txtcedcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(lblcliente)
-                                .addGap(5, 5, 5)
-                                .addComponent(txtnomcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel21)
-                                .addGap(9, 9, 9)
-                                .addComponent(lblbuscardestinatario))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(lblcoddestinatario))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(lblceddestinatario)
-                                .addGap(19, 19, 19)
-                                .addComponent(txtceddestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addComponent(lbldestinatario)
-                                .addGap(7, 7, 7)
-                                .addComponent(txtnomdestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel13)
-                            .addComponent(lblcodprovincia)
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addComponent(lblprovincia)
-                                .addGap(36, 36, 36)
-                                .addComponent(cbxprovincia, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(45, 45, 45)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(jLabel15))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addComponent(lblpeso)
-                                .addGap(15, 15, 15)
-                                .addComponent(txtpeso, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel18))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(lblsalidapro)
-                                .addGap(20, 20, 20)
-                                .addComponent(jclsalidapro, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addComponent(lblllegadapro)
-                                .addGap(13, 13, 13)
-                                .addComponent(jclllegadapro, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(lblfecharegistro)
-                                .addGap(30, 30, 30)
-                                .addComponent(jclfecharegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel27)
-                                .addGap(19, 19, 19)
-                                .addComponent(lblbuscamionero))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(lblcodcamionero))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(lbcedcamionero)
-                                .addGap(9, 9, 9)
-                                .addComponent(txtcedcamionero, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addComponent(lblnomcamionero)
-                                .addGap(7, 7, 7)
-                                .addComponent(txtnomcamionero, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                        .addGap(7, 7, 7)
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnbuscarcliente)
+                                        .addGap(570, 570, 570))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlprincipalLayout.createSequentialGroup()
+                                        .addComponent(lblfecharegistro)
+                                        .addGap(18, 18, 18)))
+                                .addComponent(jclfecharegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(pnlprincipalLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(btnguardar)
                         .addGap(633, 633, 633)
-                        .addComponent(btncancelar)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addComponent(btncancelar))
+                    .addGroup(pnlprincipalLayout.createSequentialGroup()
+                        .addGap(376, 376, 376)
+                        .addComponent(jLabel2)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         pnlprincipalLayout.setVerticalGroup(
             pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlprincipalLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(pnlprincipalLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel8)))
-                .addGap(19, 19, 19)
+                .addComponent(jLabel2)
                 .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlprincipalLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(btnbuscarcliente))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblcodcliente)
+                            .addComponent(txtcodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(jLabel3))
-                            .addComponent(lblbuscarcliente))
-                        .addGap(11, 11, 11)
-                        .addComponent(lblcodcliente)
-                        .addGap(6, 6, 6)
-                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(3, 3, 3)
+                                .addGap(4, 4, 4)
                                 .addComponent(lblcedcliente))
-                            .addComponent(txtcedcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtcedcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlprincipalLayout.createSequentialGroup()
                                 .addGap(3, 3, 3)
                                 .addComponent(lblcliente))
                             .addComponent(txtnomcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(15, 15, 15)
-                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel21))
-                            .addComponent(lblbuscardestinatario))
-                        .addGap(13, 13, 13)
-                        .addComponent(lblcoddestinatario)
-                        .addGap(5, 5, 5)
-                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblceddestinatario)
-                            .addComponent(txtceddestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21)
+                            .addComponent(btnbuscardestinatario))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblcoddestinatario)
+                            .addComponent(txtcodigoDestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtceddestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblceddestinatario))
                         .addGap(20, 20, 20)
                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbldestinatario)
                             .addComponent(txtnomdestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(20, 20, 20)
                         .addComponent(jLabel13)
-                        .addGap(13, 13, 13)
-                        .addComponent(lblcodprovincia)
-                        .addGap(15, 15, 15)
+                        .addGap(10, 10, 10)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblcodprovincia)
+                            .addComponent(txtCodigoProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblprovincia)
                             .addComponent(cbxprovincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlprincipalLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
+                        .addGap(28, 28, 28)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlprincipalLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel15)
-                        .addGap(32, 32, 32)
-                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(lblpeso))
-                            .addComponent(txtpeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18))
-                        .addGap(13, 13, 13)
-                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addComponent(lblsalidapro))
-                            .addComponent(jclsalidapro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20)
-                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblllegadapro)
-                            .addComponent(jclllegadapro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20)
+                        .addGap(4, 4, 4)
                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblfecharegistro)
                             .addComponent(jclfecharegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel15)
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblpeso)
+                            .addComponent(spinnerPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18))
+                        .addGap(40, 40, 40)
                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel27))
-                            .addComponent(lblbuscamionero))
-                        .addGap(13, 13, 13)
-                        .addComponent(lblcodcamionero)
-                        .addGap(5, 5, 5)
-                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbcedcamionero)
-                            .addComponent(txtcedcamionero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblsalidapro)
+                            .addComponent(jclsalidapro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jclllegadapro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblllegadapro))
+                        .addGap(56, 56, 56)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel27)
+                            .addComponent(btnbuscarcamionero))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblcodcamionero)
+                            .addComponent(txtcodigoCamionero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtcedcamionero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbcedcamionero))
                         .addGap(20, 20, 20)
                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblnomcamionero)
@@ -993,17 +1008,12 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Cód", "DNI", "Nombre", "Apellido"
+                "Código", "DNI", "Nombre", "Apellido"
             }
         ));
         jScrollPane2.setViewportView(tblclientes);
 
-        lblcargarcliente.setBackground(new java.awt.Color(255, 255, 255));
-        lblcargarcliente.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        lblcargarcliente.setForeground(new java.awt.Color(255, 255, 255));
-        lblcargarcliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/listo.png"))); // NOI18N
-        lblcargarcliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblcargarcliente.setOpaque(true);
+        btncargarCliente.setText("Cargar");
 
         javax.swing.GroupLayout pnlprincipalcliLayout = new javax.swing.GroupLayout(pnlprincipalcli);
         pnlprincipalcli.setLayout(pnlprincipalcliLayout);
@@ -1012,9 +1022,9 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
             .addGroup(pnlprincipalcliLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(lblcargarcliente)
-                .addGap(49, 49, 49))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(btncargarCliente)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlprincipalcliLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbltitulo)
@@ -1028,7 +1038,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlprincipalcliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblcargarcliente))
+                    .addComponent(btncargarCliente))
                 .addGap(37, 37, 37))
         );
 
@@ -1064,12 +1074,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         ));
         jScrollPane3.setViewportView(tbldestinatarios);
 
-        lblcargardestinatario.setBackground(new java.awt.Color(255, 255, 255));
-        lblcargardestinatario.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        lblcargardestinatario.setForeground(new java.awt.Color(255, 255, 255));
-        lblcargardestinatario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/listo.png"))); // NOI18N
-        lblcargardestinatario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblcargardestinatario.setOpaque(true);
+        btncargarDestinatario.setText("Cargar");
 
         javax.swing.GroupLayout pblprincipaldesLayout = new javax.swing.GroupLayout(pblprincipaldes);
         pblprincipaldes.setLayout(pblprincipaldesLayout);
@@ -1079,8 +1084,8 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblcargardestinatario)
-                .addGap(49, 49, 49))
+                .addComponent(btncargarDestinatario)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pblprincipaldesLayout.createSequentialGroup()
                 .addContainerGap(202, Short.MAX_VALUE)
                 .addComponent(lbltitulo1)
@@ -1094,7 +1099,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pblprincipaldesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblcargardestinatario))
+                    .addComponent(btncargarDestinatario))
                 .addGap(37, 37, 37))
         );
 
@@ -1130,12 +1135,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         ));
         jScrollPane4.setViewportView(tblcamioneros);
 
-        lblcargarcamionero.setBackground(new java.awt.Color(255, 255, 255));
-        lblcargarcamionero.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        lblcargarcamionero.setForeground(new java.awt.Color(255, 255, 255));
-        lblcargarcamionero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/listo.png"))); // NOI18N
-        lblcargarcamionero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblcargarcamionero.setOpaque(true);
+        btncargarCamionero.setText("Cargar");
 
         javax.swing.GroupLayout pnlprincipalcamLayout = new javax.swing.GroupLayout(pnlprincipalcam);
         pnlprincipalcam.setLayout(pnlprincipalcamLayout);
@@ -1144,9 +1144,9 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
             .addGroup(pnlprincipalcamLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblcargarcamionero)
-                .addGap(49, 49, 49))
+                .addGap(18, 18, 18)
+                .addComponent(btncargarCamionero)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlprincipalcamLayout.createSequentialGroup()
                 .addContainerGap(210, Short.MAX_VALUE)
                 .addComponent(lbltitulo2)
@@ -1160,7 +1160,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlprincipalcamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblcargarcamionero))
+                    .addComponent(btncargarCamionero))
                 .addGap(37, 37, 37))
         );
 
@@ -1262,11 +1262,16 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnbuscarcamionero;
+    private javax.swing.JButton btnbuscarcliente;
+    private javax.swing.JButton btnbuscardestinatario;
     private javax.swing.JButton btncancelar;
+    private javax.swing.JButton btncargarCamionero;
+    private javax.swing.JButton btncargarCliente;
+    private javax.swing.JButton btncargarDestinatario;
     private javax.swing.JButton btncrear;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
@@ -1285,7 +1290,6 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1295,12 +1299,6 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
     private com.toedter.calendar.JDateChooser jclllegadapro;
     private com.toedter.calendar.JDateChooser jclsalidapro;
     private javax.swing.JLabel lbcedcamionero;
-    private javax.swing.JLabel lblbuscamionero;
-    private javax.swing.JLabel lblbuscarcliente;
-    private javax.swing.JLabel lblbuscardestinatario;
-    private javax.swing.JLabel lblcargarcamionero;
-    private javax.swing.JLabel lblcargarcliente;
-    private javax.swing.JLabel lblcargardestinatario;
     private javax.swing.JLabel lblcedcliente;
     private javax.swing.JLabel lblceddestinatario;
     private javax.swing.JLabel lblcliente;
@@ -1323,17 +1321,21 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
     private javax.swing.JPanel pnlprincipalcam;
     private javax.swing.JPanel pnlprincipalcli;
     private javax.swing.JPanel pnlprincipalframe;
+    private javax.swing.JSpinner spinnerPeso;
     private javax.swing.JTable tablapaquetes;
     private javax.swing.JTable tblcamioneros;
     private javax.swing.JTable tblclientes;
     private javax.swing.JTable tbldestinatarios;
+    private javax.swing.JTextField txtCodigoProvincia;
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtcedcamionero;
     private javax.swing.JTextField txtcedcliente;
     private javax.swing.JTextField txtceddestinatario;
+    private javax.swing.JTextField txtcodigoCamionero;
+    private javax.swing.JTextField txtcodigoCliente;
+    private javax.swing.JTextField txtcodigoDestinatario;
     private javax.swing.JTextField txtnomcamionero;
     private javax.swing.JTextField txtnomcliente;
     private javax.swing.JTextField txtnomdestinatario;
-    private javax.swing.JTextField txtpeso;
     // End of variables declaration//GEN-END:variables
 }
