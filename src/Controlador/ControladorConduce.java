@@ -114,6 +114,9 @@ public class ControladorConduce {
                     vista.getjDlgConduce().setTitle("Editar");
                     vista.getjDlgConduce().setVisible(true);
                     vista.getTxtcodigoconduce().setEditable(false); //Bloqueo el campo
+                    //Hago visible el label y el txt del codigo de conduce
+                    vista.getTxtcodigoconduce().setVisible(true);
+                    vista.getLblcodigoconduce().setVisible(true);
 
                     //Seteo los datos en los campos de texto
                     vista.getTxtcodigoconduce().setText(String.valueOf(c.getCodigoCon()));
@@ -420,7 +423,10 @@ public class ControladorConduce {
     public void limpiarDatosYDespacerCampos() {
 
         vista.getTxtcodigocamionero().setText("");
+        vista.getTxtcedula().setText("");
+        vista.getTxtnombreyapellido().setText("");
         vista.getTxtcodigocamion().setText("");
+        vista.getTxtplaca().setText("");
         vista.getjFechainicio().setDate(null);
 
         vista.getTxtcodigoconduce().setVisible(false);
