@@ -5,6 +5,7 @@ import Modelo.Modelo_Camionero;
 import Modelo.Modelo_Persona;
 import Modelo.Validaciones;
 import Vista.VistaCamionero;
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.ParseException;
@@ -337,6 +338,7 @@ public class ControladorCamionero {
         }*/
         if (vista.getTxtprinombre().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtprinombre().getText())) {
             validar = false;
+            vista.getTxtprinombre().setBackground(Color.red);
         }
 
         if (vista.getTxtsegnombre().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtsegnombre().getText())) {
