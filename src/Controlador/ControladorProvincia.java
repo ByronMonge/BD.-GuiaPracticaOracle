@@ -1,7 +1,5 @@
 package Controlador;
 
-import Modelo.Camion;
-import Modelo.Modelo_Camion;
 import Modelo.Modelo_Provincia;
 import Modelo.Provincia;
 import Modelo.Validaciones;
