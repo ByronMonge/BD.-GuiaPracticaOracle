@@ -1192,7 +1192,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        pnlprincipalframe.setBackground(new java.awt.Color(200, 255, 255));
+        pnlprincipalframe.setBackground(new java.awt.Color(102, 153, 255));
 
         jLabel1.setText("Buscar:");
 

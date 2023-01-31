@@ -1,7 +1,5 @@
 package Modelo;
 
-import java.time.LocalDate;
-import java.util.Date;
 
 public class Paquete {
 
@@ -10,7 +8,7 @@ public class Paquete {
     private int codprovincia;
     private int coddestina;
     private int codcamionero;
-    private String salidaproga;
+    private String salidaprogra;
     private String llegadaprogra;
     private double peso;
     private String fecharegistro;
@@ -24,7 +22,7 @@ public class Paquete {
         this.codprovincia = codprovincia;
         this.coddestina = coddestina;
         this.codcamionero = codcamionero;
-        this.salidaproga = salidaproga;
+        this.salidaprogra = salidaproga;
         this.llegadaprogra = llegadaprogra;
         this.peso = peso;
         this.fecharegistro = fecharegistro;
@@ -70,12 +68,12 @@ public class Paquete {
         this.codcamionero = codcamionero;
     }
 
-    public String getSalidaproga() {
-        return salidaproga;
+    public String getSalidaprogra() {
+        return salidaprogra;
     }
 
-    public void setSalidaproga(String salidaproga) {
-        this.salidaproga = salidaproga;
+    public void setSalidaprogra(String salidaprogra) {
+        this.salidaprogra = salidaprogra;
     }
 
     public String getLlegadaprogra() {
