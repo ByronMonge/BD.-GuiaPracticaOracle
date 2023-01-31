@@ -2,10 +2,13 @@ package Controlador;
 
 import Modelo.Camion;
 import Modelo.Camionero;
+import Modelo.Conduce;
 import Modelo.Modelo_Camion;
 import Modelo.Modelo_Camionero;
 import Modelo.Modelo_Conduce;
 import Vista.VistaConduce;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -27,7 +30,8 @@ public class ControladorConduce {
         vista.getBtnbuscarcamionero().addActionListener(l -> abrirjDialogCamionero());
         vista.getBtnbuscarcamion().addActionListener(l -> abrirjDialogCamion());
         vista.getBtncargarCamionero().addActionListener(l -> cargarDatosCamioneroEnTXT());
-        vista.getBtncargarCamion().addActionListener(l-> cargarDatosCamionEnTXT());
+        vista.getBtncargarCamion().addActionListener(l -> cargarDatosCamionEnTXT());
+        vista.getBtnguardar().addActionListener(l -> crearOModificarConduccion());
     }
 
     public void abrirDialogCrear() {
@@ -38,6 +42,29 @@ public class ControladorConduce {
         vista.getjDlgConduce().setVisible(true);
     }
 
+    /*public void cargarDatosTurnosDeConduccion() {
+
+        //Modelo_Camionero modeloCamionero = new Modelo_Camionero();
+        vista.getTablaconduccion().setRowHeight(25);
+        DefaultTableModel estructuraTabla = (DefaultTableModel) vista.getTblcamionerosDlg().getModel();
+        estructuraTabla.setRowCount(0);
+
+        List<Conduce> listap = modelo.lista;
+
+        Holder<Integer> i = new Holder<>(0);
+
+        listap.stream().forEach(persona -> {
+
+            estructuraTabla.addRow(new Object[8]);
+
+            vista.getTblcamionerosDlg().setValueAt(persona.getCodigoCam(), i.value, 0);
+            vista.getTblcamionerosDlg().setValueAt(persona.getDni(), i.value, 1);
+            vista.getTblcamionerosDlg().setValueAt(persona.getPrinombre(), i.value, 2);
+            vista.getTblcamionerosDlg().setValueAt(persona.getApellidopat(), i.value, 3);
+
+            i.value++;
+        });
+    }*/
     //TODO SOBRE CAMIONERO
     public void abrirjDialogCamionero() {
         vista.getjDlgConduceCamionero().setLocationRelativeTo(vista);
@@ -139,12 +166,100 @@ public class ControladorConduce {
             String placa;
 
             codigo = vista.getTblcamionesDlg().getValueAt(fila, 0).toString();
-            placa= vista.getTblcamionesDlg().getValueAt(fila, 1).toString();
+            placa = vista.getTblcamionesDlg().getValueAt(fila, 1).toString();
 
             vista.getTxtcodigocamion().setText(codigo);
             vista.getTxtplaca().setText(placa);
 
             vista.getjDlgConduceCamion().dispose();//Cierro la ventana luego de cargar los datos
         }
+    }
+
+    public void crearOModificarConduccion() {
+
+        if (vista.getjDlgConduce().getName().equals("Crear nueva conduccion")) { //CREAR
+
+            if (validarDatos()) {
+
+                int codigoCamionero = Integer.parseInt(vista.getTxtcodigocamionero().getText());
+                int codigoCamion = Integer.parseInt(vista.getTxtcodigocamion().getText());
+                Date fechainicio = vista.getjFechainicio().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
+                Date fechafin = vista.getjFechafin().getDate();
+
+                SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Doy formato a la fecha
+                String fechainicioTexto = formato.format(fechainicio); //La fecha tiene el formato indicado y es de tipo String
+                String fechafinTexto = formato.format(fechafin);
+
+                //Seteo los datos
+                Modelo_Conduce conduce = new Modelo_Conduce();
+
+                conduce.setCodigoCam(codigoCamionero);
+                conduce.setCodigoCmi(codigoCamion);
+                conduce.setFechaSalida(fechainicioTexto);
+                conduce.setFechaLlegada(fechafinTexto);
+
+                if (conduce.crearConduccion()) {
+                    vista.getjDlgConduce().setVisible(false);
+                    JOptionPane.showMessageDialog(vista, "Turno de conduccion Creado Satisfactoriamente");
+                    //cargarTabla();
+                } else {
+                    JOptionPane.showMessageDialog(vista, "No se pudo crear la el turno de conduccion");
+                }
+            } else {
+
+                JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
+            }
+
+        }
+        /*else {//EDITAR 
+
+            if (validarDatos()) {
+
+                int codigo = Integer.valueOf(vista.getTxtcodigo().getText());
+                String nombre = vista.getTxtnombre().getText();
+                String region = vista.getTxtregion().getText();
+                int cantones = Integer.parseInt(vista.getSpinnercantones().getValue().toString());
+
+                Modelo_Provincia provincia = new Modelo_Provincia();
+                provincia.setCodigoPro(codigo);
+                provincia.setNombre(nombre);
+                provincia.setRegion(region);
+                provincia.setNumcanton(cantones);
+
+                if (provincia.modificarProvincia()) {
+                    vista.getjDlgprovincias().setVisible(false);
+                    JOptionPane.showMessageDialog(vista, "Provincia Modificada Satisfactoriamente");
+                    cargarTabla();
+                } else {
+                    JOptionPane.showMessageDialog(vista, "Error: No se pudo modificar la provincia");
+                }
+            } else {
+                JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
+            }
+
+        }*/
+    }
+
+    public boolean validarDatos() {
+        boolean validar = true;
+
+        if (vista.getTxtcodigocamionero().getText().isEmpty()) {
+
+            validar = false;
+        }
+
+        if (vista.getTxtcodigocamion().getText().isEmpty()) {
+            validar = false;
+        }
+
+        if (vista.getjFechainicio().getDate() == null) {
+            validar = false;
+        }
+
+        if (vista.getjFechafin().getDate() == null) {
+            validar = false;
+        }
+
+        return validar;
     }
 }
