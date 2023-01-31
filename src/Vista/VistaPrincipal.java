@@ -92,6 +92,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.btnconduce = btnconduce;
     }
 
+    public JButton getBtnpaquetes() {
+        return btnpaquetes;
+    }
+
+    public void setBtnpaquetes(JButton btnpaquetes) {
+        this.btnpaquetes = btnpaquetes;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -108,6 +116,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btndestinatario = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JToolBar.Separator();
         btnconduce = new javax.swing.JButton();
+        btnpaquetes = new javax.swing.JButton();
         escritorio = new javax.swing.JDesktopPane();
         MnuCamioneros = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -187,6 +196,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnconduce.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnconduce);
 
+        btnpaquetes.setText("Paquete");
+        btnpaquetes.setFocusable(false);
+        btnpaquetes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnpaquetes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnpaquetes);
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
@@ -234,6 +249,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btncamion;
     private javax.swing.JButton btnconduce;
     private javax.swing.JButton btndestinatario;
+    private javax.swing.JButton btnpaquetes;
     private javax.swing.JButton btnprovincia;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
