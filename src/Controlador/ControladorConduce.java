@@ -23,6 +23,8 @@ public class ControladorConduce {
         this.modelo = modelo;
         this.vista = vista;
         vista.setVisible(true);
+        //cargarTablaTurnosDeConduccion();
+        cargarTablaTurnosDeConduccion();
     }
 
     public void iniciarControl() {
@@ -40,31 +42,77 @@ public class ControladorConduce {
         vista.getjDlgConduce().setSize(876, 733);
         vista.getjDlgConduce().setTitle("Crear nueva conduccion");
         vista.getjDlgConduce().setVisible(true);
+        limpiarDatosYDespacerCampos();
     }
 
-    /*public void cargarDatosTurnosDeConduccion() {
+    /*public void cargarTablaTurnosDeConduccion() {
 
-        //Modelo_Camionero modeloCamionero = new Modelo_Camionero();
+        Modelo_Camionero modeloCamionero = new Modelo_Camionero();
+        Modelo_Camion modeloCamion = new Modelo_Camion();
+
         vista.getTablaconduccion().setRowHeight(25);
         DefaultTableModel estructuraTabla = (DefaultTableModel) vista.getTblcamionerosDlg().getModel();
         estructuraTabla.setRowCount(0);
 
-        List<Conduce> listap = modelo.lista;
+        List<Conduce> listacon = modelo.listaTurnosDeConduccion();
+        List<Camionero> listacam = modeloCamionero.listaCamionerosTabla();
+        List<Camion> listacmi = modeloCamion.listaCamiones();
 
         Holder<Integer> i = new Holder<>(0);
 
-        listap.stream().forEach(persona -> {
+        listacon.stream().forEach(t -> {
 
-            estructuraTabla.addRow(new Object[8]);
+            listacam.stream().forEach(c -> {
 
-            vista.getTblcamionerosDlg().setValueAt(persona.getCodigoCam(), i.value, 0);
-            vista.getTblcamionerosDlg().setValueAt(persona.getDni(), i.value, 1);
-            vista.getTblcamionerosDlg().setValueAt(persona.getPrinombre(), i.value, 2);
-            vista.getTblcamionerosDlg().setValueAt(persona.getApellidopat(), i.value, 3);
+                if (t.getCodigoCam() == c.getCodigoCam()) {
 
-            i.value++;
+                    estructuraTabla.addRow(new Object[8]);
+
+                    vista.getTablaconduccion().setValueAt(t.getCodigoCon(), i.value, 0);
+                    vista.getTablaconduccion().setValueAt(t.getFechaSalida(), i.value, 1);
+                    vista.getTablaconduccion().setValueAt(t.getFechaLlegada(), i.value, 2);
+                    vista.getTablaconduccion().setValueAt(t.getCodigoCam(), i.value, 3);
+                    vista.getTablaconduccion().setValueAt(c.getPrinombre(), i.value, 4);
+                    vista.getTablaconduccion().setValueAt(t.getCodigoCmi(), i.value, 5);
+
+                    i.value++;
+                }
+
+            });
+
         });
     }*/
+    public void cargarTablaTurnosDeConduccion() {
+
+        Modelo_Camionero modeloCamionero = new Modelo_Camionero();
+        Modelo_Camion modeloCamion = new Modelo_Camion();
+
+        DefaultTableModel tabla = (DefaultTableModel) vista.getTablaconduccion().getModel();
+        tabla.setNumRows(0);
+
+        List<Conduce> listacon = modelo.listaTurnosDeConduccion();
+        List<Camionero> listacam = modeloCamionero.listaCamionerosTabla();
+        List<Camion> listacmi = modeloCamion.listaCamiones();
+
+        listacon.stream().forEach(c -> {
+
+            listacam.stream().forEach(ca -> {
+
+                if (c.getCodigoCam() == ca.getCodigoCam()) {
+
+                    listacmi.stream().forEach(ci -> {
+
+                        if (c.getCodigoCmi() == ci.getCodigoCmi()) {
+                            
+                            String[] datos = {String.valueOf(c.getCodigoCon()), c.getFechaSalida(), c.getFechaLlegada(), String.valueOf(c.getCodigoCam()), ca.getPrinombre() + " " + ca.getApellidopat(), String.valueOf(c.getCodigoCmi()), ci.getPlaca()};
+                            tabla.addRow(datos);
+                        }
+                    });
+                }
+            });
+        });
+    }
+
     //TODO SOBRE CAMIONERO
     public void abrirjDialogCamionero() {
         vista.getjDlgConduceCamionero().setLocationRelativeTo(vista);
@@ -201,7 +249,7 @@ public class ControladorConduce {
                 if (conduce.crearConduccion()) {
                     vista.getjDlgConduce().setVisible(false);
                     JOptionPane.showMessageDialog(vista, "Turno de conduccion Creado Satisfactoriamente");
-                    //cargarTabla();
+                    cargarTablaTurnosDeConduccion();
                 } else {
                     JOptionPane.showMessageDialog(vista, "No se pudo crear la el turno de conduccion");
                 }
@@ -261,5 +309,16 @@ public class ControladorConduce {
         }
 
         return validar;
+    }
+
+    public void limpiarDatosYDespacerCampos() {
+
+        vista.getTxtcodigocamionero().setText("");
+        vista.getTxtcodigocamion().setText("");
+        vista.getjFechainicio().setDate(null);
+        vista.getjFechafin().setDate(null);
+
+        vista.getTxtcodigoconduce().setVisible(false);
+        vista.getLblcodigoconduce().setVisible(false);
     }
 }
