@@ -5,12 +5,14 @@ import Modelo.Modelo_Camionero;
 import Modelo.Modelo_Cliente;
 import Modelo.Modelo_Conduce;
 import Modelo.Modelo_Destinatario;
+import Modelo.Modelo_Paquete;
 import Modelo.Modelo_Provincia;
 import Vista.VistaCamion;
 import Vista.VistaCamionero;
 import Vista.VistaCliente;
 import Vista.VistaConduce;
 import Vista.VistaDestinatario;
+import Vista.VistaPaquete;
 import Vista.VistaPrincipal;
 import Vista.VistaProvincia;
 
@@ -31,6 +33,7 @@ public class ControladorPrincipal {
         vistaPrincipal.getBtnCliente().addActionListener(l -> crudClientes());
         vistaPrincipal.getBtndestinatario().addActionListener(l -> crudDestinatarios());
         vistaPrincipal.getBtnconduce().addActionListener(l-> crudConduce());
+        vistaPrincipal.getBtnpaquetes().addActionListener(l-> crudPaquetes());
     }
 
     private void crudCamioneros() {
@@ -93,5 +96,17 @@ public class ControladorPrincipal {
 
         ControladorProvincia control = new ControladorProvincia(modelo, vista);
         control.iniciarControl();
+    }
+    
+    private void crudPaquetes() {
+        //Instancio las clases del Modelo y la Vista.
+        VistaPaquete vista = new VistaPaquete();
+        Modelo_Paquete modelo = new Modelo_Paquete();
+
+        //Agregar VistaCamionero al Desktop Pane.
+        vistaPrincipal.getEscritorio().add(vista);
+
+        ControladorPaquete control = new ControladorPaquete(modelo, vista);
+        control.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
     }
 }
