@@ -14,13 +14,13 @@ public class Modelo_Conduce extends Conduce {
     public Modelo_Conduce() {
     }
 
-    public Modelo_Conduce(int codigoCon, String fechaSalida, String fechaLlegada, int codigoCam, int codigoCmi) {
-        super(codigoCon, fechaSalida, fechaLlegada, codigoCam, codigoCmi);
+    public Modelo_Conduce(int codigoCon, String fechaSalida, int codigoCam, int codigoCmi) {
+        super(codigoCon, fechaSalida, codigoCam, codigoCmi);
     }
 
     public boolean crearConduccion() {
 
-        String sql = "insert into conduce (con_codcamionero, con_codcamion, con_fechaini, con_fechafin) values (" + getCodigoCam() + "," + getCodigoCmi() + ",'" + getFechaSalida() + "','" + getFechaLlegada() + "')";
+        String sql = "insert into conduce (con_codcamionero, con_codcamion, con_fechaini) values (" + getCodigoCam() + "," + getCodigoCmi() + ",'" + getFechaSalida() + "')";
         return conoc.accion(sql);
     }
 
@@ -43,8 +43,6 @@ public class Modelo_Conduce extends Conduce {
                 con.setCodigoCam(rs.getInt("con_codcamionero"));
                 con.setCodigoCmi(rs.getInt("con_codcamion"));
                 con.setFechaSalida(rs.getString("con_fechaini"));
-                con.setFechaLlegada(rs.getString("con_fechafin"));
-
 
                 lista.add(con); //Agrego los datos a la lista
             }
