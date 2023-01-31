@@ -4,17 +4,15 @@ public class Conduce {
 
     private int codigoCon;
     private String fechaSalida;
-    private String fechaLlegada;
     private int codigoCam;
     private int codigoCmi;
 
     public Conduce() {
     }
 
-    public Conduce(int codigoCon, String fechaSalida, String fechaLlegada, int codigoCam, int codigoCmi) {
+    public Conduce(int codigoCon, String fechaSalida, int codigoCam, int codigoCmi) {
         this.codigoCon = codigoCon;
         this.fechaSalida = fechaSalida;
-        this.fechaLlegada = fechaLlegada;
         this.codigoCam = codigoCam;
         this.codigoCmi = codigoCmi;
     }
@@ -33,14 +31,6 @@ public class Conduce {
 
     public void setFechaSalida(String fechaSalida) {
         this.fechaSalida = fechaSalida;
-    }
-
-    public String getFechaLlegada() {
-        return fechaLlegada;
-    }
-
-    public void setFechaLlegada(String fechaLlegada) {
-        this.fechaLlegada = fechaLlegada;
     }
 
     public int getCodigoCam() {
