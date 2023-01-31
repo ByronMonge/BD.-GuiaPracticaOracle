@@ -10,15 +10,15 @@ public class Paquete {
     private int codprovincia;
     private int coddestina;
     private int codcamionero;
-    private LocalDate salidaproga;
-    private LocalDate llegadaprogra;
+    private String salidaproga;
+    private String llegadaprogra;
     private double peso;
-    private Date fecharegistro;
+    private String fecharegistro;
 
     public Paquete() {
     }
 
-    public Paquete(int codigoPaq, int codcliente, int codprovincia, int coddestina, int codcamionero, LocalDate salidaproga, LocalDate llegadaprogra, double peso, Date fecharegistro) {
+    public Paquete(int codigoPaq, int codcliente, int codprovincia, int coddestina, int codcamionero, String salidaproga, String llegadaprogra, double peso, String fecharegistro) {
         this.codigoPaq = codigoPaq;
         this.codcliente = codcliente;
         this.codprovincia = codprovincia;
@@ -70,19 +70,19 @@ public class Paquete {
         this.codcamionero = codcamionero;
     }
 
-    public LocalDate getSalidaproga() {
+    public String getSalidaproga() {
         return salidaproga;
     }
 
-    public void setSalidaproga(LocalDate salidaproga) {
+    public void setSalidaproga(String salidaproga) {
         this.salidaproga = salidaproga;
     }
 
-    public LocalDate getLlegadaprogra() {
+    public String getLlegadaprogra() {
         return llegadaprogra;
     }
 
-    public void setLlegadaprogra(LocalDate llegadaprogra) {
+    public void setLlegadaprogra(String llegadaprogra) {
         this.llegadaprogra = llegadaprogra;
     }
 
@@ -94,11 +94,11 @@ public class Paquete {
         this.peso = peso;
     }
 
-    public Date getFecharegistro() {
+    public String getFecharegistro() {
         return fecharegistro;
     }
 
-    public void setFecharegistro(Date fecharegistro) {
+    public void setFecharegistro(String fecharegistro) {
         this.fecharegistro = fecharegistro;
     }
 }
