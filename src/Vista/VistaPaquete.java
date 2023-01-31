@@ -1,6 +1,18 @@
 
 package Vista;
 
+import com.toedter.calendar.JDateChooser;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 
 public class VistaPaquete extends javax.swing.JInternalFrame {
 
@@ -9,6 +21,559 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtncancelar() {
+        return btncancelar;
+    }
+
+    public void setBtncancelar(JButton btncancelar) {
+        this.btncancelar = btncancelar;
+    }
+
+    public JButton getBtncrear() {
+        return btncrear;
+    }
+
+    public void setBtncrear(JButton btncrear) {
+        this.btncrear = btncrear;
+    }
+
+    public JButton getBtneliminar() {
+        return btneliminar;
+    }
+
+    public void setBtneliminar(JButton btneliminar) {
+        this.btneliminar = btneliminar;
+    }
+
+    public JButton getBtnguardar() {
+        return btnguardar;
+    }
+
+    public void setBtnguardar(JButton btnguardar) {
+        this.btnguardar = btnguardar;
+    }
+
+    public JButton getBtnmodificar() {
+        return btnmodificar;
+    }
+
+    public void setBtnmodificar(JButton btnmodificar) {
+        this.btnmodificar = btnmodificar;
+    }
+
+    public JComboBox<String> getCbxprovincia() {
+        return cbxprovincia;
+    }
+
+    public void setCbxprovincia(JComboBox<String> cbxprovincia) {
+        this.cbxprovincia = cbxprovincia;
+    }
+
+    public JDialog getjDlgCamionero() {
+        return jDlgCamionero;
+    }
+
+    public void setjDlgCamionero(JDialog jDlgCamionero) {
+        this.jDlgCamionero = jDlgCamionero;
+    }
+
+    public JDialog getjDlgClientes() {
+        return jDlgClientes;
+    }
+
+    public void setjDlgClientes(JDialog jDlgClientes) {
+        this.jDlgClientes = jDlgClientes;
+    }
+
+    public JDialog getjDlgDestinatario() {
+        return jDlgDestinatario;
+    }
+
+    public void setjDlgDestinatario(JDialog jDlgDestinatario) {
+        this.jDlgDestinatario = jDlgDestinatario;
+    }
+
+    public JDialog getjDlgPaquetes() {
+        return jDlgPaquetes;
+    }
+
+    public void setjDlgPaquetes(JDialog jDlgPaquetes) {
+        this.jDlgPaquetes = jDlgPaquetes;
+    }
+
+    public JInternalFrame getjInternalFrame1() {
+        return jInternalFrame1;
+    }
+
+    public void setjInternalFrame1(JInternalFrame jInternalFrame1) {
+        this.jInternalFrame1 = jInternalFrame1;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel18() {
+        return jLabel18;
+    }
+
+    public void setjLabel18(JLabel jLabel18) {
+        this.jLabel18 = jLabel18;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel21() {
+        return jLabel21;
+    }
+
+    public void setjLabel21(JLabel jLabel21) {
+        this.jLabel21 = jLabel21;
+    }
+
+    public JLabel getjLabel27() {
+        return jLabel27;
+    }
+
+    public void setjLabel27(JLabel jLabel27) {
+        this.jLabel27 = jLabel27;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public JScrollPane getjScrollPane3() {
+        return jScrollPane3;
+    }
+
+    public void setjScrollPane3(JScrollPane jScrollPane3) {
+        this.jScrollPane3 = jScrollPane3;
+    }
+
+    public JScrollPane getjScrollPane4() {
+        return jScrollPane4;
+    }
+
+    public void setjScrollPane4(JScrollPane jScrollPane4) {
+        this.jScrollPane4 = jScrollPane4;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public void setjSeparator1(JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public JDateChooser getJclfecharegistro() {
+        return jclfecharegistro;
+    }
+
+    public void setJclfecharegistro(JDateChooser jclfecharegistro) {
+        this.jclfecharegistro = jclfecharegistro;
+    }
+
+    public JDateChooser getJclllegadapro() {
+        return jclllegadapro;
+    }
+
+    public void setJclllegadapro(JDateChooser jclllegadapro) {
+        this.jclllegadapro = jclllegadapro;
+    }
+
+    public JDateChooser getJclsalidapro() {
+        return jclsalidapro;
+    }
+
+    public void setJclsalidapro(JDateChooser jclsalidapro) {
+        this.jclsalidapro = jclsalidapro;
+    }
+
+    public JLabel getLbcedcamionero() {
+        return lbcedcamionero;
+    }
+
+    public void setLbcedcamionero(JLabel lbcedcamionero) {
+        this.lbcedcamionero = lbcedcamionero;
+    }
+
+    public JLabel getLblbuscamionero() {
+        return lblbuscamionero;
+    }
+
+    public void setLblbuscamionero(JLabel lblbuscamionero) {
+        this.lblbuscamionero = lblbuscamionero;
+    }
+
+    public JLabel getLblbuscarcliente() {
+        return lblbuscarcliente;
+    }
+
+    public void setLblbuscarcliente(JLabel lblbuscarcliente) {
+        this.lblbuscarcliente = lblbuscarcliente;
+    }
+
+    public JLabel getLblbuscardestinatario() {
+        return lblbuscardestinatario;
+    }
+
+    public void setLblbuscardestinatario(JLabel lblbuscardestinatario) {
+        this.lblbuscardestinatario = lblbuscardestinatario;
+    }
+
+    public JLabel getLblcargarcamionero() {
+        return lblcargarcamionero;
+    }
+
+    public void setLblcargarcamionero(JLabel lblcargarcamionero) {
+        this.lblcargarcamionero = lblcargarcamionero;
+    }
+
+    public JLabel getLblcargarcliente() {
+        return lblcargarcliente;
+    }
+
+    public void setLblcargarcliente(JLabel lblcargarcliente) {
+        this.lblcargarcliente = lblcargarcliente;
+    }
+
+    public JLabel getLblcargardestinatario() {
+        return lblcargardestinatario;
+    }
+
+    public void setLblcargardestinatario(JLabel lblcargardestinatario) {
+        this.lblcargardestinatario = lblcargardestinatario;
+    }
+
+    public JLabel getLblcedcliente() {
+        return lblcedcliente;
+    }
+
+    public void setLblcedcliente(JLabel lblcedcliente) {
+        this.lblcedcliente = lblcedcliente;
+    }
+
+    public JLabel getLblceddestinatario() {
+        return lblceddestinatario;
+    }
+
+    public void setLblceddestinatario(JLabel lblceddestinatario) {
+        this.lblceddestinatario = lblceddestinatario;
+    }
+
+    public JLabel getLblcliente() {
+        return lblcliente;
+    }
+
+    public void setLblcliente(JLabel lblcliente) {
+        this.lblcliente = lblcliente;
+    }
+
+    public JLabel getLblcodcamionero() {
+        return lblcodcamionero;
+    }
+
+    public void setLblcodcamionero(JLabel lblcodcamionero) {
+        this.lblcodcamionero = lblcodcamionero;
+    }
+
+    public JLabel getLblcodcliente() {
+        return lblcodcliente;
+    }
+
+    public void setLblcodcliente(JLabel lblcodcliente) {
+        this.lblcodcliente = lblcodcliente;
+    }
+
+    public JLabel getLblcoddestinatario() {
+        return lblcoddestinatario;
+    }
+
+    public void setLblcoddestinatario(JLabel lblcoddestinatario) {
+        this.lblcoddestinatario = lblcoddestinatario;
+    }
+
+    public JLabel getLblcodprovincia() {
+        return lblcodprovincia;
+    }
+
+    public void setLblcodprovincia(JLabel lblcodprovincia) {
+        this.lblcodprovincia = lblcodprovincia;
+    }
+
+    public JLabel getLbldestinatario() {
+        return lbldestinatario;
+    }
+
+    public void setLbldestinatario(JLabel lbldestinatario) {
+        this.lbldestinatario = lbldestinatario;
+    }
+
+    public JLabel getLblfecharegistro() {
+        return lblfecharegistro;
+    }
+
+    public void setLblfecharegistro(JLabel lblfecharegistro) {
+        this.lblfecharegistro = lblfecharegistro;
+    }
+
+    public JLabel getLblllegadapro() {
+        return lblllegadapro;
+    }
+
+    public void setLblllegadapro(JLabel lblllegadapro) {
+        this.lblllegadapro = lblllegadapro;
+    }
+
+    public JLabel getLblnomcamionero() {
+        return lblnomcamionero;
+    }
+
+    public void setLblnomcamionero(JLabel lblnomcamionero) {
+        this.lblnomcamionero = lblnomcamionero;
+    }
+
+    public JLabel getLblpeso() {
+        return lblpeso;
+    }
+
+    public void setLblpeso(JLabel lblpeso) {
+        this.lblpeso = lblpeso;
+    }
+
+    public JLabel getLblprovincia() {
+        return lblprovincia;
+    }
+
+    public void setLblprovincia(JLabel lblprovincia) {
+        this.lblprovincia = lblprovincia;
+    }
+
+    public JLabel getLblsalidapro() {
+        return lblsalidapro;
+    }
+
+    public void setLblsalidapro(JLabel lblsalidapro) {
+        this.lblsalidapro = lblsalidapro;
+    }
+
+    public JLabel getLbltitulo() {
+        return lbltitulo;
+    }
+
+    public void setLbltitulo(JLabel lbltitulo) {
+        this.lbltitulo = lbltitulo;
+    }
+
+    public JLabel getLbltitulo1() {
+        return lbltitulo1;
+    }
+
+    public void setLbltitulo1(JLabel lbltitulo1) {
+        this.lbltitulo1 = lbltitulo1;
+    }
+
+    public JLabel getLbltitulo2() {
+        return lbltitulo2;
+    }
+
+    public void setLbltitulo2(JLabel lbltitulo2) {
+        this.lbltitulo2 = lbltitulo2;
+    }
+
+    public JPanel getPblprincipaldes() {
+        return pblprincipaldes;
+    }
+
+    public void setPblprincipaldes(JPanel pblprincipaldes) {
+        this.pblprincipaldes = pblprincipaldes;
+    }
+
+    public JPanel getPnlprincipal() {
+        return pnlprincipal;
+    }
+
+    public void setPnlprincipal(JPanel pnlprincipal) {
+        this.pnlprincipal = pnlprincipal;
+    }
+
+    public JPanel getPnlprincipalcam() {
+        return pnlprincipalcam;
+    }
+
+    public void setPnlprincipalcam(JPanel pnlprincipalcam) {
+        this.pnlprincipalcam = pnlprincipalcam;
+    }
+
+    public JPanel getPnlprincipalcli() {
+        return pnlprincipalcli;
+    }
+
+    public void setPnlprincipalcli(JPanel pnlprincipalcli) {
+        this.pnlprincipalcli = pnlprincipalcli;
+    }
+
+    public JPanel getPnlprincipalframe() {
+        return pnlprincipalframe;
+    }
+
+    public void setPnlprincipalframe(JPanel pnlprincipalframe) {
+        this.pnlprincipalframe = pnlprincipalframe;
+    }
+
+    public JTable getTablapaquetes() {
+        return tablapaquetes;
+    }
+
+    public void setTablapaquetes(JTable tablapaquetes) {
+        this.tablapaquetes = tablapaquetes;
+    }
+
+    public JTable getTblcamioneros() {
+        return tblcamioneros;
+    }
+
+    public void setTblcamioneros(JTable tblcamioneros) {
+        this.tblcamioneros = tblcamioneros;
+    }
+
+    public JTable getTblclientes() {
+        return tblclientes;
+    }
+
+    public void setTblclientes(JTable tblclientes) {
+        this.tblclientes = tblclientes;
+    }
+
+    public JTable getTbldestinatarios() {
+        return tbldestinatarios;
+    }
+
+    public void setTbldestinatarios(JTable tbldestinatarios) {
+        this.tbldestinatarios = tbldestinatarios;
+    }
+
+    public JTextField getTxtbuscar() {
+        return txtbuscar;
+    }
+
+    public void setTxtbuscar(JTextField txtbuscar) {
+        this.txtbuscar = txtbuscar;
+    }
+
+    public JTextField getTxtcedcamionero() {
+        return txtcedcamionero;
+    }
+
+    public void setTxtcedcamionero(JTextField txtcedcamionero) {
+        this.txtcedcamionero = txtcedcamionero;
+    }
+
+    public JTextField getTxtcedcliente() {
+        return txtcedcliente;
+    }
+
+    public void setTxtcedcliente(JTextField txtcedcliente) {
+        this.txtcedcliente = txtcedcliente;
+    }
+
+    public JTextField getTxtceddestinatario() {
+        return txtceddestinatario;
+    }
+
+    public void setTxtceddestinatario(JTextField txtceddestinatario) {
+        this.txtceddestinatario = txtceddestinatario;
+    }
+
+    public JTextField getTxtnomcamionero() {
+        return txtnomcamionero;
+    }
+
+    public void setTxtnomcamionero(JTextField txtnomcamionero) {
+        this.txtnomcamionero = txtnomcamionero;
+    }
+
+    public JTextField getTxtnomcliente() {
+        return txtnomcliente;
+    }
+
+    public void setTxtnomcliente(JTextField txtnomcliente) {
+        this.txtnomcliente = txtnomcliente;
+    }
+
+    public JTextField getTxtnomdestinatario() {
+        return txtnomdestinatario;
+    }
+
+    public void setTxtnomdestinatario(JTextField txtnomdestinatario) {
+        this.txtnomdestinatario = txtnomdestinatario;
+    }
+
+    public JTextField getTxtpeso() {
+        return txtpeso;
+    }
+
+    public void setTxtpeso(JTextField txtpeso) {
+        this.txtpeso = txtpeso;
+    }
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -72,7 +637,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         pnlprincipalcam = new javax.swing.JPanel();
         lbltitulo2 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        tblclientes2 = new javax.swing.JTable();
+        tblcamioneros = new javax.swing.JTable();
         lblcargarcamionero = new javax.swing.JLabel();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         pnlprincipalframe = new javax.swing.JPanel();
@@ -551,8 +1116,8 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         lbltitulo2.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         lbltitulo2.setText("Listado de Camionero");
 
-        tblclientes2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        tblclientes2.setModel(new javax.swing.table.DefaultTableModel(
+        tblcamioneros.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        tblcamioneros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -563,7 +1128,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                 "Cód", "DNI", "Nombre", "Apellido"
             }
         ));
-        jScrollPane4.setViewportView(tblclientes2);
+        jScrollPane4.setViewportView(tblcamioneros);
 
         lblcargarcamionero.setBackground(new java.awt.Color(255, 255, 255));
         lblcargarcamionero.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -666,15 +1231,16 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
+        tablapaquetes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         tablapaquetes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código", "Descripción", "Destinatario", "Direccion destinatario", "Código del camionero", "Nombre y apellido", "Código de la provincia", "Nombre de la provincia"
+                "Código", "Descripción", "Destinatario", "Direccion destinatario", "Código del camionero", "Nombre y apellido", "Nombre de la provincia"
             }
         ));
         jScrollPane1.setViewportView(tablapaquetes);
@@ -758,8 +1324,8 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
     private javax.swing.JPanel pnlprincipalcli;
     private javax.swing.JPanel pnlprincipalframe;
     private javax.swing.JTable tablapaquetes;
+    private javax.swing.JTable tblcamioneros;
     private javax.swing.JTable tblclientes;
-    private javax.swing.JTable tblclientes2;
     private javax.swing.JTable tbldestinatarios;
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtcedcamionero;
