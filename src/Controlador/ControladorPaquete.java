@@ -1,5 +1,5 @@
-
 package Controlador;
+
 import Modelo.Camionero;
 import Modelo.Cliente;
 import Modelo.Destinatario;
@@ -8,17 +8,21 @@ import Modelo.Modelo_Cliente;
 import Modelo.Modelo_Destinatario;
 import Modelo.Modelo_Paquete;
 import Modelo.Modelo_Provincia;
-import Modelo.Paquete;
 import Modelo.Provincia;
 import Vista.VistaPaquete;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
 
-
 public class ControladorPaquete {
-    
+
     Modelo_Paquete modelo;
     VistaPaquete vista;
 
@@ -28,24 +32,34 @@ public class ControladorPaquete {
         vista.setVisible(true);
         //cargarTablaPaquetes();
     }
-//    public void iniciarControl() {
-//        vista.getBtncrear().addActionListener(l -> abrirDialogCrear());
-//        vista.getBtnbuscarcamionero().addActionListener(l -> abrirjDialogCamionero());
-//        vista.getBtnbuscarcamion().addActionListener(l -> abrirjDialogCamion());
-//        vista.getBtncargarCamionero().addActionListener(l -> cargarDatosCamioneroEnTXT());
-//        vista.getBtncargarCamion().addActionListener(l -> cargarDatosCamionEnTXT());
-//        vista.getBtnguardar().addActionListener(l -> crearOModificarConduccion());
-//    }
+
+    public void iniciarControl() {
+        vista.getBtncrear().addActionListener(l -> abrirDialogCrear());
+        vista.getBtnbuscarcliente().addActionListener(l -> abrirjDialogCliente());
+        vista.getBtnbuscarcamionero().addActionListener(l -> abrirjDialogCamionero());
+        vista.getBtnbuscardestinatario().addActionListener(l -> abrirjDialogDestinatario());
+        vista.getBtncargarCliente().addActionListener(l -> cargarDatosClienteEnTXT());
+        vista.getBtncargarCamionero().addActionListener(l -> cargarDatosCamioneroEnTXT());
+        vista.getBtncargarDestinatario().addActionListener(l -> cargarDatosDestinatarioEnTXT());
+        vista.getCbxprovincia().addActionListener(l -> cargarDatosProvinciaEnTXT());
+
+        //vista.getBtnbuscarcamion().addActionListener(l -> abrirjDialogCamion());
+        //vista.getBtncargarCamionero().addActionListener(l -> cargarDatosCamioneroEnTXT());
+        //vista.getBtncargarCamion().addActionListener(l -> cargarDatosCamionEnTXT());
+        //vista.getBtnguardar().addActionListener(l -> crearOModificarConduccion());
+    }
 
     public void abrirDialogCrear() {
         vista.getjDlgPaquetes().setName("Registrar nuevo Paquete");
         vista.getjDlgPaquetes().setLocationRelativeTo(vista);
-        vista.getjDlgPaquetes().setSize(876, 733);
+        vista.getjDlgPaquetes().setSize(1017, 521);
         vista.getjDlgPaquetes().setTitle("Registrar nuevo Paquete");
         vista.getjDlgPaquetes().setVisible(true);
         //limpiarDatosYDespacerCampos();
+        cargarProvinciasComboBox();
+        setearFechaActual();
     }
-    
+
 //    public void cargarTablaPaquetes() {
 //
 //        Modelo_Camionero modeloCamionero = new Modelo_Camionero();
@@ -81,8 +95,6 @@ public class ControladorPaquete {
 //            });
 //        });
 //    }
-    
-    
     //TODO SOBRE CLIENTE
     public void abrirjDialogCliente() {
         vista.getjDlgClientes().setLocationRelativeTo(vista);
@@ -133,14 +145,14 @@ public class ControladorPaquete {
             nombre = vista.getTblclientes().getValueAt(fila, 2).toString();
             apellido = vista.getTblclientes().getValueAt(fila, 3).toString();
 
-            vista.getLblcodcliente().setText(codigo);
+            vista.getTxtcodigoCliente().setText(codigo);
             vista.getTxtcedcliente().setText(cedula);
             vista.getTxtnomcliente().setText(nombre + " " + apellido);
 
             vista.getjDlgClientes().dispose();//Cierro la ventana luego de cargar los datos
         }
     }
-    
+
     //TODO SOBRE EL DESTINATARIO
     public void abrirjDialogDestinatario() {
         vista.getjDlgDestinatario().setLocationRelativeTo(vista);
@@ -191,15 +203,14 @@ public class ControladorPaquete {
             nombre = vista.getTbldestinatarios().getValueAt(fila, 2).toString();
             apellido = vista.getTbldestinatarios().getValueAt(fila, 3).toString();
 
-            vista.getLblcoddestinatario().setText(codigo);
+            vista.getTxtcodigoDestinatario().setText(codigo);
             vista.getTxtceddestinatario().setText(cedula);
             vista.getTxtnomdestinatario().setText(nombre + " " + apellido);
 
             vista.getjDlgDestinatario().dispose();//Cierro la ventana luego de cargar los datos
         }
     }
-    
-    
+
     //TODO SOBRE CAMIONERO
     public void abrirjDialogCamionero() {
         vista.getjDlgCamionero().setLocationRelativeTo(vista);
@@ -250,14 +261,54 @@ public class ControladorPaquete {
             nombre = vista.getTblcamioneros().getValueAt(fila, 2).toString();
             apellido = vista.getTblcamioneros().getValueAt(fila, 3).toString();
 
-            vista.getLblcodcamionero().setText(codigo);
+            vista.getTxtcodigoCamionero().setText(codigo);
             vista.getTxtcedcamionero().setText(cedula);
             vista.getTxtnomcamionero().setText(nombre + " " + apellido);
 
             vista.getjDlgCamionero().dispose();//Cierro la ventana luego de cargar los datos
         }
     }
+
+    //RELLENAR COMBOBOX DE PROVINCIAS
+    public void cargarProvinciasComboBox() {
+        Modelo_Provincia pro = new Modelo_Provincia();
+
+        List<Provincia> listapro = pro.listaProvincias();
+
+        for (int i = 0; i < listapro.size(); i++) {
+            vista.getCbxprovincia().addItem(listapro.get(i).getNombre());
+        }
+    }
+
+    public void cargarDatosProvinciaEnTXT() {
+        Modelo_Provincia pro = new Modelo_Provincia();
+
+        List<Provincia> listapro = pro.listaProvincias();
+
+        listapro.stream().forEach(p -> {
+
+            if (vista.getCbxprovincia().getSelectedItem().toString().equalsIgnoreCase(p.getNombre())) {
+                vista.getTxtCodigoProvincia().setText(String.valueOf(p.getCodigoPro()));
+            } else {
+                if (vista.getCbxprovincia().getSelectedItem().toString().equalsIgnoreCase("Seleccionar")) {
+                    vista.getTxtCodigoProvincia().setText(" ");
+                }
+            }
+        });
+    }
     
-    //Rellenar el combo de las provincias
-    
+    public void setearFechaActual(){
+        Date fecha = null;
+        LocalDate ahora = LocalDate.now();
+
+        SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
+
+        try {
+            fecha = formatofecha.parse(ahora.toString());
+        } catch (ParseException ex) {
+            Logger.getLogger(ControladorPaquete.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        vista.getJclfecharegistro().setDate(fecha);
+        vista.getJclfecharegistro().setEnabled(false);
+    }
 }
