@@ -125,4 +125,31 @@ public class Modelo_Provincia extends Provincia {
 
         return cantidad;
     }
+    
+    public List rellenarcombo()
+    {
+        try {
+
+            List<Provincia> lista = new ArrayList<>();
+            String sql = "select pro_nombre from provincia";
+            ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
+
+            //Pasar de "ResultSet" a "List"
+            while (rs.next()) {
+                Provincia pro = new Provincia();
+
+                //Todo lo que haga en la sentencia define como voy a extraer los datos
+                pro.setNombre(rs.getString("pro_nombre"));
+                lista.add(pro); //Agrego los datos a la lista
+            }
+
+            //Cierro la conexion a la BD
+            rs.close();
+            return lista;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Modelo_Camionero.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
 }
