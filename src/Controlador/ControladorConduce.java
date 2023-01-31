@@ -7,11 +7,18 @@ import Modelo.Modelo_Camion;
 import Modelo.Modelo_Camionero;
 import Modelo.Modelo_Conduce;
 import Vista.VistaConduce;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+//import javax.swing.RowFilter; //NO ELIMNAR. IMPORTANTE PARA EL METODO DE FILTAR COMENTADO
 import javax.swing.table.DefaultTableModel;
+//import javax.swing.table.TableRowSorter;//NO ELIMINAR. IMPORTANTE PARA EL METODO DE FILTAR COMENTADO
 import javax.xml.ws.Holder;
 
 public class ControladorConduce {
@@ -23,7 +30,6 @@ public class ControladorConduce {
         this.modelo = modelo;
         this.vista = vista;
         vista.setVisible(true);
-        //cargarTablaTurnosDeConduccion();
         cargarTablaTurnosDeConduccion();
     }
 
@@ -34,6 +40,9 @@ public class ControladorConduce {
         vista.getBtncargarCamionero().addActionListener(l -> cargarDatosCamioneroEnTXT());
         vista.getBtncargarCamion().addActionListener(l -> cargarDatosCamionEnTXT());
         vista.getBtnguardar().addActionListener(l -> crearOModificarConduccion());
+        vista.getBtnmodificar().addActionListener(l -> abrirYCargarDatosEnElDialogConduce());
+        vista.getBtnactualizar().addActionListener(l -> cargarTablaTurnosDeConduccion());
+        buscarRegistros();
     }
 
     public void abrirDialogCrear() {
@@ -80,6 +89,14 @@ public class ControladorConduce {
 
     public void abrirYCargarDatosEnElDialogConduce() {
 
+        //Creo objetos de los modelos de camionero y de camion
+        Modelo_Camionero modeloCamionero = new Modelo_Camionero();
+        Modelo_Camion modeloCamion = new Modelo_Camion();
+
+        //Cargo las listas con los registros de la BD
+        List<Camionero> listacam = modeloCamionero.listaCamionerosTabla();
+        List<Camion> listacmi = modeloCamion.listaCamiones();
+
         int seleccion = vista.getTablaconduccion().getSelectedRow();
 
         if (seleccion == -1) {
@@ -101,9 +118,32 @@ public class ControladorConduce {
                     //Seteo los datos en los campos de texto
                     vista.getTxtcodigoconduce().setText(String.valueOf(c.getCodigoCon()));
                     vista.getTxtcodigocamionero().setText(String.valueOf(c.getCodigoCam()));
-                    vista.getTxtmodelo().setText(pe.getModelo());
-                    vista.getTxttipo().setText(pe.getTipo());
-                    vista.getSpinnerpotencia().setValue(pe.getPotencia());
+                    vista.getTxtcodigocamion().setText(String.valueOf(c.getCodigoCmi()));
+
+                    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); //Doy formato a la fecha
+                    try {
+                        Date fecha = formato.parse(c.getFechaSalida()); //La fecha la paso de String a Date
+
+                        vista.getjFechainicio().setDate(fecha);
+                    } catch (ParseException ex) {
+                        Logger.getLogger(ControladorCamionero.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    listacam.stream().forEach(ca -> {
+                        if (ca.getCodigoCam() == c.getCodigoCam()) {
+
+                            vista.getTxtcedula().setText(ca.getDni());
+                            vista.getTxtnombreyapellido().setText(ca.getPrinombre() + " " + ca.getApellidopat());
+                        }
+
+                    });
+
+                    listacmi.stream().forEach(ci -> {
+                        if (ci.getCodigoCmi() == c.getCodigoCmi()) {
+
+                            vista.getTxtplaca().setText(ci.getPlaca());
+                        }
+                    });
                 }
             });
         }
@@ -251,34 +291,111 @@ public class ControladorConduce {
                 JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
             }
 
-        }
-        /*else {//EDITAR 
+        } else {//EDITAR 
 
             if (validarDatos()) {
 
-                int codigo = Integer.valueOf(vista.getTxtcodigo().getText());
-                String nombre = vista.getTxtnombre().getText();
-                String region = vista.getTxtregion().getText();
-                int cantones = Integer.parseInt(vista.getSpinnercantones().getValue().toString());
+                int codigoConduce = Integer.parseInt(vista.getTxtcodigoconduce().getText());
+                int codigoCamionero = Integer.parseInt(vista.getTxtcodigocamionero().getText());
+                int codigoCamion = Integer.parseInt(vista.getTxtcodigocamion().getText());
+                Date fechainicio = vista.getjFechainicio().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
 
-                Modelo_Provincia provincia = new Modelo_Provincia();
-                provincia.setCodigoPro(codigo);
-                provincia.setNombre(nombre);
-                provincia.setRegion(region);
-                provincia.setNumcanton(cantones);
+                SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Doy formato a la fecha
+                String fechainicioTexto = formato.format(fechainicio); //La fecha tiene el formato indicado y es de tipo String
 
-                if (provincia.modificarProvincia()) {
-                    vista.getjDlgprovincias().setVisible(false);
-                    JOptionPane.showMessageDialog(vista, "Provincia Modificada Satisfactoriamente");
-                    cargarTabla();
+                //Seteo los datos
+                Modelo_Conduce conduce = new Modelo_Conduce();
+
+                conduce.setCodigoCon(codigoConduce);
+                conduce.setCodigoCam(codigoCamionero);
+                conduce.setCodigoCmi(codigoCamion);
+                conduce.setFechaSalida(fechainicioTexto);
+
+                if (conduce.modificarConduccion()) {
+                    vista.getjDlgConduce().setVisible(false);
+                    JOptionPane.showMessageDialog(vista, "El turno de conduccion se ha Modificado Satisfactoriamente");
+                    cargarTablaTurnosDeConduccion();
                 } else {
-                    JOptionPane.showMessageDialog(vista, "Error: No se pudo modificar la provincia");
+                    JOptionPane.showMessageDialog(vista, "Error: El turno de conduccion no se pudo modificar");
                 }
             } else {
                 JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
             }
 
-        }*/
+        }
+    }
+
+    public void buscarRegistros() {
+
+        KeyListener eventoTeclado = new KeyListener() {//Crear un objeto de tipo keyListener(Es una interface) por lo tanto se debe implementar sus metodos abstractos
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+                //CODIGO PARA FILTRAR LOS DATOS DIRECTAMENTE DE LA TABLA. NO ELIMINAR. SI FUNCIONA. ES MUY IMPORTANTE
+//                TableRowSorter<DefaultTableModel> filtrar;
+//
+//                DefaultTableModel tabla = (DefaultTableModel) vista.getTablaconduccion().getModel();
+//
+//                //vista.getTablaconduccion().setAutoCreateRowSorter(true);
+//                filtrar = new TableRowSorter<>(tabla);
+//                vista.getTablaconduccion().setRowSorter(filtrar);
+//
+//                try {
+//
+//                    filtrar.setRowFilter(RowFilter.regexFilter(vista.getTxtbuscar().getText())); //Se pasa como parametro el campo de donde se va a obtener la informacion y el (3) es la columna con la cual va a buscar las coincidencias
+//                } catch (Exception ex) {
+//                    System.out.println("Error: " + ex);
+//                }
+                try {
+
+                    Modelo_Camionero modeloCamionero = new Modelo_Camionero();
+                    Modelo_Camion modeloCamion = new Modelo_Camion();
+
+                    DefaultTableModel tabla = (DefaultTableModel) vista.getTablaconduccion().getModel();
+                    tabla.setNumRows(0);
+
+                    List<Conduce> listacon = modelo.buscarTurnosDeConduccion(Integer.parseInt(vista.getTxtbuscar().getText()));
+                    List<Camionero> listacam = modeloCamionero.listaCamionerosTabla();
+                    List<Camion> listacmi = modeloCamion.listaCamiones();
+
+                    listacon.stream().forEach(c -> {
+
+                        String fechaInicio = c.getFechaSalida().substring(0, 10);
+
+                        listacam.stream().forEach(ca -> {
+
+                            if (c.getCodigoCam() == ca.getCodigoCam()) {
+
+                                listacmi.stream().forEach(ci -> {
+
+                                    if (c.getCodigoCmi() == ci.getCodigoCmi()) {
+
+                                        String[] datos = {String.valueOf(c.getCodigoCon()), fechaInicio, String.valueOf(c.getCodigoCam()), ca.getDni(), ca.getPrinombre() + " " + ca.getApellidopat(), String.valueOf(c.getCodigoCmi()), ci.getPlaca()};
+                                        tabla.addRow(datos);
+                                    }
+                                });
+                            }
+                        });
+                    });
+                } catch (NumberFormatException n) {
+
+                    //System.out.println("Error: No se puede pasar a un numero");
+                }
+            }
+        };
+
+        vista.getTxtbuscar().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
     }
 
     public boolean validarDatos() {
