@@ -40,7 +40,7 @@ public class ControladorDestinatario {
     }
 
     public void abrirDialogCrear() {
-        vista.getjDlgDestinatarios().setName("Crear nueva persona");
+        vista.getjDlgDestinatarios().setName("Crear nuevo destinatario");
         vista.getjDlgDestinatarios().setLocationRelativeTo(vista);
         vista.getjDlgDestinatarios().setSize(792, 396);
         vista.getjDlgDestinatarios().setTitle("Crear nueva persona");
@@ -133,7 +133,7 @@ public class ControladorDestinatario {
 
         Modelo_Persona mipersona = new Modelo_Persona();
 
-        if (vista.getjDlgDestinatarios().getName().equals("Crear nueva persona")) { //CREAR
+        if (vista.getjDlgDestinatarios().getName().equals("Crear nuevo destinatario")) { //CREAR
 
             if (mipersona.validarRepetidos(vista.getTxtdni().getText()) == 0) {
                 if (validacionDeDatos()) {
