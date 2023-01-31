@@ -161,11 +161,11 @@ public class VistaConduce extends javax.swing.JInternalFrame {
     }
 
     public JLabel getjLabel3() {
-        return jLabel3;
+        return lblcodigoconduce;
     }
 
     public void setjLabel3(JLabel jLabel3) {
-        this.jLabel3 = jLabel3;
+        this.lblcodigoconduce = jLabel3;
     }
 
     public JLabel getjLabel4() {
@@ -344,13 +344,21 @@ public class VistaConduce extends javax.swing.JInternalFrame {
         this.btnbuscarcamion = btnbuscarcamion;
     }
 
+    public JLabel getLblcodigoconduce() {
+        return lblcodigoconduce;
+    }
+
+    public void setLblcodigoconduce(JLabel lblcodigoconduce) {
+        this.lblcodigoconduce = lblcodigoconduce;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jDlgConduce = new javax.swing.JDialog();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblcodigoconduce = new javax.swing.JLabel();
         txtcodigoconduce = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -395,7 +403,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("Conduce");
 
-        jLabel3.setText("Código:");
+        lblcodigoconduce.setText("Código:");
 
         jLabel4.setText("Código:");
 
@@ -447,7 +455,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel12)
                                 .addGap(27, 27, 27))
                             .addGroup(jDlgConduceLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addComponent(lblcodigoconduce)
                                 .addGap(58, 58, 58)))
                         .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtcodigoconduce, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -509,7 +517,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtcodigoconduce, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
+                    .addComponent(lblcodigoconduce)
                     .addComponent(jLabel10))
                 .addGap(14, 14, 14)
                 .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -517,9 +525,9 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                     .addComponent(txtcodigocamionero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnbuscarcamionero))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jFechainicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jFechainicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -528,12 +536,9 @@ public class VistaConduce extends javax.swing.JInternalFrame {
                     .addComponent(txtnombreyapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
                 .addGroup(jDlgConduceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDlgConduceLayout.createSequentialGroup()
-                        .addComponent(jFechafin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE))
-                    .addGroup(jDlgConduceLayout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jFechafin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
                 .addComponent(jLabel9)
@@ -737,7 +742,6 @@ public class VistaConduce extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -749,6 +753,7 @@ public class VistaConduce extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblcodigoconduce;
     private javax.swing.JTable tablaconduccion;
     private javax.swing.JTable tblcamionerosDlg;
     private javax.swing.JTable tblcamionesDlg;
