@@ -75,6 +75,14 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
         this.genero = genero;
     }
 
+    public JButton getBtnEliminarDestina() {
+        return btnEliminarDestina;
+    }
+
+    public void setBtnEliminarDestina(JButton btnEliminarDestina) {
+        this.btnEliminarDestina = btnEliminarDestina;
+    }
+
     public JDialog getjDlgDestinatarios() {
         return jDlgDestinatarios;
     }
@@ -420,6 +428,7 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
         btnactualizar = new javax.swing.JButton();
         btncrear = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
+        btnEliminarDestina = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabladestinatarios = new javax.swing.JTable();
 
@@ -666,6 +675,8 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
 
         btnmodificar.setText("Modificar");
 
+        btnEliminarDestina.setText("Eliminar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -676,11 +687,13 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
                 .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(87, 87, 87)
                 .addComponent(btnactualizar)
-                .addGap(49, 49, 49)
+                .addGap(29, 29, 29)
                 .addComponent(btncrear)
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addComponent(btnmodificar)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnEliminarDestina)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -691,7 +704,8 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
                     .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnactualizar)
                     .addComponent(btncrear)
-                    .addComponent(btnmodificar))
+                    .addComponent(btnmodificar)
+                    .addComponent(btnEliminarDestina))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
@@ -729,6 +743,7 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnEliminarDestina;
     private javax.swing.JButton btnactualizar;
     private javax.swing.JButton btncrear;
     private javax.swing.JButton btnguardar;
