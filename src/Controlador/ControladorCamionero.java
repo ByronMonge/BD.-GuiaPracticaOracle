@@ -355,46 +355,83 @@ public class ControladorCamionero {
             }
         }
 
-        if (vista.getTxtsegnombre().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtsegnombre().getText())) {
+        if (vista.getTxtsegnombre().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el segundo nombre");
             validar = false;
-
+        } else {
+            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtsegnombre().getText())) {
+                JOptionPane.showMessageDialog(null, "Segundo nombre incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtpriapellido().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtpriapellido().getText())) {
+        if (vista.getTxtpriapellido().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el primer apellido");
             validar = false;
-
+        } else {
+            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtpriapellido().getText())) {
+                JOptionPane.showMessageDialog(null, "Primer apellido incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtsegapellido().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtsegapellido().getText())) {
+        if (vista.getTxtsegapellido().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el segundo apellido");
             validar = false;
-
+        } else {
+            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtsegapellido().getText())) {
+                JOptionPane.showMessageDialog(null, "Segundo apellido incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtdireccion().getText().isEmpty() || !mivalidacion.validarDireccion(vista.getTxtdireccion().getText())) {
+        if (vista.getTxtdireccion().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese la direccion");
             validar = false;
-
+        } else {
+            if (!mivalidacion.validarDireccion(vista.getTxtdireccion().getText())) {
+                JOptionPane.showMessageDialog(null, "Direccion incorrecta");
+                validar = false;
+            }
         }
 
-        if (vista.getTxttelefono().getText().isEmpty() || !mivalidacion.validarTelefono(vista.getTxttelefono().getText())) {
+        if (vista.getTxttelefono().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el numero de telefono");
             validar = false;
-
+        } else {
+            if (!mivalidacion.validarTelefono(vista.getTxttelefono().getText())) {
+                JOptionPane.showMessageDialog(null, "Telefono incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtemail().getText().isEmpty() || !mivalidacion.validarCorreo(vista.getTxtemail().getText())) {
+        if (vista.getTxtemail().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el correo");
             validar = false;
-
+        } else {
+            if (!mivalidacion.validarCorreo(vista.getTxtemail().getText())) {
+                JOptionPane.showMessageDialog(null, "Correo incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxttipodelicencia().getText().isEmpty() || !mivalidacion.validarTipoDeLicencia(vista.getTxttipodelicencia().getText())) {
+        if (vista.getTxttipodelicencia().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el tipo de licencia");
             validar = false;
-
+        } else {
+            if (!mivalidacion.validarTextoSinEspacio(vista.getTxttipodelicencia().getText())) {
+                JOptionPane.showMessageDialog(null, "Tipo de licencia Incorrecto");
+                validar = false;
+            }
         }
 
         if (vista.getJfechanacimiento().getDate() == null) {
+            JOptionPane.showMessageDialog(null, "Ingrese la fecha");
             validar = false;
         }
 
         if (vista.getMasculino() == null && vista.getFemenino() == null) {
+            JOptionPane.showMessageDialog(null, "Seleccione el genero");
             validar = false;
         }
 
