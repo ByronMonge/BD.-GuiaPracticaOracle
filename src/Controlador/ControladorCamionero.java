@@ -43,7 +43,7 @@ public class ControladorCamionero {
     public void abrirDialogCrear() {
         vista.getjDlgCamionero().setName("Crear nueva persona");
         vista.getjDlgCamionero().setLocationRelativeTo(vista);
-        vista.getjDlgCamionero().setSize(876, 733);
+        vista.getjDlgCamionero().setSize(1049, 740);
         vista.getjDlgCamionero().setTitle("Crear nueva persona");
         vista.getjDlgCamionero().setVisible(true);
         vista.getTxtdni().setEditable(true); //Desbloqueo el campo de la cedula
@@ -100,7 +100,7 @@ public class ControladorCamionero {
                     //Abre el jDialog y carga los datos en el jDialog
                     vista.getjDlgCamionero().setName("Editar");
                     vista.getjDlgCamionero().setLocationRelativeTo(vista);
-                    vista.getjDlgCamionero().setSize(876, 733);
+                    vista.getjDlgCamionero().setSize(1049, 740);
                     vista.getjDlgCamionero().setTitle("Editar");
                     vista.getjDlgCamionero().setVisible(true);
                     vista.getTxtdni().setEditable(false); //Bloqueo el campo de cedula

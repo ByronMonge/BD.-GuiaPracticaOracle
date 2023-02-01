@@ -36,7 +36,7 @@ public class ControladorCamion {
     public void abrirDialogCrear() {
         vista.getjDlgCamion().setName("Crear nuevo camion");
         vista.getjDlgCamion().setLocationRelativeTo(vista);
-        vista.getjDlgCamion().setSize(463, 408);
+        vista.getjDlgCamion().setSize(491, 407);
         vista.getjDlgCamion().setTitle("Crear nuevo camion");
         vista.getjDlgCamion().setVisible(true);
         vista.getTxtplaca().setEditable(true); //Desbloqueo el campo de la placa
@@ -81,7 +81,7 @@ public class ControladorCamion {
                     //Abre el jDialog y carga los datos en el jDialog
                     vista.getjDlgCamion().setName("Editar");
                     vista.getjDlgCamion().setLocationRelativeTo(vista);
-                    vista.getjDlgCamion().setSize(463, 408);
+                    vista.getjDlgCamion().setSize(491, 407);
                     vista.getjDlgCamion().setTitle("Editar");
                     vista.getjDlgCamion().setVisible(true);
                     vista.getTxtplaca().setEditable(false); //Bloqueo el campo
