@@ -185,9 +185,6 @@ public class ControladorCliente {
                     } else {
                         JOptionPane.showMessageDialog(vista, "No se pudo crear la persona");
                     }
-                } else {
-
-                    JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
                 }
             } else {
                 JOptionPane.showMessageDialog(vista, "El numero de cedula ya se encuentra registrado");
