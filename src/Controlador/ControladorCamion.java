@@ -124,9 +124,6 @@ public class ControladorCamion {
                         } else {
                             JOptionPane.showMessageDialog(vista, "No se pudo crear el camion");
                         }
-                    } else {
-
-                        JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
                     }
                 } else {
                     JOptionPane.showMessageDialog(vista, "La matricula ya se encuentra registrada");
@@ -158,9 +155,7 @@ public class ControladorCamion {
                 } else {
                     JOptionPane.showMessageDialog(vista, "No se pudo modificar el camion");
                 }
-            } else {
-                JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
-            }
+            } 
         }
     }
 
