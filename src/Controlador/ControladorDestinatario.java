@@ -34,7 +34,6 @@ public class ControladorDestinatario {
         vista.getBtnactualizar().addActionListener(l -> cargarTabla());
         vista.getBtnguardar().addActionListener(l -> crearOModificarPersonaYDestinatario());
         vista.getBtnmodificar().addActionListener(l -> abrirYCargarDatosEnElDialog());
-        vista.getBtneliminar().addActionListener(l -> eliminarPersonaYDestinatario());
         buscarPersona(); //Metodo para buscar personas
     }
 
@@ -260,30 +259,6 @@ public class ControladorDestinatario {
         }
     }
 
-    public void eliminarPersonaYDestinatario() {
-
-        int fila = vista.getTabladestinatarios().getSelectedRow();
-
-        if (fila == -1) {
-            JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
-        } else {
-
-            int response = JOptionPane.showConfirmDialog(vista, "¿Seguro que desea eliminar esta información?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (response == JOptionPane.YES_OPTION) {
-
-                String cedula;
-                cedula = vista.getTabladestinatarios().getValueAt(fila, 0).toString();
-
-                if (modelo.eliminarDestinatario(cedula)) {
-                    JOptionPane.showMessageDialog(null, "La persona fue eliminada exitosamente");
-                    cargarTabla();//Actualizo la tabla con los datos
-                } else {
-                    JOptionPane.showMessageDialog(null, "Error: La persona no se pudo eliminar");
-                }
-            }
-        }
-    }
-
     public void buscarPersona() {
 
         KeyListener eventoTeclado = new KeyListener() {//Crear un objeto de tipo keyListener(Es una interface) por lo tanto se debe implementar sus metodos abstractos
@@ -453,7 +428,7 @@ public class ControladorDestinatario {
         }
 
         if (vista.getMasculino() == null && vista.getFemenino() == null) {
-             JOptionPane.showMessageDialog(null, "Seleccione el genero");
+            JOptionPane.showMessageDialog(null, "Seleccione el genero");
             validar = false;
         }
 
