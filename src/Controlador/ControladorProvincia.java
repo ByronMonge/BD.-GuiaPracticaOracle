@@ -119,9 +119,6 @@ public class ControladorProvincia {
                     } else {
                         JOptionPane.showMessageDialog(vista, "No se pudo crear la provincia");
                     }
-                } else {
-
-                    JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
                 }
 
             } else {
