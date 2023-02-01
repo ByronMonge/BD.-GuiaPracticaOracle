@@ -441,6 +441,10 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
 
         jLabel9.setText("Años de experiencia:");
 
+        txtdni.setToolTipText("");
+
+        txtprinombre.setToolTipText("Ingrese solo letras y la primera con mayuscula");
+
         spinnerSalario.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 10000.0d, 1.0d));
 
         btnguardar.setText("Guardar");
