@@ -1,5 +1,5 @@
-
 package Controlador;
+
 import Modelo.Destinatario;
 import Modelo.Modelo_Destinatario;
 import Modelo.Modelo_Persona;
@@ -17,9 +17,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
 
-
 public class ControladorDestinatario {
-    
+
     Modelo_Destinatario modelo;
     VistaDestinatario vista;
 
@@ -107,7 +106,6 @@ public class ControladorDestinatario {
                     vista.getTxtcalleprinc().setText(pe.getCalleprinc());
                     vista.getTxtcallesecun().setText(pe.getCallesecun());
 
-
                     if (pe.getGenero().equalsIgnoreCase("M")) {
                         vista.getMasculino().setSelected(true);
                     } else {
@@ -146,7 +144,7 @@ public class ControladorDestinatario {
                     String telefono = vista.getTxttelefono().getText();
                     String email = vista.getTxtemail().getText();
                     String codpostal = vista.getTxtcodpostal().getText();
-                    String infocomplement = vista.getTxtArea().getText();                   
+                    String infocomplement = vista.getTxtArea().getText();
                     String calleprinc = vista.getTxtcalleprinc().getText();
                     String callesecun = vista.getTxtcallesecun().getText();
                     int edad = Integer.parseInt(vista.getSpinneredad().getValue().toString());
@@ -202,37 +200,36 @@ public class ControladorDestinatario {
         } else {//EDITAR 
             if (validacionDeDatos()) {
                 String dni = vista.getTxtdni().getText();
-                    String prinombre = vista.getTxtprinombre().getText();
-                    String segnombre = vista.getTxtsegnombre().getText();
-                    String priapellido = vista.getTxtpriapellido().getText();
-                    String segapellido = vista.getTxtsegapellido().getText();
-                    String direccion = vista.getTxtdireccion().getText();
-                    String telefono = vista.getTxttelefono().getText();
-                    String email = vista.getTxtemail().getText();
-                    String codpostal = vista.getTxtcodpostal().getText();
-                    String infocomplement = vista.getTxtArea().getText();                   
-                    String calleprinc = vista.getTxtcalleprinc().getText();
-                    String callesecun = vista.getTxtcallesecun().getText();
-                    int edad = Integer.parseInt(vista.getSpinneredad().getValue().toString());
+                String prinombre = vista.getTxtprinombre().getText();
+                String segnombre = vista.getTxtsegnombre().getText();
+                String priapellido = vista.getTxtpriapellido().getText();
+                String segapellido = vista.getTxtsegapellido().getText();
+                String direccion = vista.getTxtdireccion().getText();
+                String telefono = vista.getTxttelefono().getText();
+                String email = vista.getTxtemail().getText();
+                String codpostal = vista.getTxtcodpostal().getText();
+                String infocomplement = vista.getTxtArea().getText();
+                String calleprinc = vista.getTxtcalleprinc().getText();
+                String callesecun = vista.getTxtcallesecun().getText();
+                int edad = Integer.parseInt(vista.getSpinneredad().getValue().toString());
 
-                    Date fecha = vista.getJfechanacimiento().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
+                Date fecha = vista.getJfechanacimiento().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
 
-                    Modelo_Destinatario destinatario = new Modelo_Destinatario();
-                    destinatario.setDni(dni);
-                    destinatario.setPrinombre(prinombre);
-                    destinatario.setSegnombre(segnombre);
-                    destinatario.setApellidopat(priapellido);
-                    destinatario.setApellidomat(segapellido);
-                    destinatario.setDireccion(direccion);
-                    destinatario.setTelefono(telefono);
-                    destinatario.setEmail(email);
-                    destinatario.setCodpostal(codpostal);
-                    destinatario.setEdad(edad);
-                    destinatario.setCodpostal(codpostal);
-                    destinatario.setInfocomplement(infocomplement);
-                    destinatario.setCalleprinc(calleprinc);
-                    destinatario.setCallesecun(callesecun);
-
+                Modelo_Destinatario destinatario = new Modelo_Destinatario();
+                destinatario.setDni(dni);
+                destinatario.setPrinombre(prinombre);
+                destinatario.setSegnombre(segnombre);
+                destinatario.setApellidopat(priapellido);
+                destinatario.setApellidomat(segapellido);
+                destinatario.setDireccion(direccion);
+                destinatario.setTelefono(telefono);
+                destinatario.setEmail(email);
+                destinatario.setCodpostal(codpostal);
+                destinatario.setEdad(edad);
+                destinatario.setCodpostal(codpostal);
+                destinatario.setInfocomplement(infocomplement);
+                destinatario.setCalleprinc(calleprinc);
+                destinatario.setCallesecun(callesecun);
 
                 SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Doy formato a la fecha
                 String fechaTexto = formato.format(fecha); //La fecha tiene el formato indicado y es de tipo String
@@ -340,54 +337,123 @@ public class ControladorDestinatario {
 
             validar = false;
         }*/
-        if (vista.getTxtprinombre().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtprinombre().getText())) {
+        if (vista.getTxtprinombre().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el primer nombre");
             validar = false;
+        } else {
+            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtprinombre().getText())) {
+                JOptionPane.showMessageDialog(null, "Primer nombre incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtsegnombre().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtsegnombre().getText())) {
+        if (vista.getTxtsegnombre().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el segundo nombre");
             validar = false;
+        } else {
+            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtsegnombre().getText())) {
+                JOptionPane.showMessageDialog(null, "Segundo nombre incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtpriapellido().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtpriapellido().getText())) {
+        if (vista.getTxtpriapellido().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el primer apellido");
             validar = false;
+        } else {
+            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtpriapellido().getText())) {
+                JOptionPane.showMessageDialog(null, "Primer apellido incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtsegapellido().getText().isEmpty() || !mivalidacion.validarTextoSinEspacio(vista.getTxtsegapellido().getText())) {
+        if (vista.getTxtsegapellido().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el segundo apellido");
             validar = false;
+        } else {
+            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtsegapellido().getText())) {
+                JOptionPane.showMessageDialog(null, "Segundo apellido incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtdireccion().getText().isEmpty() || !mivalidacion.validarDireccion(vista.getTxtdireccion().getText())) {
+        if (vista.getTxtdireccion().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese la direccion");
             validar = false;
+        } else {
+            if (!mivalidacion.validarDireccion(vista.getTxtdireccion().getText())) {
+                JOptionPane.showMessageDialog(null, "Direccion incorrecta");
+                validar = false;
+            }
         }
 
-        if (vista.getTxttelefono().getText().isEmpty() || !mivalidacion.validarTelefono(vista.getTxttelefono().getText())) {
+        if (vista.getTxttelefono().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el numero de telefono");
             validar = false;
+        } else {
+            if (!mivalidacion.validarTelefono(vista.getTxttelefono().getText())) {
+                JOptionPane.showMessageDialog(null, "Telefono incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtemail().getText().isEmpty() || !mivalidacion.validarCorreo(vista.getTxtemail().getText())) {
+        if (vista.getTxtemail().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el correo");
             validar = false;
-        }
-        
-        if (vista.getTxtcodpostal().getText().isEmpty() || !mivalidacion.validarCodigoPostal(vista.getTxtcodpostal().getText())) {
-            validar = false;
-        }
-        
-        if (vista.getTxtArea().getText().isEmpty() || !mivalidacion.validarTextoConEspacio(vista.getTxtArea().getText())) {
-            validar = false;
-        }
-        
-        if (vista.getTxtcalleprinc().getText().isEmpty() || !mivalidacion.validarDireccion(vista.getTxtcalleprinc().getText())) {
-            validar = false;
+        } else {
+            if (!mivalidacion.validarCorreo(vista.getTxtemail().getText())) {
+                JOptionPane.showMessageDialog(null, "Correo incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtcallesecun().getText().isEmpty() || !mivalidacion.validarDireccion(vista.getTxtcallesecun().getText())) {
+        if (vista.getTxtcodpostal().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el codigo postal");
             validar = false;
+        } else {
+            if (!mivalidacion.validarCodigoPostal(vista.getTxtcodpostal().getText())) {
+                JOptionPane.showMessageDialog(null, "Codigo Postal incorrecto");
+                validar = false;
+            }
         }
+
+        if (vista.getTxtArea().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el area");
+            validar = false;
+        } else {
+            if (!mivalidacion.validarTextoConEspacio(vista.getTxtArea().getText())) {
+                JOptionPane.showMessageDialog(null, "Area incorrecta");
+                validar = false;
+            }
+        }
+
+        if (vista.getTxtcalleprinc().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese la calle principal");
+            validar = false;
+        } else {
+            if (!mivalidacion.validarDireccion(vista.getTxtcalleprinc().getText())) {
+                JOptionPane.showMessageDialog(null, "Calle principal incorrecta");
+                validar = false;
+            }
+        }
+
+        if (vista.getTxtcallesecun().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese la calle secundaria");
+            validar = false;
+        } else {
+            if (!mivalidacion.validarDireccion(vista.getTxtcallesecun().getText())) {
+                JOptionPane.showMessageDialog(null, "Calle secundaria incorrecta");
+                validar = false;
+            }
+        }
+
         if (vista.getJfechanacimiento().getDate() == null) {
+            JOptionPane.showMessageDialog(null, "Ingrese la fecha");
             validar = false;
         }
 
         if (vista.getMasculino() == null && vista.getFemenino() == null) {
+             JOptionPane.showMessageDialog(null, "Seleccione el genero");
             validar = false;
         }
 
@@ -411,5 +477,5 @@ public class ControladorDestinatario {
         vista.getJfechanacimiento().setDate(null);
         vista.getGenero().clearSelection();
     }
-    
+
 }
