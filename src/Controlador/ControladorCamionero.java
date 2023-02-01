@@ -419,7 +419,7 @@ public class ControladorCamionero {
             JOptionPane.showMessageDialog(null, "Ingrese el tipo de licencia");
             validar = false;
         } else {
-            if (!mivalidacion.validarTextoSinEspacio(vista.getTxttipodelicencia().getText())) {
+            if (!mivalidacion.validarTipoDeLicencia(vista.getTxttipodelicencia().getText())) {
                 JOptionPane.showMessageDialog(null, "Tipo de licencia Incorrecto");
                 validar = false;
             }
