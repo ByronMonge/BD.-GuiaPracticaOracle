@@ -628,11 +628,11 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
     }
 
     public JButton getBtncargar() {
-        return btncargar;
+        return btncargarProvincias;
     }
 
     public void setBtncargar(JButton btncargar) {
-        this.btncargar = btncargar;
+        this.btncargarProvincias = btncargar;
     }
 
     public JDialog getjDlgProvincias() {
@@ -651,7 +651,14 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         this.jtblaProvinciasjDlg = jtblaProvinciasjDlg;
     }
 
-    
+    public JButton getBtncargarProvincias() {
+        return btncargarProvincias;
+    }
+
+    public void setBtncargarProvincias(JButton btncargarProvincias) {
+        this.btncargarProvincias = btncargarProvincias;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -726,7 +733,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jtblaProvinciasjDlg = new javax.swing.JTable();
         lbltitulo2 = new javax.swing.JLabel();
-        btncargar = new javax.swing.JButton();
+        btncargarProvincias = new javax.swing.JButton();
         pnlprincipalframe = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
@@ -1274,7 +1281,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         lbltitulo2.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         lbltitulo2.setText("Listado de provincias");
 
-        btncargar.setText("Cargar");
+        btncargarProvincias.setText("Cargar");
 
         javax.swing.GroupLayout jDlgProvinciasLayout = new javax.swing.GroupLayout(jDlgProvincias.getContentPane());
         jDlgProvincias.getContentPane().setLayout(jDlgProvinciasLayout);
@@ -1284,7 +1291,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                 .addContainerGap(35, Short.MAX_VALUE)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btncargar)
+                .addComponent(btncargarProvincias)
                 .addContainerGap())
             .addGroup(jDlgProvinciasLayout.createSequentialGroup()
                 .addGap(106, 106, 106)
@@ -1299,7 +1306,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jDlgProvinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btncargar))
+                    .addComponent(btncargarProvincias))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -1389,10 +1396,10 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnbuscarcliente;
     private javax.swing.JButton btnbuscardestinatario;
     private javax.swing.JButton btncancelar;
-    private javax.swing.JButton btncargar;
     private javax.swing.JButton btncargarCamionero;
     private javax.swing.JButton btncargarCliente;
     private javax.swing.JButton btncargarDestinatario;
+    private javax.swing.JButton btncargarProvincias;
     private javax.swing.JButton btncrear;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
