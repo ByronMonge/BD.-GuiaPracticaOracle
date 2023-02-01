@@ -427,7 +427,7 @@ public class ControladorCliente {
         if (vista.getMasculino() == null && vista.getFemenino() == null) {
             JOptionPane.showMessageDialog(null, "Seleccione el genero");
             validar = false;
-        }
+        }////
 
         return validar;
     }
