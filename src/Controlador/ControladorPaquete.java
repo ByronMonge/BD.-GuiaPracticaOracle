@@ -26,6 +26,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
+import Modelo.Email;
+import javax.mail.MessagingException;
 
 public class ControladorPaquete {
 
@@ -247,6 +249,25 @@ public class ControladorPaquete {
                 if (paquete.crearPaquete()) {
                     vista.getjDlgPaquetes().setVisible(false);
                     JOptionPane.showMessageDialog(vista, "Se registro exitosamente el envio del paquete");
+
+                    Modelo_Cliente cliente = new Modelo_Cliente();
+                    List<Cliente> listcli = cliente.listaClientesTabla();
+
+                    listcli.stream().forEach(cli -> {
+
+                        if (cli.getCodigocli() == codigoCliente) {
+                            
+                            try {
+                                Email email = new Email();
+                                email.enviarEmail(cli.getEmail());
+                                
+                                JOptionPane.showMessageDialog(vista, "Correo enviado");
+                            } catch (MessagingException ex) {
+                                Logger.getLogger(ControladorPaquete.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    });
+
                     cargarTablaPaquetes();
                 } else {
                     JOptionPane.showMessageDialog(vista, "No se pudo enviar el paquete");
@@ -305,6 +326,10 @@ public class ControladorPaquete {
             }
 
         }
+    }
+
+    public void enviarEmailControlador() {
+
     }
 
     //TODO SOBRE CLIENTE
