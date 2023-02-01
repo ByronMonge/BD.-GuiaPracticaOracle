@@ -82,9 +82,9 @@ public class Validaciones {
 
         } else {
 
-            if (texto.length() >= 3 && texto.length() <= 20) {//Valido que el texto tenga mas de 3 letras(Tambien acepta vocales mayusculas con tilde)
+            if (texto.charAt(0) >= 97 && texto.charAt(0) <= 122 || texto.charAt(0) >= 65 && texto.charAt(0) <=90 && texto.length() >= 3 && texto.length() <= 20) {//Valido que el texto tenga mas de 3 letras(Tambien acepta vocales mayusculas con tilde)
 
-                for (int i = 0; i < texto.length() && contenedor; i++) { //El for iterara  la longuitud de la palabra y mientras "contenedor" sea true, en caso de "contenedor" ser false saldra del bucle. Ademas i=1 ya que la primera letra ya ha sido valida y ahora solo se validara desde la segunda letra
+                for (int i = 1; i < texto.length() && contenedor; i++) { //El for iterara  la longuitud de la palabra y mientras "contenedor" sea true, en caso de "contenedor" ser false saldra del bucle. Ademas i=1 ya que la primera letra ya ha sido valida y ahora solo se validara desde la segunda letra
 
                     //Valido que el texto cumpla con las letras requeridas(No admite letras mayusculas)
                     if (texto.charAt(i) >= 97 && texto.charAt(i) <= 122 || texto.charAt(i) == 225 || texto.charAt(i) == 233 || texto.charAt(i) == 237 || texto.charAt(i) == 243 || texto.charAt(i) == 250 || texto.charAt(i) == 241 || texto.charAt(i) == 252) {
