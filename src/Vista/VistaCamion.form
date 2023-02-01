@@ -186,6 +186,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txttipo">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese la primera letra con mayuscula y lo demas con minuscula"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="spinnerpotencia">
               <Properties>
@@ -195,10 +198,19 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtmodelo">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtmatricula">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese los siete digitos de la matricula"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtplaca">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese tres letras en mayuscula un guion y cuatro numeros"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>

@@ -354,7 +354,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtdireccion">
               <Properties>
-                <Property name="toolTipText" type="java.lang.String" value="Ingrese su direccion"/>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese su direccion puede contener cualquier caracter a excepcion de slash"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="spinnerSalario">
