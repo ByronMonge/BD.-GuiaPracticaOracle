@@ -61,7 +61,7 @@ public class ControladorPaquete {
     public void abrirDialogCrear() {
         vista.getjDlgPaquetes().setName("Registrar nuevo Paquete");
         vista.getjDlgPaquetes().setLocationRelativeTo(vista);
-        vista.getjDlgPaquetes().setSize(1017, 521);
+        vista.getjDlgPaquetes().setSize(1009, 561);
         vista.getjDlgPaquetes().setTitle("Registrar nuevo Paquete");
         vista.getjDlgPaquetes().setVisible(true);
         limpiarDatosYDespacerCampos();
@@ -142,7 +142,7 @@ public class ControladorPaquete {
                     //Abre el jDialog y carga los datos en el jDialog
                     vista.getjDlgPaquetes().setName("Editar");
                     vista.getjDlgPaquetes().setLocationRelativeTo(vista);
-                    vista.getjDlgPaquetes().setSize(1017, 521);
+                    vista.getjDlgPaquetes().setSize(1009, 561);
                     vista.getjDlgPaquetes().setTitle("Editar");
                     vista.getjDlgPaquetes().setVisible(true);
 
