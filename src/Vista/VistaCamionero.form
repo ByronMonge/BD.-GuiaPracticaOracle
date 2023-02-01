@@ -314,6 +314,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtsegnombre">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese solo letras y la primera con mayuscula"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
@@ -324,6 +327,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtpriapellido">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese solo letras y la primera con mayuscula"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
@@ -334,6 +340,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtsegapellido">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese solo letras y la primera con mayuscula"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
@@ -344,15 +353,22 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtdireccion">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese su direccion"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="spinnerSalario">
               <Properties>
                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                   <SpinnerModel initial="0.0" maximum="10000.0" minimum="0.0" numberType="java.lang.Double" stepSize="1.0" type="number"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="No acepta negativos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txttipodelicencia">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese solo en mayuscula A,B,C,D,E,G"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="spinneraniosexperiencia">
               <Properties>
@@ -409,8 +425,14 @@
             <Component class="com.toedter.calendar.JDateChooser" name="jfechanacimiento">
             </Component>
             <Component class="javax.swing.JTextField" name="txtemail">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Debe contener el @ y el .com"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txttelefono">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese el telefono celular de 10 digitos "/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel17">
               <Properties>

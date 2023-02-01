@@ -470,16 +470,27 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
         jLabel13.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel13.setText("Email:");
 
+        txtsegnombre.setToolTipText("Ingrese solo letras y la primera con mayuscula");
+
         jLabel12.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel12.setText("Fecha de nacimiento:");
+
+        txtpriapellido.setToolTipText("Ingrese solo letras y la primera con mayuscula");
 
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel8.setText("Edad:");
 
+        txtsegapellido.setToolTipText("Ingrese solo letras y la primera con mayuscula");
+
         jLabel14.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel14.setText("Genero:");
 
+        txtdireccion.setToolTipText("Ingrese su direccion");
+
         spinnerSalario.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 10000.0d, 1.0d));
+        spinnerSalario.setToolTipText("No acepta negativos");
+
+        txttipodelicencia.setToolTipText("Ingrese solo en mayuscula A,B,C,D,E,G");
 
         spinneraniosexperiencia.setModel(new javax.swing.SpinnerNumberModel(0, 0, 40, 1));
 
@@ -498,6 +509,10 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
         femenino.setText("F");
 
         spinneredad.setModel(new javax.swing.SpinnerNumberModel(18, 18, 65, 1));
+
+        txtemail.setToolTipText("Debe contener el @ y el .com");
+
+        txttelefono.setToolTipText("Ingrese el telefono celular de 10 digitos ");
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/camionero.png"))); // NOI18N
         jLabel17.setToolTipText("");
