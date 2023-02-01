@@ -229,6 +229,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtprinombre">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese solo letras y la primera con mayuscula"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
@@ -239,6 +242,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtsegnombre">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese solo letras y la primera con mayuscula"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
@@ -249,6 +255,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtpriapellido">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese solo letras y la primera con mayuscula"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
@@ -259,6 +268,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtsegapellido">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese solo letras y la primera con mayuscula"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
@@ -269,6 +281,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtdireccion">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese su direccion puede contener cualquier caracter a excepcion de slash"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
@@ -279,6 +294,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtruc">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese su numero de cedula y despues el 001"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
@@ -289,6 +307,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtprofesion">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese solo letras y la primera con mayuscula"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnguardar">
               <Properties>
@@ -353,8 +374,14 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txttelefono">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Ingrese el telefono celular de 10 digitos "/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtemail">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Debe contener el @ y el .com"/>
+              </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="jfechanacimiento">
             </Component>

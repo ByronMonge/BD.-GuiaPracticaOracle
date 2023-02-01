@@ -410,23 +410,37 @@ public class VistaCliente extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel4.setText("Primer nombre:");
 
+        txtprinombre.setToolTipText("Ingrese solo letras y la primera con mayuscula");
+
         jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel10.setText("Segundo nombre:");
+
+        txtsegnombre.setToolTipText("Ingrese solo letras y la primera con mayuscula");
 
         jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel5.setText("Primer apellido:");
 
+        txtpriapellido.setToolTipText("Ingrese solo letras y la primera con mayuscula");
+
         jLabel11.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel11.setText("Segundo apellido:");
+
+        txtsegapellido.setToolTipText("Ingrese solo letras y la primera con mayuscula");
 
         jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel7.setText("Dirección:");
 
+        txtdireccion.setToolTipText("Ingrese su direccion puede contener cualquier caracter a excepcion de slash");
+
         jLabel16.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel16.setText("Ruc:");
 
+        txtruc.setToolTipText("Ingrese su numero de cedula y despues el 001");
+
         jLabel15.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel15.setText("Profesion:");
+
+        txtprofesion.setToolTipText("Ingrese solo letras y la primera con mayuscula");
 
         btnguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/guardar.png"))); // NOI18N
@@ -450,6 +464,10 @@ public class VistaCliente extends javax.swing.JInternalFrame {
 
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel6.setText("Telefono:");
+
+        txttelefono.setToolTipText("Ingrese el telefono celular de 10 digitos ");
+
+        txtemail.setToolTipText("Debe contener el @ y el .com");
 
         spinneredad.setModel(new javax.swing.SpinnerNumberModel(18, 18, 65, 1));
 
