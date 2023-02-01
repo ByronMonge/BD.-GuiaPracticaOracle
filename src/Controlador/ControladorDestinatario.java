@@ -41,7 +41,7 @@ public class ControladorDestinatario {
     public void abrirDialogCrear() {
         vista.getjDlgDestinatarios().setName("Crear nuevo destinatario");
         vista.getjDlgDestinatarios().setLocationRelativeTo(vista);
-        vista.getjDlgDestinatarios().setSize(792, 396);
+        vista.getjDlgDestinatarios().setSize(945, 796);
         vista.getjDlgDestinatarios().setTitle("Crear nueva persona");
         vista.getjDlgDestinatarios().setVisible(true);
         vista.getTxtdni().setEditable(true); //Desbloqueo el campo de la cedula
@@ -87,7 +87,7 @@ public class ControladorDestinatario {
                     //Abre el jDialog y carga los datos en el jDialog
                     vista.getjDlgDestinatarios().setName("Editar");
                     vista.getjDlgDestinatarios().setLocationRelativeTo(vista);
-                    vista.getjDlgDestinatarios().setSize(792, 396);
+                    vista.getjDlgDestinatarios().setSize(945, 796);
                     vista.getjDlgDestinatarios().setTitle("Editar");
                     vista.getjDlgDestinatarios().setVisible(true);
                     vista.getTxtdni().setEditable(false); //Bloqueo el campo de cedula
