@@ -259,7 +259,7 @@ public class ControladorPaquete {
 
                             try {
                                 Email email = new Email();
-                                email.enviarEmail(cli.getEmail(),String.format("%-27S%-27S%-27S%-27S%-32S%n", "Su paquete se ha enviado correctamente\n", "Cédula del cliente:", cli.getDni(), "Nombre:",cli.getPrinombre()));
+                                email.enviarEmail(cli.getEmail(), "Su paquete se ha enviado correctamente");
 
                                 JOptionPane.showMessageDialog(vista, "Correo enviado");
                             } catch (MessagingException ex) {
@@ -272,9 +272,6 @@ public class ControladorPaquete {
                 } else {
                     JOptionPane.showMessageDialog(vista, "No se pudo enviar el paquete");
                 }
-            } else {
-
-                JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
             }
 
         } else {//EDITAR 
@@ -671,26 +668,32 @@ public class ControladorPaquete {
 
         if (vista.getTxtcodigoCliente().getText().isEmpty()) {
 
+            JOptionPane.showConfirmDialog(vista, "Seleccione un cliente");
             validar = false;
         }
 
         if (vista.getTxtcodigoDestinatario().getText().isEmpty()) {
+            JOptionPane.showConfirmDialog(vista, "Seleccione un destinatario");
             validar = false;
         }
 
         if (vista.getTxtcodigoCamionero().getText().isEmpty()) {
+            JOptionPane.showConfirmDialog(vista, "Seleccione un camionero");
             validar = false;
         }
 
         if (vista.getTxtCodigoProvincia().getText().isEmpty()) {
+            JOptionPane.showConfirmDialog(vista, "Seleccione una provincia");
             validar = false;
         }
 
         if (vista.getJclsalidapro().getDate() == null) {
+            JOptionPane.showConfirmDialog(vista, "Seleccione una fecha de salida");
             validar = false;
         }
 
         if (vista.getJclllegadapro().getDate() == null) {
+            JOptionPane.showConfirmDialog(vista, "Seleccione una fecha de llegada");
             validar = false;
         }
 
