@@ -73,7 +73,15 @@ public class VistaCamion extends javax.swing.JInternalFrame {
         btncancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton-x.png"))); // NOI18N
         btncancelar.setText("Cancelar");
 
+        txttipo.setToolTipText("Ingrese la primera letra con mayuscula y lo demas con minuscula");
+
         spinnerpotencia.setModel(new javax.swing.SpinnerNumberModel(1.0d, 1.0d, 1000.0d, 1.0d));
+
+        txtmodelo.setToolTipText("");
+
+        txtmatricula.setToolTipText("Ingrese los siete digitos de la matricula");
+
+        txtplaca.setToolTipText("Ingrese tres letras en mayuscula un guion y cuatro numeros");
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/camion.png"))); // NOI18N
 
