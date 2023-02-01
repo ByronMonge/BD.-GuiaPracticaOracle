@@ -697,7 +697,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         btncancelar.setText("Cancelar");
 
         jLabel13.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel13.setText("Información del destino");
+        jLabel13.setText("Información de la provincia");
 
         lblcodprovincia.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         lblcodprovincia.setText("Codigo");
