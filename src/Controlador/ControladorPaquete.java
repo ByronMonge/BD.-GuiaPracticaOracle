@@ -1,8 +1,11 @@
 package Controlador;
 
+import Modelo.Camion;
 import Modelo.Camionero;
 import Modelo.Cliente;
+import Modelo.Conduce;
 import Modelo.Destinatario;
+import Modelo.Modelo_Camion;
 import Modelo.Modelo_Camionero;
 import Modelo.Modelo_Cliente;
 import Modelo.Modelo_Destinatario;
@@ -11,6 +14,8 @@ import Modelo.Modelo_Provincia;
 import Modelo.Paquete;
 import Modelo.Provincia;
 import Vista.VistaPaquete;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -47,6 +52,7 @@ public class ControladorPaquete {
         vista.getBtnactualizar().addActionListener(l -> cargarTablaPaquetes());
         vista.getBtnmodificar().addActionListener(l -> abrirYCargarDatosEnElDialogPaquete());
         vista.getBtnguardar().addActionListener(l -> crearOModificarConduccion());
+        buscarRegistros();
     }
 
     public void abrirDialogCrear() {
@@ -254,7 +260,7 @@ public class ControladorPaquete {
 
             if (validarDatos()) {
 
-                int codigoPaquete= Integer.parseInt(vista.getTxtcodigoPaquete().getText());
+                int codigoPaquete = Integer.parseInt(vista.getTxtcodigoPaquete().getText());
                 int codigoCliente = Integer.parseInt(vista.getTxtcodigoCliente().getText());
                 int codigoCamionero = Integer.parseInt(vista.getTxtcodigoCamionero().getText());
                 int codigoDestinatario = Integer.parseInt(vista.getTxtcodigoDestinatario().getText());
@@ -292,7 +298,7 @@ public class ControladorPaquete {
                 } else {
                     JOptionPane.showMessageDialog(vista, "No se pudo modificar el paquete");
                 }
-                
+
             } else {
                 JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
             }
@@ -538,6 +544,78 @@ public class ControladorPaquete {
         }
         vista.getJclfecharegistro().setDate(fecha);
         vista.getJclfecharegistro().setEnabled(false);
+    }
+
+    public void buscarRegistros() {
+
+        KeyListener eventoTeclado = new KeyListener() {//Crear un objeto de tipo keyListener(Es una interface) por lo tanto se debe implementar sus metodos abstractos
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+                try {
+
+                    Modelo_Camionero modeloCamionero = new Modelo_Camionero();
+                    Modelo_Destinatario modeloDestinatario = new Modelo_Destinatario();
+                    Modelo_Cliente modeloCliente = new Modelo_Cliente();
+                    Modelo_Provincia modeloProvincia = new Modelo_Provincia();
+
+                    DefaultTableModel tabla = (DefaultTableModel) vista.getTablapaquetes().getModel();
+                    tabla.setNumRows(0);
+
+                    List<Paquete> listapaq = modelo.buscarPaquetes(Integer.parseInt(vista.getTxtbuscar().getText()));
+                    List<Camionero> listacam = modeloCamionero.listaCamionerosTabla();
+                    List<Destinatario> listades = modeloDestinatario.listaDestinatariosTabla();
+                    List<Cliente> listacli = modeloCliente.listaClientesTabla();
+                    List<Provincia> listaprov = modeloProvincia.listaProvincias();
+
+                    listapaq.stream().forEach(p -> {
+
+                        String fechaRegistro = p.getFecharegistro().substring(0, 10);
+                        listacam.stream().forEach(ca -> {
+
+                            if (p.getCodcamionero() == ca.getCodigoCam()) {
+
+                                listades.stream().forEach(de -> {
+
+                                    if (p.getCoddestina() == de.getCodigodes()) {
+
+                                        listacli.stream().forEach(cl -> {
+
+                                            if (p.getCodcliente() == cl.getCodigocli()) {
+
+                                                listaprov.stream().forEach(pr -> {
+
+                                                    if (p.getCodprovincia() == pr.getCodigoPro()) {
+
+                                                        String[] datos = {String.valueOf(p.getCodigoPaq()), fechaRegistro, String.valueOf(p.getCoddestina()), de.getPrinombre() + " " + de.getApellidopat(), String.valueOf(p.getCodcliente()), cl.getPrinombre() + " " + cl.getApellidopat()};
+                                                        tabla.addRow(datos);
+                                                    }
+                                                });
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    });
+                } catch (NumberFormatException ex) {
+                    System.out.println("Error");
+                }
+            }
+        };
+
+        vista.getTxtbuscar().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
     }
 
     public boolean validarDatos() {
