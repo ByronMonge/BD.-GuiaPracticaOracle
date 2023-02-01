@@ -485,7 +485,7 @@ public class VistaCamionero extends javax.swing.JInternalFrame {
         jLabel14.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel14.setText("Genero:");
 
-        txtdireccion.setToolTipText("Ingrese su direccion");
+        txtdireccion.setToolTipText("Ingrese su direccion puede contener cualquier caracter a excepcion de slash");
 
         spinnerSalario.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 10000.0d, 1.0d));
         spinnerSalario.setToolTipText("No acepta negativos");
