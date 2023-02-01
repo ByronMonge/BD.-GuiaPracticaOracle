@@ -294,7 +294,7 @@ public class ControladorConduce {
                 JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
             }
 
-        } else {//EDITAR 
+        } /*else {//EDITAR 
 
             if (validarDatos()) {
 
@@ -325,7 +325,7 @@ public class ControladorConduce {
                 JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
             }
 
-        }
+        }*/
     }
 
     public void buscarRegistros() {
