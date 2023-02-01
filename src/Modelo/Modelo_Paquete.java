@@ -20,7 +20,7 @@ public class Modelo_Paquete extends Paquete {
 
     public boolean crearPaquete() {
 
-        String sql = "insert into paquete (paq_codcliente,paq_codprovincia, paq_coddestina, paq_codcamionero, paq_salidaproga, paq_llegadaprogra,paq_peso, paq_fecharegistro) values (" + getCodcliente() + "," + getCodprovincia() + "," + getCoddestina() + "," + getCodcamionero() + ",'" + getSalidaprogra() + "','" + getLlegadaprogra() + "'," + getPeso() + ",'" + getFecharegistro() + "')";
+        String sql = "insert into paquete (paq_codcliente,paq_codprovincia, paq_coddestina, paq_codcamionero, paq_salidaproga, paq_llegadaprogra,paq_peso, paq_fecharegistro, paq_estado) values (" + getCodcliente() + "," + getCodprovincia() + "," + getCoddestina() + "," + getCodcamionero() + ",'" + getSalidaprogra() + "','" + getLlegadaprogra() + "'," + getPeso() + ",'" + getFecharegistro() + "', 'A')";
         return conoc.accion(sql);
     }
 
@@ -30,9 +30,9 @@ public class Modelo_Paquete extends Paquete {
         return conoc.accion(sqlP);
     }
 
-    public boolean eliminarPaquete(String cedula) { //Eliminar un paquete
+    public boolean eliminarPaquete(int codigo) { //Eliminar un paquete
 
-        String sqlC = "DELETE paquete WHERE paq_codigo = " + getCodigoPaq() + "";
+        String sqlC = "UPDATE paquete set paq_estado = 'I' WHERE paq_codigo = " + codigo + "";
         return conoc.accion(sqlC);
     }
 
@@ -41,7 +41,7 @@ public class Modelo_Paquete extends Paquete {
             //Me retorna un "List" de "persona"
             List<Paquete> lista = new ArrayList<>();
 
-            String sql = "select * from paquete";
+            String sql = "select * from paquete where paq_estado = 'A'";
 
             ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
