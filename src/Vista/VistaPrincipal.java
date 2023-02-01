@@ -196,7 +196,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnconduce.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnconduce);
 
-        btnpaquetes.setText("Paquete");
+        btnpaquetes.setBackground(new java.awt.Color(153, 153, 255));
+        btnpaquetes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/seguro-de-entrega.png"))); // NOI18N
+        btnpaquetes.setToolTipText("Enviar paquetes");
         btnpaquetes.setFocusable(false);
         btnpaquetes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnpaquetes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -210,7 +212,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
+            .addGap(0, 389, Short.MAX_VALUE)
         );
 
         MnuCamioneros.setBackground(new java.awt.Color(153, 153, 255));
