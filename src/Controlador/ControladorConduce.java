@@ -48,7 +48,7 @@ public class ControladorConduce {
     public void abrirDialogCrear() {
         vista.getjDlgConduce().setName("Crear nueva conduccion");
         vista.getjDlgConduce().setLocationRelativeTo(vista);
-        vista.getjDlgConduce().setSize(876, 733);
+        vista.getjDlgConduce().setSize(960, 527);
         vista.getjDlgConduce().setTitle("Crear nueva conduccion");
         vista.getjDlgConduce().setVisible(true);
         limpiarDatosYDespacerCampos();
@@ -110,7 +110,7 @@ public class ControladorConduce {
                     //Abre el jDialog y carga los datos en el jDialog
                     vista.getjDlgConduce().setName("Editar");
                     vista.getjDlgConduce().setLocationRelativeTo(vista);
-                    vista.getjDlgConduce().setSize(876, 733);
+                    vista.getjDlgConduce().setSize(960, 527);
                     vista.getjDlgConduce().setTitle("Editar");
                     vista.getjDlgConduce().setVisible(true);
                     vista.getTxtcodigoconduce().setEditable(false); //Bloqueo el campo

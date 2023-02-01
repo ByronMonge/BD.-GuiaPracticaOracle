@@ -43,7 +43,7 @@ public class ControladorCliente {
     public void abrirDialogCrear() {
         vista.getjDlgClientes().setName("Crear nueva persona");
         vista.getjDlgClientes().setLocationRelativeTo(vista);
-        vista.getjDlgClientes().setSize(876, 733);
+        vista.getjDlgClientes().setSize(1000, 748);
         vista.getjDlgClientes().setTitle("Crear nueva persona");
         vista.getjDlgClientes().setVisible(true);
         vista.getTxtdni().setEditable(true); //Desbloqueo el campo de la cedula
@@ -90,7 +90,7 @@ public class ControladorCliente {
                     //Abre el jDialog y carga los datos en el jDialog
                     vista.getjDlgClientes().setName("Editar");
                     vista.getjDlgClientes().setLocationRelativeTo(vista);
-                    vista.getjDlgClientes().setSize(876, 733);
+                    vista.getjDlgClientes().setSize(1000, 748);
                     vista.getjDlgClientes().setTitle("Editar");
                     vista.getjDlgClientes().setVisible(true);
                     vista.getTxtdni().setEditable(false); //Bloqueo el campo de cedula
