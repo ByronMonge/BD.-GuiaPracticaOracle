@@ -242,9 +242,7 @@ public class ControladorCliente {
                 } else {
                     JOptionPane.showMessageDialog(vista, "No se pudo modificar la persona");
                 }
-            } else {
-                JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
-            }
+            } 
         }
     }
 
