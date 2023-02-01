@@ -1,4 +1,3 @@
-
 package Modelo;
 
 import java.sql.ResultSet;
@@ -9,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Modelo_Paquete extends Paquete {
-    
+
     ConectOC conoc = new ConectOC();
 
     public Modelo_Paquete() {
@@ -18,16 +17,16 @@ public class Modelo_Paquete extends Paquete {
     public Modelo_Paquete(int codigoPaq, int codcliente, int codprovincia, int coddestina, int codcamionero, String salidaproga, String llegadaprogra, double peso, String fecharegistro) {
         super(codigoPaq, codcliente, codprovincia, coddestina, codcamionero, salidaproga, llegadaprogra, peso, fecharegistro);
     }
-    
+
     public boolean crearPaquete() {
 
         String sql = "insert into paquete (paq_codcliente,paq_codprovincia, paq_coddestina, paq_codcamionero, paq_salidaproga, paq_llegadaprogra,paq_peso, paq_fecharegistro) values (" + getCodcliente() + "," + getCodprovincia() + "," + getCoddestina() + "," + getCodcamionero() + ",'" + getSalidaprogra() + "','" + getLlegadaprogra() + "'," + getPeso() + ",'" + getFecharegistro() + "')";
         return conoc.accion(sql);
     }
-    
+
     public boolean modificarPaquete() { //Modificar la instancia en la BD
 
-        String sqlP = "UPDATE paquete SET paq_peso = " + getPeso() + ",paq_salidaprogra = '" + getSalidaprogra() + "' ',paq_llegadaprogra = '" + getLlegadaprogra() + " WHERE paq_codigo = '" +getCodigoPaq()+ "'"; //Modifica los datos de la tabla paquete...Solo modifica peso, llegadaprogra, salidaprogra
+        String sqlP = "UPDATE paquete SET paq_codcliente = " + getCodcliente() + ", paq_codprovincia = " + getCodprovincia() + ",paq_coddestina = " + getCoddestina() + ",paq_codcamionero = " + getCodcamionero() + ", paq_peso = " + getPeso() + ",paq_salidaproga = '" + getSalidaprogra() + "',paq_llegadaprogra = '" + getLlegadaprogra() + "' WHERE paq_codigo = " + getCodigoPaq() + ""; //Modifica los datos de la tabla paquete...Solo modifica peso, llegadaprogra, salidaprogra
         return conoc.accion(sqlP);
     }
 
@@ -36,7 +35,7 @@ public class Modelo_Paquete extends Paquete {
         String sqlC = "DELETE paquete WHERE paq_codigo = " + getCodigoPaq() + "";
         return conoc.accion(sqlC);
     }
-    
+
     public List<Paquete> listaPaquetes() {
         try {
             //Me retorna un "List" de "persona"
@@ -59,8 +58,8 @@ public class Modelo_Paquete extends Paquete {
                 paq.setCodcamionero(rs.getInt("paq_codcamionero"));
                 paq.setPeso(rs.getDouble("paq_peso"));
                 paq.setFecharegistro(rs.getString("paq_fecharegistro"));
-                paq.setLlegadaprogra(rs.getString("con_llegadaprogra"));
-                paq.setSalidaprogra(rs.getString("con_salidaprogra"));
+                paq.setLlegadaprogra(rs.getString("paq_llegadaprogra"));
+                paq.setSalidaprogra(rs.getString("paq_salidaproga"));
 
                 lista.add(paq); //Agrego los datos a la lista
             }
@@ -74,6 +73,6 @@ public class Modelo_Paquete extends Paquete {
             Logger.getLogger(Modelo_Paquete.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
-    }    
-    
+    }
+
 }
