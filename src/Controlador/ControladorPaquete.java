@@ -52,6 +52,7 @@ public class ControladorPaquete {
         vista.getBtnactualizar().addActionListener(l -> cargarTablaPaquetes());
         vista.getBtnmodificar().addActionListener(l -> abrirYCargarDatosEnElDialogPaquete());
         vista.getBtnguardar().addActionListener(l -> crearOModificarConduccion());
+        vista.getBtneliminar().addActionListener(l -> eliminarRegistros());
         buscarRegistros();
     }
 
@@ -544,6 +545,29 @@ public class ControladorPaquete {
         }
         vista.getJclfecharegistro().setDate(fecha);
         vista.getJclfecharegistro().setEnabled(false);
+    }
+
+    public void eliminarRegistros() {
+        int fila = vista.getTablapaquetes().getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
+        } else {
+
+            int response = JOptionPane.showConfirmDialog(vista, "¿Seguro que desea eliminar esta información?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+
+                int codigo;
+                codigo = Integer.parseInt(vista.getTablapaquetes().getValueAt(fila, 0).toString());
+
+                if (modelo.eliminarPaquete(codigo)) {
+                    JOptionPane.showMessageDialog(null, "Los registros fueron eliminados exitosamente");
+                    cargarTablaPaquetes();//Actualizo la tabla con los datos
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error: No se pudo eliminar los registros");
+                }
+            }
+        }
     }
 
     public void buscarRegistros() {
