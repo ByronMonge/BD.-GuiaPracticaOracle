@@ -42,6 +42,7 @@ public class ControladorConduce {
         vista.getBtnguardar().addActionListener(l -> crearOModificarConduccion());
         vista.getBtnmodificar().addActionListener(l -> abrirYCargarDatosEnElDialogConduce());
         vista.getBtnactualizar().addActionListener(l -> cargarTablaTurnosDeConduccion());
+        vista.getBtneliminar().addActionListener(l -> eliminarRegistros());
         buscarRegistros();
     }
 
@@ -323,6 +324,29 @@ public class ControladorConduce {
                 }
             } else {
                 JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
+            }
+        }
+    }
+
+    public void eliminarRegistros() {
+        int fila = vista.getTablaconduccion().getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
+        } else {
+
+            int response = JOptionPane.showConfirmDialog(vista, "¿Seguro que desea eliminar esta información?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+
+                int codigo;
+                codigo = Integer.parseInt(vista.getTablaconduccion().getValueAt(fila, 0).toString());
+
+                if (modelo.eliminarConduce(codigo)) {
+                    JOptionPane.showMessageDialog(null, "Los registros fueron eliminados exitosamente");
+                    cargarTablaTurnosDeConduccion();//Actualizo la tabla con los datos
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error: No se pudo eliminar los registros");
+                }
             }
         }
     }
