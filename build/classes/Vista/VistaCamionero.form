@@ -211,10 +211,16 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtdni">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtpriapellido">
         </Component>
         <Component class="javax.swing.JTextField" name="txtprinombre">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Ingrese solo letras y la primera con mayuscula"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txttelefono">
         </Component>
