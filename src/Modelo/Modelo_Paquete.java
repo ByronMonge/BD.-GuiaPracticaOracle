@@ -21,7 +21,7 @@ public class Modelo_Paquete extends Paquete {
     
     public boolean crearPaquete() {
 
-        String sql = "insert into paquete (paq_codcliente,paq_codprovincia, paq_coddestina, paq_codcamionero, paq_salidapro, paq_llegadaprogra,paq_peso, paq_fecharegistro) values (" + getCodcliente() + "," + getCodprovincia() + "," + getCoddestina() + "," + getCodcamionero() + ",'" + getSalidaprogra() + "','" + getLlegadaprogra() + "'," + getPeso() + ",'" + getFecharegistro() + "')";
+        String sql = "insert into paquete (paq_codcliente,paq_codprovincia, paq_coddestina, paq_codcamionero, paq_salidaproga, paq_llegadaprogra,paq_peso, paq_fecharegistro) values (" + getCodcliente() + "," + getCodprovincia() + "," + getCoddestina() + "," + getCodcamionero() + ",'" + getSalidaprogra() + "','" + getLlegadaprogra() + "'," + getPeso() + ",'" + getFecharegistro() + "')";
         return conoc.accion(sql);
     }
     
