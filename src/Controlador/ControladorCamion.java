@@ -230,23 +230,47 @@ public class ControladorCamion {
     }
 
     public boolean validarDatos() {
-        Validaciones validacion = new Validaciones();
+        Validaciones mivalidacion = new Validaciones();
 
         boolean validar = true;
-        if (vista.getTxtplaca().getText().isEmpty() || !validacion.validarPlaca(vista.getTxtplaca().getText())) {
+
+        if (vista.getTxtplaca().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese una placa");
             validar = false;
+        } else {
+            if (!mivalidacion.validarPlaca(vista.getTxtplaca().getText())) {
+                JOptionPane.showMessageDialog(null, "Placa incorrecta");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtmatricula().getText().isEmpty() || !validacion.validarMatricula(vista.getTxtmatricula().getText())) {
+        if (vista.getTxtmatricula().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese una matricula");
             validar = false;
+        } else {
+            if (!mivalidacion.validarMatricula(vista.getTxtmatricula().getText())) {
+                JOptionPane.showMessageDialog(null, "Matricula incorrecta");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtmodelo().getText().isEmpty() || !validacion.validarDireccion(vista.getTxtmodelo().getText())) {
+        if (vista.getTxtmodelo().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese un modelo");
             validar = false;
+        } else {
+            if (!mivalidacion.validarDireccion(vista.getTxtmodelo().getText())) {
+                JOptionPane.showMessageDialog(null, "Modelo incorrecta");
+                validar = false;
+            }
         }
-
-        if (vista.getTxttipo().getText().isEmpty() || !validacion.validarTextoSinEspacio(vista.getTxttipo().getText())) {
+        if (vista.getTxttipo().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el tipo");
             validar = false;
+        } else {
+            if (!mivalidacion.validarTextoSinEspacio(vista.getTxttipo().getText())) {
+                JOptionPane.showMessageDialog(null, "Tipo incorrecto");
+                validar = false;
+            }
         }
         return validar;
     }
