@@ -1,7 +1,6 @@
 package Modelo;
 
 import java.util.Properties;
-import java.util.Scanner;
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
 import javax.mail.BodyPart;
@@ -16,8 +15,8 @@ import javax.mail.internet.MimeMultipart;
 
 public class Email {
 
-    public void enviarEmail(String correoDestino) throws MessagingException {
-        //ENVIAR CORREO: CON TEXTO Y CON ARCHIVO ADJUNTO
+    public void enviarEmail(String correoDestino, String mensajeaEnviar) throws MessagingException {
+        //ENVIAR CORREO: CON TEXTO Y SIN ARCHIVO ADJUNTO
         //Scanner lectura = new Scanner(System.in);
 
         String correo = "mongebyron46@gmail.com";
@@ -41,13 +40,13 @@ public class Email {
 
         ////////////Enviar archivo Adjunto/////////////////
         BodyPart texto = new MimeBodyPart();
-        texto.setText(" Aqui va el texto que quiero enviar"); //Aqui va el texto que encabezara al documento enviado
-        BodyPart adjunto = new MimeBodyPart();
-        adjunto.setDataHandler(new DataHandler(new FileDataSource("C:\\Users\\monge\\Downloads\\DG. Importante. Tercer ciclo B.pdf"))); //Aqui va la ruta del archivo que deseo enviar
-        adjunto.setFileName("DG. Importante. Tercer ciclo B.pdf");//Aqui va el nombre del archivo que estoy enviado mas su extension
+        texto.setText(mensajeaEnviar); //Aqui va el texto que encabezara al documento enviado
+        //BodyPart adjunto = new MimeBodyPart();
+        //adjunto.setDataHandler(new DataHandler(new FileDataSource("C:\\Users\\monge\\Downloads\\DG. Importante. Tercer ciclo B.pdf"))); //Aqui va la ruta del archivo que deseo enviar
+        //adjunto.setFileName("DG. Importante. Tercer ciclo B.pdf");//Aqui va el nombre del archivo que estoy enviado mas su extension
         MimeMultipart m = new MimeMultipart();
         m.addBodyPart(texto);
-        m.addBodyPart(adjunto);
+        //m.addBodyPart(adjunto);
         /////////////////////////////////////////////////
 
         MimeMessage adjunto2 = new MimeMessage(session);
@@ -60,7 +59,7 @@ public class Email {
 
         mensaje.setFrom(new InternetAddress(correo));
         mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(correoDestino));
-        adjunto2.setSubject("PRUEBA"); //Aqui va el asunto del email
+        adjunto2.setSubject("Confirmacion de envio del paquete al cliente"); //Aqui va el asunto del email
         Transport transport = session.getTransport("smtp");
         transport.connect(correo, contra);
         transport.sendMessage(adjunto2, adjunto2.getAllRecipients());
