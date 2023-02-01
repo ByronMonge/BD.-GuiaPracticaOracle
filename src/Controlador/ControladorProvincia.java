@@ -221,16 +221,30 @@ public class ControladorProvincia {
     }
 
     public boolean validarDatos() {
-        Validaciones validacion = new Validaciones();
+        Validaciones mivalidacion = new Validaciones();
 
         boolean validar = true;
-        if (vista.getTxtnombre().getText().isEmpty() || !validacion.validarTextoConEspacio(vista.getTxtnombre().getText())) {
+
+        if (vista.getTxtnombre().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el nombre");
             validar = false;
+        } else {
+            if (!mivalidacion.validarTextoConEspacio(vista.getTxtnombre().getText())) {
+                JOptionPane.showMessageDialog(null, "Nombre incorrecto");
+                validar = false;
+            }
         }
 
-        if (vista.getTxtregion().getText().isEmpty() || !validacion.validarTextoSinEspacio(vista.getTxtregion().getText())) {
+        if (vista.getTxtregion().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese la region");
             validar = false;
+        } else {
+            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtregion().getText())) {
+                JOptionPane.showMessageDialog(null, "Region incorrecta");
+                validar = false;
+            }
         }
+
 
         return validar;
     }
