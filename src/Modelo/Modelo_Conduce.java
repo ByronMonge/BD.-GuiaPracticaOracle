@@ -20,7 +20,7 @@ public class Modelo_Conduce extends Conduce {
 
     public boolean crearConduccion() {
 
-        String sql = "insert into conduce (con_codcamionero, con_codcamion, con_fechaini) values (" + getCodigoCam() + "," + getCodigoCmi() + ",'" + getFechaSalida() + "')";
+        String sql = "insert into conduce (con_codcamionero, con_codcamion, con_fechaini, con_estado) values (" + getCodigoCam() + "," + getCodigoCmi() + ",'" + getFechaSalida() + "', 'A')";
         return conoc.accion(sql);
     }
 
@@ -30,12 +30,18 @@ public class Modelo_Conduce extends Conduce {
         return conoc.accion(sql);
     }
 
+    public boolean eliminarConduce(int codigo) {
+        String sql = "Update conduce set con_estado = 'I' where con_codigo = " + codigo + "";
+        return conoc.accion(sql);
+
+    }
+
     public List<Conduce> listaTurnosDeConduccion() {
         try {
             //Me retorna un "List" de "persona"
             List<Conduce> lista = new ArrayList<>();
 
-            String sql = "select * from conduce";
+            String sql = "select * from conduce where con_estado = 'A'";
 
             ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
@@ -69,7 +75,7 @@ public class Modelo_Conduce extends Conduce {
             //Me retorna un "List" de "persona"
             List<Conduce> lista = new ArrayList<>();
 
-            String sql = "select * from conduce where con_codigo like '"+codigo+"%'";
+            String sql = "select * from conduce where con_codigo like '" + codigo + "%'";
 
             ResultSet rs = conoc.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
