@@ -610,7 +610,7 @@ public class ControladorPaquete {
                         });
                     });
                 } catch (NumberFormatException ex) {
-                    System.out.println("Error");
+                    //System.out.println("Error");
                 }
             }
         };
