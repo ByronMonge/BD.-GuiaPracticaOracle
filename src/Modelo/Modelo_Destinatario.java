@@ -34,7 +34,7 @@ public class Modelo_Destinatario extends Destinatario {
 
         if (crearPersona()) { //Si la persona ya existe entonces puedo crear un destinatario
 
-            String sql = "insert into destinatario (des_percodigo, des_codpostal, des_infocomplement, des_calleprinc, des_callesecun) values (" + mipersona.traerCodigoDePersonaCrear() + ",'" + getCodpostal() + "','" + getInfocomplement() + "','" + getCalleprinc() + "','" + getCallesecun() + "')";
+            String sql = "insert into destinatario (des_percodigo, des_codpostal, des_infocomplement, des_calleprinc, des_callesecun,des_estado) values (" + mipersona.traerCodigoDePersonaCrear() + ",'" + getCodpostal() + "','" + getInfocomplement() + "','" + getCalleprinc() + "','" + getCallesecun() + "','A')";
             return conoc.accion(sql);
         } else {
             return false;
@@ -49,6 +49,14 @@ public class Modelo_Destinatario extends Destinatario {
         String sqlC = "UPDATE destinatario SET des_codpostal = '" + getCodpostal() + "',des_infocomplement = '" + getInfocomplement() + "', des_calleprinc = '" + getCalleprinc() + "', des_callesecun = '" + getCallesecun() + "' WHERE des_percodigo = '" + mipersona.traerCodigoDePersonaModificar(getDni()) + "'"; //Modifica los datos de la tabla camionero
         return conoc.accion(sqlP) && conoc.accion(sqlC);
     }
+
+    /*public boolean eliminarDestinatario(int codigo) {
+        Modelo_Persona mipersona = new Modelo_Persona(); //Creo un objeto de la clase Modelo_Persona 
+
+        String sqlC = "UPDATE destinatario SET des_estado = 'I' WHERE cam_percodigo = '" + mipersona.traerCodigoDePersonaModificar(cedula) + "'";
+        return conoc.accion(sqlC);
+
+    }*/
 
     public List<Destinatario> listaDestinatariosTabla() {
         try {
