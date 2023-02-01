@@ -290,9 +290,7 @@ public class ControladorConduce {
                 } else {
                     JOptionPane.showMessageDialog(vista, "No se pudo crear la el turno de conduccion");
                 }
-            } else {
-
-                JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
+            
             }
 
         } else {//EDITAR 
@@ -428,15 +426,17 @@ public class ControladorConduce {
         boolean validar = true;
 
         if (vista.getTxtcodigocamionero().getText().isEmpty()) {
-
+            JOptionPane.showMessageDialog(null, "Escoga un conductor");
             validar = false;
         }
 
         if (vista.getTxtcodigocamion().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Eligan un camion");
             validar = false;
         }
 
         if (vista.getjFechainicio().getDate() == null) {
+            JOptionPane.showMessageDialog(null, "Sleccione una fecha");
             validar = false;
         }
 
