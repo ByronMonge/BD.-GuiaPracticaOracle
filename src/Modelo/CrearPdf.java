@@ -16,13 +16,33 @@ import java.io.IOException;
 public class CrearPdf {
 
     public void hacerPdf() {
-        File file = new File("Trabajo.pdf");
+//        File file = new File("Sistema_Envios.pdf");
+//        try (PdfWriter pdfWriter = new PdfWriter(file); PdfDocument pdfDocument = new PdfDocument(pdfWriter); Document document = new Document(pdfDocument)) {
+//
+//            Image gasolinera = new Image(ImageDataFactory.create("C:\\Users\\User\\Downloads\\Gasolinera.jpeg"));
+//            Paragraph p = new Paragraph();
+//
+//            p.add("Factura").add(gasolinera);
+//
+//            //p.add("Prueba de pdf solo con texto");
+//            document.add(p);
+//            document.close();
+//            pdfDocument.close();
+//
+//            System.out.println("Pdf creado");
+//        } catch (FileNotFoundException ex) {
+//            System.out.println(ex.getMessage());
+//        } catch (IOException ex) {
+//            System.out.println(ex.getMessage());
+//        }
+
+        File file = new File("Sistema_Envios.pdf");
         try (PdfWriter pdfWriter = new PdfWriter(file); PdfDocument pdfDocument = new PdfDocument(pdfWriter); Document document = new Document(pdfDocument)) {
 
-            Image gasolinera = new Image(ImageDataFactory.create("C:\\Users\\User\\Downloads\\Gasolinera.jpeg"));
+            //Image gasolinera = new Image(ImageDataFactory.create("C:\\Users\\User\\Downloads\\Gasolinera.jpeg"));
             Paragraph p = new Paragraph();
 
-            p.add("Factura").add(gasolinera);
+            p.add("Factura");
 
             //p.add("Prueba de pdf solo con texto");
             document.add(p);
