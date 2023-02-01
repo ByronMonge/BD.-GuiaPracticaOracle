@@ -595,6 +595,14 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         this.spinnerPeso = spinnerPeso;
     }
 
+    public JButton getBtnactualizar() {
+        return btnactualizar;
+    }
+
+    public void setBtnactualizar(JButton btnactualizar) {
+        this.btnactualizar = btnactualizar;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -669,6 +677,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         btncrear = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
+        btnactualizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablapaquetes = new javax.swing.JTable();
 
@@ -1202,6 +1211,8 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
 
         btneliminar.setText("Eliminar");
 
+        btnactualizar.setText("Actualizar");
+
         javax.swing.GroupLayout pnlprincipalframeLayout = new javax.swing.GroupLayout(pnlprincipalframe);
         pnlprincipalframe.setLayout(pnlprincipalframeLayout);
         pnlprincipalframeLayout.setHorizontalGroup(
@@ -1210,11 +1221,13 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addComponent(btnactualizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btncrear, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(18, 18, 18)
                 .addComponent(btnmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btneliminar)
                 .addGap(29, 29, 29))
         );
@@ -1227,20 +1240,21 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                     .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btncrear)
                     .addComponent(btnmodificar)
-                    .addComponent(btneliminar))
+                    .addComponent(btneliminar)
+                    .addComponent(btnactualizar))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
         tablapaquetes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         tablapaquetes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Código", "Descripción", "Destinatario", "Direccion destinatario", "Código del camionero", "Nombre y apellido", "Nombre de la provincia"
+                "Código de registro", "Fecha de registro", "Código del destinatario", "Nombre y apellido", "Código del cliente", "Nombre y apellido"
             }
         ));
         jScrollPane1.setViewportView(tablapaquetes);
@@ -1265,6 +1279,7 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnactualizar;
     private javax.swing.JButton btnbuscarcamionero;
     private javax.swing.JButton btnbuscarcliente;
     private javax.swing.JButton btnbuscardestinatario;
