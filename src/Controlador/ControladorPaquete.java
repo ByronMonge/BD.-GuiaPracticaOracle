@@ -39,16 +39,14 @@ public class ControladorPaquete {
         vista.getBtnbuscarcliente().addActionListener(l -> abrirjDialogCliente());
         vista.getBtnbuscarcamionero().addActionListener(l -> abrirjDialogCamionero());
         vista.getBtnbuscardestinatario().addActionListener(l -> abrirjDialogDestinatario());
+        vista.getBtnbuscarProvincia().addActionListener(l -> abrirjDialogProvincias());
         vista.getBtncargarCliente().addActionListener(l -> cargarDatosClienteEnTXT());
         vista.getBtncargarCamionero().addActionListener(l -> cargarDatosCamioneroEnTXT());
         vista.getBtncargarDestinatario().addActionListener(l -> cargarDatosDestinatarioEnTXT());
-        vista.getCbxprovincia().addActionListener(l -> cargarDatosProvinciaEnTXT());
-        vista.getBtnguardar().addActionListener(l -> crearOModificarConduccion());
+        vista.getBtncargarProvincias().addActionListener(l -> cargarDatosProvinciaEnTXT());
         vista.getBtnactualizar().addActionListener(l -> cargarTablaPaquetes());
-
-        //vista.getBtnbuscarcamion().addActionListener(l -> abrirjDialogCamion());
-        //vista.getBtncargarCamionero().addActionListener(l -> cargarDatosCamioneroEnTXT());
-        //vista.getBtncargarCamion().addActionListener(l -> cargarDatosCamionEnTXT());
+        vista.getBtnmodificar().addActionListener(l -> abrirYCargarDatosEnElDialogPaquete());
+        vista.getBtnguardar().addActionListener(l -> crearOModificarConduccion());
     }
 
     public void abrirDialogCrear() {
@@ -57,9 +55,7 @@ public class ControladorPaquete {
         vista.getjDlgPaquetes().setSize(1017, 521);
         vista.getjDlgPaquetes().setTitle("Registrar nuevo Paquete");
         vista.getjDlgPaquetes().setVisible(true);
-        //limpiarDatosYDespacerCampos();
-        cargarProvinciasComboBox();
-        setearFechaActual();
+        limpiarDatosYDespacerCampos();
     }
 
     public void cargarTablaPaquetes() {
@@ -80,7 +76,7 @@ public class ControladorPaquete {
 
         listapaq.stream().forEach(p -> {
 
-            //String fechaInicio = c.getFechaSalida().substring(0, 10);
+            String fechaRegistro = p.getFecharegistro().substring(0, 10);
             listacam.stream().forEach(ca -> {
 
                 if (p.getCodcamionero() == ca.getCodigoCam()) {
@@ -97,7 +93,7 @@ public class ControladorPaquete {
 
                                         if (p.getCodprovincia() == pr.getCodigoPro()) {
 
-                                            String[] datos = {String.valueOf(p.getCodigoPaq()), p.getFecharegistro(), String.valueOf(p.getCoddestina()), de.getPrinombre() + " " + de.getApellidopat(), String.valueOf(p.getCodcliente()), cl.getPrinombre() + " " + cl.getApellidopat()};
+                                            String[] datos = {String.valueOf(p.getCodigoPaq()), fechaRegistro, String.valueOf(p.getCoddestina()), de.getPrinombre() + " " + de.getApellidopat(), String.valueOf(p.getCodcliente()), cl.getPrinombre() + " " + cl.getApellidopat()};
                                             tabla.addRow(datos);
                                         }
                                     });
@@ -108,6 +104,101 @@ public class ControladorPaquete {
                 }
             });
         });
+    }
+
+    public void abrirYCargarDatosEnElDialogPaquete() {
+
+        //Creo objetos de los modelos de camionero y de camion
+        Modelo_Camionero modeloCamionero = new Modelo_Camionero();
+        Modelo_Destinatario modeloDestinatario = new Modelo_Destinatario();
+        Modelo_Cliente modeloCliente = new Modelo_Cliente();
+        Modelo_Provincia modeloProvincia = new Modelo_Provincia();
+
+        //Cargar los list con los registros
+        List<Camionero> listacam = modeloCamionero.listaCamionerosTabla();
+        List<Destinatario> listades = modeloDestinatario.listaDestinatariosTabla();
+        List<Cliente> listacli = modeloCliente.listaClientesTabla();
+        List<Provincia> listaprov = modeloProvincia.listaProvincias();
+
+        int seleccion = vista.getTablapaquetes().getSelectedRow();
+
+        if (seleccion == -1) {
+            JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
+        } else {
+
+            int codigo = Integer.parseInt(vista.getTablapaquetes().getValueAt(seleccion, 0).toString());
+            modelo.listaPaquetes().forEach((p) -> {
+                if (p.getCodigoPaq() == codigo) {
+
+                    //Abre el jDialog y carga los datos en el jDialog
+                    vista.getjDlgPaquetes().setName("Editar");
+                    vista.getjDlgPaquetes().setLocationRelativeTo(vista);
+                    vista.getjDlgPaquetes().setSize(1017, 521);
+                    vista.getjDlgPaquetes().setTitle("Editar");
+                    vista.getjDlgPaquetes().setVisible(true);
+
+                    //Visibilizo y bloqueo campos
+                    setearFechaActual(); //Seteo la fecha actual en el jDateChooser
+                    vista.getLblCodigoPaquete().setVisible(true);
+                    vista.getTxtcodigoPaquete().setVisible(true);
+                    vista.getTxtcodigoPaquete().setEditable(false);
+                    vista.getJclfecharegistro().setEnabled(false);
+
+                    //Seteo los datos en los campos de texto
+                    vista.getTxtcodigoPaquete().setText(String.valueOf(p.getCodigoPaq()));
+                    vista.getTxtcodigoCliente().setText(String.valueOf(p.getCodcliente()));
+                    vista.getTxtcodigoDestinatario().setText(String.valueOf(p.getCoddestina()));
+                    vista.getTxtCodigoProvincia().setText(String.valueOf(p.getCodprovincia()));
+                    vista.getTxtcodigoCamionero().setText(String.valueOf(p.getCodcamionero()));
+                    vista.getSpinnerPeso().setValue(p.getPeso());
+
+                    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); //Doy formato a la fecha
+                    try {
+                        Date fechaR = formato.parse(p.getFecharegistro()); //La fecha la paso de String a Date
+                        Date fechaS = formato.parse(p.getSalidaprogra());
+                        Date fechaL = formato.parse(p.getLlegadaprogra());
+
+                        vista.getJclfecharegistro().setDate(fechaR);
+                        vista.getJclsalidapro().setDate(fechaS);
+                        vista.getJclllegadapro().setDate(fechaL);
+
+                    } catch (ParseException ex) {
+                        Logger.getLogger(ControladorPaquete.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    listacli.stream().forEach(cl -> {
+                        if (p.getCodcliente() == cl.getCodigocli()) {
+
+                            vista.getTxtcedcliente().setText(cl.getDni());
+                            vista.getTxtnomcliente().setText(cl.getPrinombre() + " " + cl.getApellidopat());
+                        }
+                    });
+
+                    listades.stream().forEach(de -> {
+                        if (p.getCoddestina() == de.getCodigodes()) {
+
+                            vista.getTxtceddestinatario().setText(de.getDni());
+                            vista.getTxtnomdestinatario().setText(de.getPrinombre() + " " + de.getApellidopat());
+                        }
+                    });
+
+                    listaprov.stream().forEach(pr -> {
+                        if (p.getCodprovincia() == pr.getCodigoPro()) {
+
+                            vista.getTxtnombreprovincia().setText(pr.getNombre());
+                        }
+                    });
+
+                    listacam.stream().forEach(ca -> {
+                        if (p.getCodcamionero() == ca.getCodigoCam()) {
+
+                            vista.getTxtcedcamionero().setText(ca.getDni());
+                            vista.getTxtnomcamionero().setText(ca.getPrinombre() + " " + ca.getApellidopat());
+                        }
+                    });
+                }
+            });
+        }
     }
 
     public void crearOModificarConduccion() {
@@ -159,39 +250,54 @@ public class ControladorPaquete {
                 JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
             }
 
-        }
-        /*else {//EDITAR 
+        } else {//EDITAR 
 
             if (validarDatos()) {
 
-                int codigoConduce = Integer.parseInt(vista.getTxtcodigoconduce().getText());
-                int codigoCamionero = Integer.parseInt(vista.getTxtcodigocamionero().getText());
-                int codigoCamion = Integer.parseInt(vista.getTxtcodigocamion().getText());
-                Date fechainicio = vista.getjFechainicio().getDate(); //Obtengo la fecha del jDateChooser y la paso a date
+                int codigoPaquete= Integer.parseInt(vista.getTxtcodigoPaquete().getText());
+                int codigoCliente = Integer.parseInt(vista.getTxtcodigoCliente().getText());
+                int codigoCamionero = Integer.parseInt(vista.getTxtcodigoCamionero().getText());
+                int codigoDestinatario = Integer.parseInt(vista.getTxtcodigoDestinatario().getText());
+                int codigoProvincia = Integer.parseInt(vista.getTxtCodigoProvincia().getText());
 
-                SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); //Doy formato a la fecha
-                String fechainicioTexto = formato.format(fechainicio); //La fecha tiene el formato indicado y es de tipo String
+                double peso = Double.parseDouble(vista.getSpinnerPeso().getValue().toString());
+
+                Date fechasalida = vista.getJclsalidapro().getDate();
+                SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+                String fechasalidaT = formato.format(fechasalida);
+
+                Date fechallegada = vista.getJclllegadapro().getDate();
+                String fechallegadaT = formato.format(fechallegada);
+
+                Date fecharegistro = vista.getJclfecharegistro().getDate();
+                String fecharegistroT = formato.format(fecharegistro);
 
                 //Seteo los datos
-                Modelo_Conduce conduce = new Modelo_Conduce();
+                Modelo_Paquete paquete = new Modelo_Paquete();
 
-                conduce.setCodigoCon(codigoConduce);
-                conduce.setCodigoCam(codigoCamionero);
-                conduce.setCodigoCmi(codigoCamion);
-                conduce.setFechaSalida(fechainicioTexto);
+                paquete.setCodigoPaq(codigoPaquete);
+                paquete.setCodcliente(codigoCliente);
+                paquete.setCodcamionero(codigoCamionero);
+                paquete.setCoddestina(codigoDestinatario);
+                paquete.setCodprovincia(codigoProvincia);
+                paquete.setPeso(peso);
+                paquete.setSalidaprogra(fechasalidaT);
+                paquete.setLlegadaprogra(fechallegadaT);
+                paquete.setFecharegistro(fecharegistroT);
 
-                if (conduce.modificarConduccion()) {
-                    vista.getjDlgConduce().setVisible(false);
-                    JOptionPane.showMessageDialog(vista, "El turno de conduccion se ha Modificado Satisfactoriamente");
-                    cargarTablaTurnosDeConduccion();
+                if (paquete.modificarPaquete()) {
+                    vista.getjDlgPaquetes().setVisible(false);
+                    JOptionPane.showMessageDialog(vista, "Se modifico exitosamente el envio del paquete");
+                    cargarTablaPaquetes();
                 } else {
-                    JOptionPane.showMessageDialog(vista, "Error: El turno de conduccion no se pudo modificar");
+                    JOptionPane.showMessageDialog(vista, "No se pudo modificar el paquete");
                 }
+                
             } else {
                 JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
             }
 
-        }*/
+        }
     }
 
     //TODO SOBRE CLIENTE
@@ -368,31 +474,55 @@ public class ControladorPaquete {
         }
     }
 
-    //RELLENAR COMBOBOX DE PROVINCIAS
-    public void cargarProvinciasComboBox() {
-        Modelo_Provincia pro = new Modelo_Provincia();
+    //TODO DE PROVINCIAS
+    public void abrirjDialogProvincias() {
+        vista.getjDlgProvincias().setLocationRelativeTo(vista);
+        vista.getjDlgProvincias().setSize(502, 326);
+        vista.getjDlgProvincias().setTitle("Seleccionar provincia");
+        vista.getjDlgProvincias().setVisible(true);
+        cargarDatosDelLasProvincias();
+    }
 
-        List<Provincia> listapro = pro.listaProvincias();
+    public void cargarDatosDelLasProvincias() {
 
-        for (int i = 0; i < listapro.size(); i++) {
-            vista.getCbxprovincia().addItem(listapro.get(i).getNombre());
-        }
+        Modelo_Provincia modeloProvincia = new Modelo_Provincia();
+        vista.getJtblaProvinciasjDlg().setRowHeight(25);
+        DefaultTableModel estructuraTabla = (DefaultTableModel) vista.getJtblaProvinciasjDlg().getModel();
+        estructuraTabla.setRowCount(0);
+
+        List<Provincia> listap = modeloProvincia.listaProvincias();
+
+        Holder<Integer> i = new Holder<>(0);
+
+        listap.stream().forEach(p -> {
+
+            estructuraTabla.addRow(new Object[8]);
+
+            vista.getJtblaProvinciasjDlg().setValueAt(p.getCodigoPro(), i.value, 0);
+            vista.getJtblaProvinciasjDlg().setValueAt(p.getNombre(), i.value, 1);
+
+            i.value++;
+        });
     }
 
     public void cargarDatosProvinciaEnTXT() {
-        Modelo_Provincia pro = new Modelo_Provincia();
+        int fila = vista.getJtblaProvinciasjDlg().getSelectedRow();
 
-        List<Provincia> listapro = pro.listaProvincias();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
+        } else {
 
-        listapro.stream().forEach(p -> {
+            String codigo;
+            String nombre;
 
-            if (vista.getCbxprovincia().getSelectedItem().toString().equalsIgnoreCase(p.getNombre())) {
-                vista.getTxtCodigoProvincia().setText(String.valueOf(p.getCodigoPro()));
-            } else {
-                if (vista.getCbxprovincia().getSelectedItem().toString().equalsIgnoreCase("Seleccionar")) {
-                }
-            }
-        });
+            codigo = vista.getJtblaProvinciasjDlg().getValueAt(fila, 0).toString();
+            nombre = vista.getJtblaProvinciasjDlg().getValueAt(fila, 1).toString();
+
+            vista.getTxtCodigoProvincia().setText(codigo);
+            vista.getTxtnombreprovincia().setText(nombre);
+
+            vista.getjDlgProvincias().dispose();//Cierro la ventana luego de cargar los datos
+        }
     }
 
     public void setearFechaActual() {
@@ -439,5 +569,27 @@ public class ControladorPaquete {
         }
 
         return validar;
+    }
+
+    public void limpiarDatosYDespacerCampos() {
+        vista.getTxtcodigoCliente().setText("");
+        vista.getTxtcedcliente().setText("");
+        vista.getTxtnomcliente().setText("");
+        vista.getTxtcodigoDestinatario().setText("");
+        vista.getTxtcodigoDestinatario().setText("");
+        vista.getTxtnomdestinatario().setText("");
+        vista.getTxtCodigoProvincia().setText("");
+        vista.getTxtnombreprovincia().setText("");
+        vista.getTxtcodigoCamionero().setText("");
+        vista.getTxtcodigoCamionero().setText("");
+        vista.getTxtnomcamionero().setText("");
+        vista.getSpinnerPeso().setValue(1);
+        vista.getJclfecharegistro().setDate(null);// Limpio la fecha de registro
+        vista.getJclsalidapro().setDate(null);
+        vista.getJclllegadapro().setDate(null);
+
+        vista.getTxtcodigoPaquete().setVisible(false);
+        vista.getLblCodigoPaquete().setVisible(false);
+        setearFechaActual();
     }
 }
