@@ -59,12 +59,12 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         this.btnmodificar = btnmodificar;
     }
 
-    public JComboBox<String> getCbxprovincia() {
-        return cbxprovincia;
+    public JTextField getTxtnombreprovincia() {
+        return txtnombreprovincia;
     }
 
-    public void setCbxprovincia(JComboBox<String> cbxprovincia) {
-        this.cbxprovincia = cbxprovincia;
+    public void setTxtnombreprovincia(JTextField txtnombreprovincia) {
+        this.txtnombreprovincia = txtnombreprovincia;
     }
 
     public JDialog getjDlgCamionero() {
@@ -603,6 +603,55 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         this.btnactualizar = btnactualizar;
     }
 
+    public JTextField getTxtcodigoPaquete() {
+        return txtcodigoPaquete;
+    }
+
+    public void setTxtcodigoPaquete(JTextField txtcodigoPaquete) {
+        this.txtcodigoPaquete = txtcodigoPaquete;
+    }
+
+    public JLabel getLblCodigoPaquete() {
+        return lblCodigoPaquete;
+    }
+
+    public void setLblCodigoPaquete(JLabel lblCodigoPaquete) {
+        this.lblCodigoPaquete = lblCodigoPaquete;
+    }
+
+    public JButton getBtnbuscarProvincia() {
+        return btnbuscarProvincia;
+    }
+
+    public void setBtnbuscarProvincia(JButton btnbuscarProvincia) {
+        this.btnbuscarProvincia = btnbuscarProvincia;
+    }
+
+    public JButton getBtncargar() {
+        return btncargar;
+    }
+
+    public void setBtncargar(JButton btncargar) {
+        this.btncargar = btncargar;
+    }
+
+    public JDialog getjDlgProvincias() {
+        return jDlgProvincias;
+    }
+
+    public void setjDlgProvincias(JDialog jDlgProvincias) {
+        this.jDlgProvincias = jDlgProvincias;
+    }
+
+    public JTable getJtblaProvinciasjDlg() {
+        return jtblaProvinciasjDlg;
+    }
+
+    public void setJtblaProvinciasjDlg(JTable jtblaProvinciasjDlg) {
+        this.jtblaProvinciasjDlg = jtblaProvinciasjDlg;
+    }
+
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -623,7 +672,6 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         lblprovincia = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
-        cbxprovincia = new javax.swing.JComboBox<>();
         lblpeso = new javax.swing.JLabel();
         lblsalidapro = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -652,6 +700,10 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         txtcodigoDestinatario = new javax.swing.JTextField();
         txtcodigoCamionero = new javax.swing.JTextField();
         spinnerPeso = new javax.swing.JSpinner();
+        lblCodigoPaquete = new javax.swing.JLabel();
+        txtcodigoPaquete = new javax.swing.JTextField();
+        txtnombreprovincia = new javax.swing.JTextField();
+        btnbuscarProvincia = new javax.swing.JButton();
         jDlgClientes = new javax.swing.JDialog();
         pnlprincipalcli = new javax.swing.JPanel();
         lbltitulo = new javax.swing.JLabel();
@@ -666,11 +718,15 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         btncargarDestinatario = new javax.swing.JButton();
         jDlgCamionero = new javax.swing.JDialog();
         pnlprincipalcam = new javax.swing.JPanel();
-        lbltitulo2 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblcamioneros = new javax.swing.JTable();
         btncargarCamionero = new javax.swing.JButton();
         jInternalFrame1 = new javax.swing.JInternalFrame();
+        jDlgProvincias = new javax.swing.JDialog();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jtblaProvinciasjDlg = new javax.swing.JTable();
+        lbltitulo2 = new javax.swing.JLabel();
+        btncargar = new javax.swing.JButton();
         pnlprincipalframe = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
@@ -718,9 +774,6 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
 
         jLabel15.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel15.setText("Información del paquete");
-
-        cbxprovincia.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        cbxprovincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
 
         lblpeso.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         lblpeso.setText("Peso:");
@@ -770,6 +823,10 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
 
         spinnerPeso.setModel(new javax.swing.SpinnerNumberModel(1.0d, 1.0d, 1000.0d, 1.0d));
 
+        lblCodigoPaquete.setText("Código:");
+
+        btnbuscarProvincia.setText("Buscar");
+
         javax.swing.GroupLayout pnlprincipalLayout = new javax.swing.GroupLayout(pnlprincipal);
         pnlprincipal.setLayout(pnlprincipalLayout);
         pnlprincipalLayout.setHorizontalGroup(
@@ -813,8 +870,11 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                                             .addComponent(lblcodprovincia))
                                         .addGap(36, 36, 36)
                                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(cbxprovincia, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtCodigoProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(txtnombreprovincia, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                                .addComponent(txtCodigoProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnbuscarProvincia))))
                                     .addGroup(pnlprincipalLayout.createSequentialGroup()
                                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(lblceddestinatario)
@@ -832,9 +892,6 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                                         .addGap(20, 20, 20)
                                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(pnlprincipalLayout.createSequentialGroup()
-                                                .addGap(2, 2, 2)
-                                                .addComponent(jLabel15))
-                                            .addGroup(pnlprincipalLayout.createSequentialGroup()
                                                 .addGap(10, 10, 10)
                                                 .addComponent(jLabel27)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -842,7 +899,10 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                                             .addGroup(pnlprincipalLayout.createSequentialGroup()
                                                 .addComponent(lblnomcamionero)
                                                 .addGap(7, 7, 7)
-                                                .addComponent(txtnomcamionero, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(txtnomcamionero, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(pnlprincipalLayout.createSequentialGroup()
+                                                .addGap(2, 2, 2)
+                                                .addComponent(jLabel15))))
                                     .addGroup(pnlprincipalLayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -878,6 +938,10 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                                         .addComponent(btnbuscarcliente)
                                         .addGap(570, 570, 570))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlprincipalLayout.createSequentialGroup()
+                                        .addComponent(lblCodigoPaquete)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtcodigoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(69, 69, 69)
                                         .addComponent(lblfecharegistro)
                                         .addGap(18, 18, 18)))
                                 .addComponent(jclfecharegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -937,21 +1001,25 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                             .addComponent(txtnomdestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(20, 20, 20)
                         .addComponent(jLabel13)
-                        .addGap(10, 10, 10)
+                        .addGap(9, 9, 9)
                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblcodprovincia)
-                            .addComponent(txtCodigoProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCodigoProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnbuscarProvincia))
+                        .addGap(7, 7, 7)
+                        .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblprovincia)
-                            .addComponent(cbxprovincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtnombreprovincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlprincipalLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlprincipalLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
+                        .addGap(1, 1, 1)
                         .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblfecharegistro)
+                            .addGroup(pnlprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblfecharegistro)
+                                .addComponent(lblCodigoPaquete)
+                                .addComponent(txtcodigoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jclfecharegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel15)
@@ -1127,9 +1195,6 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
 
         pnlprincipalcam.setBackground(new java.awt.Color(255, 255, 255));
 
-        lbltitulo2.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        lbltitulo2.setText("Listado de Camionero");
-
         tblcamioneros.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         tblcamioneros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1155,18 +1220,12 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btncargarCamionero)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlprincipalcamLayout.createSequentialGroup()
-                .addContainerGap(210, Short.MAX_VALUE)
-                .addComponent(lbltitulo2)
-                .addGap(224, 224, 224))
+                .addGap(0, 33, Short.MAX_VALUE))
         );
         pnlprincipalcamLayout.setVerticalGroup(
             pnlprincipalcamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlprincipalcamLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addComponent(lbltitulo2)
-                .addGap(18, 18, 18)
+                .addContainerGap(66, Short.MAX_VALUE)
                 .addGroup(pnlprincipalcamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btncargarCamionero))
@@ -1197,6 +1256,51 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jtblaProvinciasjDlg.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Código", "Nombre"
+            }
+        ));
+        jScrollPane5.setViewportView(jtblaProvinciasjDlg);
+
+        lbltitulo2.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        lbltitulo2.setText("Listado de provincias");
+
+        btncargar.setText("Cargar");
+
+        javax.swing.GroupLayout jDlgProvinciasLayout = new javax.swing.GroupLayout(jDlgProvincias.getContentPane());
+        jDlgProvincias.getContentPane().setLayout(jDlgProvinciasLayout);
+        jDlgProvinciasLayout.setHorizontalGroup(
+            jDlgProvinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDlgProvinciasLayout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btncargar)
+                .addContainerGap())
+            .addGroup(jDlgProvinciasLayout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(lbltitulo2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jDlgProvinciasLayout.setVerticalGroup(
+            jDlgProvinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDlgProvinciasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbltitulo2)
+                .addGap(18, 18, 18)
+                .addGroup(jDlgProvinciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btncargar))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -1280,10 +1384,12 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnactualizar;
+    private javax.swing.JButton btnbuscarProvincia;
     private javax.swing.JButton btnbuscarcamionero;
     private javax.swing.JButton btnbuscarcliente;
     private javax.swing.JButton btnbuscardestinatario;
     private javax.swing.JButton btncancelar;
+    private javax.swing.JButton btncargar;
     private javax.swing.JButton btncargarCamionero;
     private javax.swing.JButton btncargarCliente;
     private javax.swing.JButton btncargarDestinatario;
@@ -1291,11 +1397,11 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnmodificar;
-    private javax.swing.JComboBox<String> cbxprovincia;
     private javax.swing.JDialog jDlgCamionero;
     private javax.swing.JDialog jDlgClientes;
     private javax.swing.JDialog jDlgDestinatario;
     private javax.swing.JDialog jDlgPaquetes;
+    private javax.swing.JDialog jDlgProvincias;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
@@ -1309,11 +1415,14 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private com.toedter.calendar.JDateChooser jclfecharegistro;
     private com.toedter.calendar.JDateChooser jclllegadapro;
     private com.toedter.calendar.JDateChooser jclsalidapro;
+    private javax.swing.JTable jtblaProvinciasjDlg;
     private javax.swing.JLabel lbcedcamionero;
+    private javax.swing.JLabel lblCodigoPaquete;
     private javax.swing.JLabel lblcedcliente;
     private javax.swing.JLabel lblceddestinatario;
     private javax.swing.JLabel lblcliente;
@@ -1349,6 +1458,8 @@ public class VistaPaquete extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtcodigoCamionero;
     private javax.swing.JTextField txtcodigoCliente;
     private javax.swing.JTextField txtcodigoDestinatario;
+    private javax.swing.JTextField txtcodigoPaquete;
+    private javax.swing.JTextField txtnombreprovincia;
     private javax.swing.JTextField txtnomcamionero;
     private javax.swing.JTextField txtnomcliente;
     private javax.swing.JTextField txtnomdestinatario;
