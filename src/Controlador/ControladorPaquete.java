@@ -246,7 +246,27 @@ public class ControladorPaquete {
                 paquete.setLlegadaprogra(fechallegadaT);
                 paquete.setFecharegistro(fecharegistroT);
 
-                if (paquete.crearPaquete()) {
+                /////////////////////////////////////
+                Modelo_Cliente cliente = new Modelo_Cliente();
+                List<Cliente> listcli = cliente.listaClientesTabla();
+
+                listcli.stream().forEach(cli -> {
+
+                    if (cli.getCodigocli() == codigoCliente) {
+
+                        try {
+                            Email email = new Email();
+                            email.enviarEmail(cli.getEmail(), String.format("%-27S%-27S%-27S%-27S%-32S%n", "Su paquete se ha enviado correctamente\n", "Cédula del cliente:", cli.getDni(), "Nombre:", cli.getPrinombre()));
+
+                            JOptionPane.showMessageDialog(vista, "Correo enviado");
+                        } catch (MessagingException ex) {
+                            Logger.getLogger(ControladorPaquete.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                });
+                ////////////////////////////////////
+
+                /*if (paquete.crearPaquete()) {
                     vista.getjDlgPaquetes().setVisible(false);
                     JOptionPane.showMessageDialog(vista, "Se registro exitosamente el envio del paquete");
 
@@ -256,11 +276,11 @@ public class ControladorPaquete {
                     listcli.stream().forEach(cli -> {
 
                         if (cli.getCodigocli() == codigoCliente) {
-                            
+
                             try {
                                 Email email = new Email();
-                                email.enviarEmail(cli.getEmail());
-                                
+                                email.enviarEmail(cli.getEmail(),String.format("%-27S%-27S%-27S%-27S%-32S%n", "Su paquete se ha enviado correctamente\n", "Cédula del cliente:", cli.getDni(), "Nombre:",cli.getPrinombre()));
+
                                 JOptionPane.showMessageDialog(vista, "Correo enviado");
                             } catch (MessagingException ex) {
                                 Logger.getLogger(ControladorPaquete.class.getName()).log(Level.SEVERE, null, ex);
@@ -271,8 +291,7 @@ public class ControladorPaquete {
                     cargarTablaPaquetes();
                 } else {
                     JOptionPane.showMessageDialog(vista, "No se pudo enviar el paquete");
-                }
-
+                }*/
             } else {
 
                 JOptionPane.showMessageDialog(vista, "Faltan campos por llenar o estan llenados de forma incorrecta");
