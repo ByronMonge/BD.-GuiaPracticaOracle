@@ -492,11 +492,9 @@
                   <Component id="btnactualizar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   <Component id="btncrear" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnmodificar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="btneliminar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="130" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -510,7 +508,6 @@
                       <Component id="btnactualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btncrear" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnmodificar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btneliminar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="54" max="32767" attributes="0"/>
               </Group>
@@ -538,11 +535,6 @@
         <Component class="javax.swing.JButton" name="btnmodificar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Modificar"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btneliminar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -43,14 +43,6 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
         this.btncrear = btncrear;
     }
 
-    public JButton getBtneliminar() {
-        return btneliminar;
-    }
-
-    public void setBtneliminar(JButton btneliminar) {
-        this.btneliminar = btneliminar;
-    }
-
     public JButton getBtnguardar() {
         return btnguardar;
     }
@@ -379,7 +371,6 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
         this.txtArea = txtArea;
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -429,7 +420,6 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
         btnactualizar = new javax.swing.JButton();
         btncrear = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
-        btneliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabladestinatarios = new javax.swing.JTable();
 
@@ -676,8 +666,6 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
 
         btnmodificar.setText("Modificar");
 
-        btneliminar.setText("Eliminar");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -690,11 +678,9 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
                 .addComponent(btnactualizar)
                 .addGap(49, 49, 49)
                 .addComponent(btncrear)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(btnmodificar)
-                .addGap(27, 27, 27)
-                .addComponent(btneliminar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -705,8 +691,7 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
                     .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnactualizar)
                     .addComponent(btncrear)
-                    .addComponent(btnmodificar)
-                    .addComponent(btneliminar))
+                    .addComponent(btnmodificar))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
@@ -746,7 +731,6 @@ public class VistaDestinatario extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnactualizar;
     private javax.swing.JButton btncrear;
-    private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JRadioButton femenino;
